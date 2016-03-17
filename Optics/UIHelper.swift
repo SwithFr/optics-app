@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct UIhelper
+public struct UIHelper
 {
     static let green        = UIColor( red:0.75, green:0.89, blue:0.86, alpha:1.0 )
     static let black        = UIColor( red:0.10, green:0.12, blue:0.16, alpha:1.0 )
