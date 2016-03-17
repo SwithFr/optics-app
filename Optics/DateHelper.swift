@@ -10,11 +10,13 @@ import Foundation
 
 public struct Date
 {
+    static let dateFormatter = NSDateFormatter()
+    static let dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+    
     // Display time ago
     static func ago(d:String) -> String
     {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.dateFormat = dateFormat
         
         let date = dateFormatter.dateFromString( d )
         let calendar = NSCalendar.currentCalendar()
@@ -85,8 +87,7 @@ public struct Date
     // Convert string to date and return formated string
     static func convertDateFormater(date: String) -> String
     {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.dateFormat = dateFormat
         dateFormatter.timeZone = NSTimeZone( name: "UTC" )
         
         let date = dateFormatter.dateFromString( date )

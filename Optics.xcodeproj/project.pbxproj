@@ -21,6 +21,7 @@
 		09EF1EA81C9A063100796BF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA61C9A063100796BF6 /* LaunchScreen.storyboard */; };
 		09EF1EB31C9A063200796BF6 /* OpticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1EB21C9A063200796BF6 /* OpticsTests.swift */; };
 		09EF1EBE1C9A063200796BF6 /* OpticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1EBD1C9A063200796BF6 /* OpticsUITests.swift */; };
+		09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9D9001C9B4C2500777162 /* NavigationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		09EF1EB91C9A063200796BF6 /* OpticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1EBD1C9A063200796BF6 /* OpticsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticsUITests.swift; sourceTree = "<group>"; };
 		09EF1EBF1C9A063200796BF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F9D9001C9B4C2500777162 /* NavigationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 			children = (
 				09197BE61C9ADEA70010C77E /* UIHelper.swift */,
 				09197BE81C9AE1FE0010C77E /* DateHelper.swift */,
+				09F9D9001C9B4C2500777162 /* NavigationHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */,
 				09EF1EA01C9A063100796BF6 /* DetailViewController.swift in Sources */,
 				09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */,
+				09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
