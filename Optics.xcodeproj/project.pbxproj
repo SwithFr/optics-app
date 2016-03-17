@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDC1C9ADAFE0010C77E /* Model.swift */; };
+		09197BDF1C9ADC0A0010C77E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDE1C9ADC0A0010C77E /* User.swift */; };
+		09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE11C9ADC640010C77E /* SwiftyJSON.swift */; };
 		09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E981C9A063100796BF6 /* AppDelegate.swift */; };
 		09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9A1C9A063100796BF6 /* Optics.xcdatamodeld */; };
 		09EF1E9E1C9A063100796BF6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9D1C9A063100796BF6 /* MasterViewController.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		09197BDC1C9ADAFE0010C77E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		09197BDE1C9ADC0A0010C77E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09197BE11C9ADC640010C77E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		09EF1E951C9A063100796BF6 /* Optics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1E981C9A063100796BF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EF1E9B1C9A063100796BF6 /* Optics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Optics.xcdatamodel; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				09197BCF1C9AD6790010C77E /* friends */,
+				09197BDE1C9ADC0A0010C77E /* User.swift */,
 			);
 			name = users;
 			sourceTree = "<group>";
@@ -222,6 +227,14 @@
 			name = friends;
 			sourceTree = "<group>";
 		};
+		09197BE01C9ADC4B0010C77E /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				09197BE11C9ADC640010C77E /* SwiftyJSON.swift */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
 		09EF1E8C1C9A063100796BF6 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +258,7 @@
 		09EF1E971C9A063100796BF6 /* Optics */ = {
 			isa = PBXGroup;
 			children = (
+				09197BE01C9ADC4B0010C77E /* libs */,
 				09197BCC1C9AD51A0010C77E /* views */,
 				09197BCB1C9AD5140010C77E /* models */,
 				09197BCA1C9AD50A0010C77E /* controllers */,
@@ -414,8 +428,10 @@
 			files = (
 				09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */,
 				09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */,
+				09197BDF1C9ADC0A0010C77E /* User.swift in Sources */,
 				09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */,
 				09EF1E9E1C9A063100796BF6 /* MasterViewController.swift in Sources */,
+				09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */,
 				09EF1EA01C9A063100796BF6 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
