@@ -10,7 +10,7 @@ import Foundation
 
 public struct Date
 {
-    
+    // Display time ago
     static func ago(d:String) -> String
     {
         let dateFormatter = NSDateFormatter()
@@ -81,4 +81,21 @@ public struct Date
             
         }
     }
+    
+    // Convert string to date and return formated string
+    static func convertDateFormater(date: String) -> String
+    {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.timeZone = NSTimeZone( name: "UTC" )
+        
+        let date = dateFormatter.dateFromString( date )
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        dateFormatter.timeZone = NSTimeZone( name: "UTC" )
+        
+        let timeStamp = dateFormatter.stringFromDate( date! )
+        
+        return timeStamp
+    }
+
 }
