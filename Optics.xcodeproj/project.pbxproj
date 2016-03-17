@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDC1C9ADAFE0010C77E /* Model.swift */; };
 		09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E981C9A063100796BF6 /* AppDelegate.swift */; };
 		09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9A1C9A063100796BF6 /* Optics.xcdatamodeld */; };
 		09EF1E9E1C9A063100796BF6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9D1C9A063100796BF6 /* MasterViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09197BDC1C9ADAFE0010C77E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		09EF1E951C9A063100796BF6 /* Optics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1E981C9A063100796BF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EF1E9B1C9A063100796BF6 /* Optics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Optics.xcdatamodel; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				09197BCE1C9AD6650010C77E /* events */,
 				09197BCD1C9AD6540010C77E /* users */,
+				09197BDC1C9ADAFE0010C77E /* Model.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -99,6 +102,8 @@
 		09197BCC1C9AD51A0010C77E /* views */ = {
 			isa = PBXGroup;
 			children = (
+				09197BD71C9ADAB40010C77E /* events */,
+				09197BD81C9ADAB90010C77E /* users */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -173,6 +178,44 @@
 			sourceTree = "<group>";
 		};
 		09197BD61C9AD6EE0010C77E /* friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = friends;
+			sourceTree = "<group>";
+		};
+		09197BD71C9ADAB40010C77E /* events */ = {
+			isa = PBXGroup;
+			children = (
+				09197BD91C9ADAC10010C77E /* comments */,
+				09197BDA1C9ADAC70010C77E /* pictures */,
+			);
+			name = events;
+			sourceTree = "<group>";
+		};
+		09197BD81C9ADAB90010C77E /* users */ = {
+			isa = PBXGroup;
+			children = (
+				09197BDB1C9ADAD90010C77E /* friends */,
+			);
+			name = users;
+			sourceTree = "<group>";
+		};
+		09197BD91C9ADAC10010C77E /* comments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = comments;
+			sourceTree = "<group>";
+		};
+		09197BDA1C9ADAC70010C77E /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = pictures;
+			sourceTree = "<group>";
+		};
+		09197BDB1C9ADAD90010C77E /* friends */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -369,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */,
 				09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */,
 				09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */,
 				09EF1E9E1C9A063100796BF6 /* MasterViewController.swift in Sources */,
