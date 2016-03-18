@@ -6,7 +6,6 @@
 //  Copyright © 2016 Jérémy Smith. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class Navigator

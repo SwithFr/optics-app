@@ -55,7 +55,7 @@ class Model
         _ = NSURLSession.sharedSession().dataTaskWithRequest( request ) {
             data, response, error in
             
-            next(error: error, data: data!)
+            next( error: error, data: data! )
             
             }.resume()
         
