@@ -12,8 +12,11 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("login view")
-        // Do any additional setup after loading the view.
+        print("login view did")
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print("login view will")
     }
 
     override func didReceiveMemoryWarning() {

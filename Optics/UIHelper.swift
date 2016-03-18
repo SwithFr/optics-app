@@ -11,9 +11,9 @@ import UIKit
 public struct UIHelper
 {
     static let green        = UIColor( red:0.75, green:0.89, blue:0.86, alpha:1.0 )
-    static let black        = UIColor( red:0.10, green:0.12, blue:0.16, alpha:1.0 )
+    static let black        = UIColor( red:0.07, green:0.07, blue:0.07, alpha:1.0 )
     static let red          = UIColor( red:0.94, green:0.32, blue:0.26, alpha:1.0 )
-    static let grey         = UIColor( red:0.80, green:0.80, blue:0.80, alpha:1.0 )
+    static let grey         = UIColor( red:0.58, green:0.60, blue:0.60, alpha:1.0 )
     static let transparent  = UIColor( red:0, green:0, blue:0, alpha:0 )
     
     static func formatInput(input: UITextField)

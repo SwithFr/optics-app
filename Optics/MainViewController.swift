@@ -8,13 +8,18 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UINavigationController {
 
+    override func viewWillAppear(animated: Bool)
+    {
+        
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        print("main")
         if !User.isAuthenticated() {
+            print("non loggé")
             Navigator.goTo( "loginView", vc: self )
         }
     }
