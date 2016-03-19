@@ -10,18 +10,33 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var loginField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        print("login view did")
+        _setUI()
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
-        print("login view will")
+    override func viewWillAppear(animated: Bool)
+    {
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func _setUI()
+    {
+        UIHelper.formatInput( loginField )
+        UIHelper.formatInput( passwordField )
+        UIHelper.formatBtn( loginBtn )
     }
     
 

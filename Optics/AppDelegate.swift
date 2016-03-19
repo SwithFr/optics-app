@@ -18,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         if !User.isAuthenticated() {
-            print("non loggé")
             let storyboard = UIStoryboard(name: "Main", bundle: nil )
             let loginViewController = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
             self.window?.rootViewController = loginViewController
