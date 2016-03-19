@@ -34,12 +34,12 @@ class Model
     // Perform a request
     private func _performRequest(route: String, method: String, authenticate: Bool?, next: (error: NSError?, data: NSData) -> Void )
     {
-        let request = makeRequest( route )
+        let request = _makeRequest( route )
         
         request.HTTPMethod = method
         
         if authenticate != nil {
-            setHeaders( request )
+            _setHeaders( request )
         }
         
         if self.params != nil {
@@ -54,11 +54,8 @@ class Model
         
         _ = NSURLSession.sharedSession().dataTaskWithRequest( request ) {
             data, response, error in
-            
-            next(error: error, data: data!)
-            
+                next( error: error, data: data! )
             }.resume()
-        
     }
     
     // Make a POST request
@@ -82,12 +79,12 @@ class Model
     // Upload an image
     func uploadImage( eventId: String, image: UIImage, next: (error: NSError?, data: NSData) -> Void )
     {
-        let request = makeRequest( "pictures" )
-        let boundary = generateBoundaryString()
+        let request = _makeRequest( "pictures" )
+        let boundary = _generateBoundaryString()
         
         request.HTTPMethod = "POST"
         
-        setHeaders( request )
+        _setHeaders( request )
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
         let imageData = UIImageJPEGRepresentation( image, 1 )
@@ -99,7 +96,7 @@ class Model
             "eventId": eventId
         ]
         
-        request.HTTPBody = createBodyWithParameters( params, filePathKey: "file", imageDataKey: imageData!, boundary: boundary )
+        request.HTTPBody = _createBodyWithParameters( params, filePathKey: "file", imageDataKey: imageData!, boundary: boundary )
         
         _ = NSURLSession.sharedSession().dataTaskWithRequest( request ) {
             data, response, error in
@@ -110,25 +107,25 @@ class Model
     }
     
     // Set header for authentification
-    private func setHeaders(request: NSMutableURLRequest)
+    private func _setHeaders(request: NSMutableURLRequest)
     {
         request.addValue( User.getUserProperty( "USER_TOKEN" ) as! String, forHTTPHeaderField: "usertoken")
         request.addValue( (User.getUserProperty( "USER_ID" )?.stringValue)!, forHTTPHeaderField: "userid" )
     }
     
     // Create a request with an URL
-    private func makeRequest(route: String) -> NSMutableURLRequest
+    private func _makeRequest(route: String) -> NSMutableURLRequest
     {
         return NSMutableURLRequest( URL: NSURL( string: self.baseUrl + route )! )
     }
     
     // Generate boundary string
-    private func generateBoundaryString() -> String
+    private func _generateBoundaryString() -> String
     {
         return "Boundary-\(NSUUID().UUIDString)"
     }
     
-    private func createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
+    private func _createBodyWithParameters(parameters: [String: String]?, filePathKey: String?, imageDataKey: NSData, boundary: String) -> NSData {
         let body = NSMutableData();
         
         if parameters != nil {

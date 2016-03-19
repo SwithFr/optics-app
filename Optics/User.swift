@@ -8,8 +8,32 @@
 
 import Foundation
 
-class User
+class User : Model
 {
+    // Log in an user
+    func login(login: String, password: String, completionHandler: () -> Void)
+    {
+        if ( login.isEmpty || password.isEmpty ) {
+            print("un des deux est vide")
+        }
+        
+        self.setData( "login=\(login)&password=\(password)" )
+        self.post( "users/login", authenticate: nil ) {
+            error, data in
+            if error == nil {
+                let data = JSON( data: data )
+                let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+                user.setValue( data[ "data"][ "token" ].string, forKey: "USER_TOKEN")
+                user.setValue( data[ "data" ][ "id" ].int, forKey: "USER_ID" )
+                user.synchronize()
+                
+                completionHandler()
+            } else {
+                print( "Erreur lors de la connexion" )
+            }
+        }
+    }
+
     
     // Check if current user is the owner of a ressource
     static func isOwner(ownerID: JSON) -> Bool
