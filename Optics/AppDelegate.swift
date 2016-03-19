@@ -10,16 +10,20 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil )
+            
+        User.logout()
+        
         if !User.isAuthenticated() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil )
             let loginViewController = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
+            
             self.window?.rootViewController = loginViewController
         }
         
