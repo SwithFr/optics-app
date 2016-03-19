@@ -7,15 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDC1C9ADAFE0010C77E /* Model.swift */; };
+		09197BDF1C9ADC0A0010C77E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDE1C9ADC0A0010C77E /* User.swift */; };
+		09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE11C9ADC640010C77E /* SwiftyJSON.swift */; };
+		09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE61C9ADEA70010C77E /* UIHelper.swift */; };
+		09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE81C9AE1FE0010C77E /* DateHelper.swift */; };
+		0954B1161C9C7353007398EF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1151C9C7353007398EF /* Event.swift */; };
+		0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1191C9C8898007398EF /* MainViewController.swift */; };
+		0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B11B1C9C8A40007398EF /* LoginViewController.swift */; };
+		0954B11E1C9C9D67007398EF /* EventsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B11D1C9C9D67007398EF /* EventsListTableViewController.swift */; };
+		0954B1231C9CB0E7007398EF /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B11F1C9CB0E7007398EF /* Raleway-Light.ttf */; };
+		0954B1241C9CB0E7007398EF /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1201C9CB0E7007398EF /* Raleway-Regular.ttf */; };
+		0954B1251C9CB0E7007398EF /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1211C9CB0E7007398EF /* Raleway-SemiBold.ttf */; };
+		0954B1261C9CB0E7007398EF /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */; };
+		0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */; };
 		09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E981C9A063100796BF6 /* AppDelegate.swift */; };
 		09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9A1C9A063100796BF6 /* Optics.xcdatamodeld */; };
-		09EF1E9E1C9A063100796BF6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9D1C9A063100796BF6 /* MasterViewController.swift */; };
-		09EF1EA01C9A063100796BF6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9F1C9A063100796BF6 /* DetailViewController.swift */; };
 		09EF1EA31C9A063100796BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA11C9A063100796BF6 /* Main.storyboard */; };
 		09EF1EA51C9A063100796BF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA41C9A063100796BF6 /* Assets.xcassets */; };
 		09EF1EA81C9A063100796BF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA61C9A063100796BF6 /* LaunchScreen.storyboard */; };
 		09EF1EB31C9A063200796BF6 /* OpticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1EB21C9A063200796BF6 /* OpticsTests.swift */; };
 		09EF1EBE1C9A063200796BF6 /* OpticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1EBD1C9A063200796BF6 /* OpticsUITests.swift */; };
+		09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9D9001C9B4C2500777162 /* NavigationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +49,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09197BDC1C9ADAFE0010C77E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		09197BDE1C9ADC0A0010C77E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		09197BE11C9ADC640010C77E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		09197BE61C9ADEA70010C77E /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		09197BE81C9AE1FE0010C77E /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		0954B1151C9C7353007398EF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		0954B1191C9C8898007398EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0954B11B1C9C8A40007398EF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0954B11D1C9C9D67007398EF /* EventsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListTableViewController.swift; sourceTree = "<group>"; };
+		0954B11F1C9CB0E7007398EF /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		0954B1201C9CB0E7007398EF /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		0954B1211C9CB0E7007398EF /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		09EF1E951C9A063100796BF6 /* Optics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1E981C9A063100796BF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EF1E9B1C9A063100796BF6 /* Optics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Optics.xcdatamodel; sourceTree = "<group>"; };
-		09EF1E9D1C9A063100796BF6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		09EF1E9F1C9A063100796BF6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		09EF1EA21C9A063100796BF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09EF1EA41C9A063100796BF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09EF1EA71C9A063100796BF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +76,7 @@
 		09EF1EB91C9A063200796BF6 /* OpticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1EBD1C9A063200796BF6 /* OpticsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticsUITests.swift; sourceTree = "<group>"; };
 		09EF1EBF1C9A063200796BF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F9D9001C9B4C2500777162 /* NavigationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +118,7 @@
 			children = (
 				09197BCE1C9AD6650010C77E /* events */,
 				09197BCD1C9AD6540010C77E /* users */,
+				09197BDC1C9ADAFE0010C77E /* Model.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -99,6 +126,8 @@
 		09197BCC1C9AD51A0010C77E /* views */ = {
 			isa = PBXGroup;
 			children = (
+				09197BD71C9ADAB40010C77E /* events */,
+				09197BD81C9ADAB90010C77E /* users */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -107,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				09197BCF1C9AD6790010C77E /* friends */,
+				09197BDE1C9ADC0A0010C77E /* User.swift */,
 			);
 			name = users;
 			sourceTree = "<group>";
@@ -116,6 +146,7 @@
 			children = (
 				09197BD01C9AD6890010C77E /* comments */,
 				09197BD11C9AD6990010C77E /* pictures */,
+				0954B1151C9C7353007398EF /* Event.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -146,6 +177,7 @@
 			children = (
 				09197BD41C9AD6D80010C77E /* comments */,
 				09197BD31C9AD6CF0010C77E /* pictures */,
+				0954B11D1C9C9D67007398EF /* EventsListTableViewController.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -168,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				09197BD61C9AD6EE0010C77E /* friends */,
+				0954B11B1C9C8A40007398EF /* LoginViewController.swift */,
+				0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */,
 			);
 			name = users;
 			sourceTree = "<group>";
@@ -177,6 +211,73 @@
 			children = (
 			);
 			name = friends;
+			sourceTree = "<group>";
+		};
+		09197BD71C9ADAB40010C77E /* events */ = {
+			isa = PBXGroup;
+			children = (
+				09197BD91C9ADAC10010C77E /* comments */,
+				09197BDA1C9ADAC70010C77E /* pictures */,
+			);
+			name = events;
+			sourceTree = "<group>";
+		};
+		09197BD81C9ADAB90010C77E /* users */ = {
+			isa = PBXGroup;
+			children = (
+				09197BDB1C9ADAD90010C77E /* friends */,
+			);
+			name = users;
+			sourceTree = "<group>";
+		};
+		09197BD91C9ADAC10010C77E /* comments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = comments;
+			sourceTree = "<group>";
+		};
+		09197BDA1C9ADAC70010C77E /* pictures */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = pictures;
+			sourceTree = "<group>";
+		};
+		09197BDB1C9ADAD90010C77E /* friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = friends;
+			sourceTree = "<group>";
+		};
+		09197BE01C9ADC4B0010C77E /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				09197BE11C9ADC640010C77E /* SwiftyJSON.swift */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		09197BE51C9ADE820010C77E /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				09197BE61C9ADEA70010C77E /* UIHelper.swift */,
+				09197BE81C9AE1FE0010C77E /* DateHelper.swift */,
+				09F9D9001C9B4C2500777162 /* NavigationHelper.swift */,
+			);
+			name = helpers;
+			sourceTree = "<group>";
+		};
+		0954B1271C9CB0F2007398EF /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0954B11F1C9CB0E7007398EF /* Raleway-Light.ttf */,
+				0954B1201C9CB0E7007398EF /* Raleway-Regular.ttf */,
+				0954B1211C9CB0E7007398EF /* Raleway-SemiBold.ttf */,
+				0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */,
+			);
+			name = fonts;
 			sourceTree = "<group>";
 		};
 		09EF1E8C1C9A063100796BF6 = {
@@ -202,14 +303,16 @@
 		09EF1E971C9A063100796BF6 /* Optics */ = {
 			isa = PBXGroup;
 			children = (
+				0954B1271C9CB0F2007398EF /* fonts */,
+				09197BE51C9ADE820010C77E /* helpers */,
+				09197BE01C9ADC4B0010C77E /* libs */,
 				09197BCC1C9AD51A0010C77E /* views */,
 				09197BCB1C9AD5140010C77E /* models */,
 				09197BCA1C9AD50A0010C77E /* controllers */,
 				09EF1E981C9A063100796BF6 /* AppDelegate.swift */,
-				09EF1E9D1C9A063100796BF6 /* MasterViewController.swift */,
-				09EF1E9F1C9A063100796BF6 /* DetailViewController.swift */,
-				09EF1EA11C9A063100796BF6 /* Main.storyboard */,
+				0954B1191C9C8898007398EF /* MainViewController.swift */,
 				09EF1EA41C9A063100796BF6 /* Assets.xcassets */,
+				09EF1EA11C9A063100796BF6 /* Main.storyboard */,
 				09EF1EA61C9A063100796BF6 /* LaunchScreen.storyboard */,
 				09EF1EA91C9A063100796BF6 /* Info.plist */,
 				09EF1E9A1C9A063100796BF6 /* Optics.xcdatamodeld */,
@@ -343,8 +446,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				09EF1EA81C9A063100796BF6 /* LaunchScreen.storyboard in Resources */,
+				0954B1241C9CB0E7007398EF /* Raleway-Regular.ttf in Resources */,
 				09EF1EA51C9A063100796BF6 /* Assets.xcassets in Resources */,
+				0954B1251C9CB0E7007398EF /* Raleway-SemiBold.ttf in Resources */,
 				09EF1EA31C9A063100796BF6 /* Main.storyboard in Resources */,
+				0954B1231C9CB0E7007398EF /* Raleway-Light.ttf in Resources */,
+				0954B1261C9CB0E7007398EF /* Raleway-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,10 +476,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */,
+				0954B1161C9C7353007398EF /* Event.swift in Sources */,
+				0954B11E1C9C9D67007398EF /* EventsListTableViewController.swift in Sources */,
 				09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */,
+				0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */,
+				09197BDF1C9ADC0A0010C77E /* User.swift in Sources */,
 				09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */,
-				09EF1E9E1C9A063100796BF6 /* MasterViewController.swift in Sources */,
-				09EF1EA01C9A063100796BF6 /* DetailViewController.swift in Sources */,
+				09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */,
+				09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */,
+				09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */,
+				0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */,
+				09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */,
+				0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
