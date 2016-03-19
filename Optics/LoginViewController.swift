@@ -8,12 +8,14 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate
+{
 
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    let ModelUser = User()
     
     override func viewDidLoad()
     {
@@ -27,18 +29,57 @@ class LoginViewController: UIViewController {
         
     }
 
+    @IBAction func loginBtnTapped(sender: AnyObject)
+    {
+        _logUser()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    // Set the UI with good appearance
     private func _setUI()
     {
         UIHelper.formatInput( loginField )
         UIHelper.formatInput( passwordField )
         UIHelper.formatBtn( loginBtn )
+        
+        loginField.returnKeyType    = .Next
+        passwordField.returnKeyType = .Done
+        loginField.delegate         = self
+        passwordField.delegate      = self
+        
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        if ( textField == loginField ) {
+            passwordField.becomeFirstResponder()
+        } else if ( textField == passwordField ) {
+            _logUser()
+            self.view.endEditing( true )
+        }
+        
+        return false
+    }
+    
+    // Do the login action
+    private func _logUser()
+    {
+        let login = loginField.text!
+        let password = passwordField.text!
+        
+        ModelUser.login( login, password: password ) {
+            dispatch_async( dispatch_get_main_queue() ) {
+                let eventListVC = EventsListTableViewController()
+                let navigationController = UINavigationController( rootViewController: eventListVC )
+                
+                self.presentViewController( navigationController, animated: true, completion: nil )
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
