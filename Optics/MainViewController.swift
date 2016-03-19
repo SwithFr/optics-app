@@ -18,10 +18,6 @@ class MainViewController: UINavigationController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        if !User.isAuthenticated() {
-            print("non loggé")
-            Navigator.goTo( "loginView", vc: self )
-        }
     }
 
     override func didReceiveMemoryWarning() {
