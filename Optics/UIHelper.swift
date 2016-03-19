@@ -48,7 +48,7 @@ public struct UIHelper
         border.borderColor = red.CGColor
         border.frame       = CGRect( x: 0, y: input.frame.size.height - width, width:  input.frame.size.width, height: input.frame.size.height )
         border.borderWidth = width
-        input.layer.addSublayer(border)
+        input.layer.addSublayer( border )
         input.layer.masksToBounds = true
     }
     
