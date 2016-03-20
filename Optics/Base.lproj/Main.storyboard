@@ -17,6 +17,11 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
         </mutableArray>
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway</string>
+            <string>Raleway</string>
+            <string>Raleway</string>
+        </mutableArray>
         <mutableArray key="Raleway-SemiBold.ttf">
             <string>Raleway-SemiBold</string>
             <string>Raleway-SemiBold</string>
@@ -112,6 +117,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="pem-zo-8hU">
                             <connections>
                                 <action selector="menuBtnTapped:" destination="Z4Z-4F-b90" id="I5V-pc-pnl"/>
+                                <segue destination="32k-Aw-qOl" kind="show" identifier="mainMenuSegue" id="iGN-n4-EUc"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="add-icon" id="RZU-G8-D8n">
@@ -128,6 +134,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mc5-rb-QZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958.5" y="283.5"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="kjU-cc-984">
+            <objects>
+                <viewController storyboardIdentifier="mainMenuView" id="32k-Aw-qOl" customClass="MainMenuViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fq0-u0-YFJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="pzB-Jb-Hbh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qYa-9n-UMV">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-bW-amC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon compte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keo-u9-sh7">
+                                <rect key="frame" x="49" y="124" width="118" height="24"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mes amis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnm-4i-jdK">
+                                <rect key="frame" x="49" y="238" width="97" height="24"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-wJ-udE">
+                                <rect key="frame" x="49" y="346" width="123" height="30"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="Déconnexion"/>
+                                <connections>
+                                    <action selector="logoutBtnTapped:" destination="32k-Aw-qOl" eventType="touchUpInside" id="CK4-jm-XCG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eXp-sW-zEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958.5" y="1062.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="vOl-dd-B6Q">

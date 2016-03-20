@@ -22,11 +22,11 @@ class EventsListTableViewController: UITableViewController {
     {
         ModelEvent.getAll( {
             data in
-            dispatch {
+            dispatch_async( dispatch_get_main_queue() ) {
                 self._setAndReloadData( data )
             }
         } ) {
-            dispatch {
+            dispatch_async( dispatch_get_main_queue() ) {
                 self.error( "Une erreur", message: "Une erreur", buttonText: "Ok" )
             }
         }
@@ -62,13 +62,13 @@ class EventsListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier( "eventCell", forIndexPath: indexPath ) as! EventTableViewCell
-
+        print(cell)
         let event = events[ indexPath.row ]
         let date = Date.convertDateFormater( event["created_at"].string! )
         
         tableView.separatorColor = UIHelper.red
         
-        cell.eventTitle.text = event["title"].string
+        cell.eventTitle.text = event["title"].string!
         cell.eventDate.text = date
         //cell.picturesCount.text = String(folder["pictures"]!)
         cell.usersCount.text = String( event["users_count"] )

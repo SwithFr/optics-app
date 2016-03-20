@@ -21,6 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     {
         super.viewDidLoad()
         _setUI()
+        _hideBackButton()
         
     }
     
@@ -59,6 +60,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         loginField.delegate         = self
         passwordField.delegate      = self
         
+    }
+    
+    private func _hideBackButton()
+    {
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
