@@ -12,6 +12,7 @@
 		09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE11C9ADC640010C77E /* SwiftyJSON.swift */; };
 		09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE61C9ADEA70010C77E /* UIHelper.swift */; };
 		09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE81C9AE1FE0010C77E /* DateHelper.swift */; };
+		093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933793F1C9ED4A800E83722 /* JSSAlertView.swift */; };
 		0954B1161C9C7353007398EF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1151C9C7353007398EF /* Event.swift */; };
 		0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1191C9C8898007398EF /* MainViewController.swift */; };
 		0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B11B1C9C8A40007398EF /* LoginViewController.swift */; };
@@ -21,6 +22,7 @@
 		0954B1251C9CB0E7007398EF /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1211C9CB0E7007398EF /* Raleway-SemiBold.ttf */; };
 		0954B1261C9CB0E7007398EF /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */; };
 		0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */; };
+		0982CD2A1C9DCEAA00DBDE47 /* ModalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */; };
 		09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E981C9A063100796BF6 /* AppDelegate.swift */; };
 		09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9A1C9A063100796BF6 /* Optics.xcdatamodeld */; };
 		09EF1EA31C9A063100796BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA11C9A063100796BF6 /* Main.storyboard */; };
@@ -54,6 +56,7 @@
 		09197BE11C9ADC640010C77E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		09197BE61C9ADEA70010C77E /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		09197BE81C9AE1FE0010C77E /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		0933793F1C9ED4A800E83722 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		0954B1151C9C7353007398EF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0954B1191C9C8898007398EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0954B11B1C9C8A40007398EF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		0954B1211C9CB0E7007398EF /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
 		0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalHelper.swift; sourceTree = "<group>"; };
 		09EF1E951C9A063100796BF6 /* Optics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1E981C9A063100796BF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EF1E9B1C9A063100796BF6 /* Optics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Optics.xcdatamodel; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				09197BE11C9ADC640010C77E /* SwiftyJSON.swift */,
+				0933793F1C9ED4A800E83722 /* JSSAlertView.swift */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				09197BE61C9ADEA70010C77E /* UIHelper.swift */,
 				09197BE81C9AE1FE0010C77E /* DateHelper.swift */,
 				09F9D9001C9B4C2500777162 /* NavigationHelper.swift */,
+				0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -481,12 +487,14 @@
 				0954B11E1C9C9D67007398EF /* EventsListTableViewController.swift in Sources */,
 				09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */,
 				0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */,
+				0982CD2A1C9DCEAA00DBDE47 /* ModalHelper.swift in Sources */,
 				09197BDF1C9ADC0A0010C77E /* User.swift in Sources */,
 				09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */,
 				09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */,
 				09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */,
 				09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */,
 				0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */,
+				093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */,
 				09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */,
 				0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */,
 			);
