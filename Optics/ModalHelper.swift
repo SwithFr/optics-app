@@ -6,40 +6,55 @@
 //  Copyright © 2016 Jérémy Smith. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-public struct Modal
+extension UIViewController
 {
-    static func error(title: String, message: String)
-    {
-        let vc = UIViewController()
-        let alertView = _alert( title, message: message, style: "error" )
-        let defaultAction = UIAlertAction( title: "Ok", style: .Default, handler: nil )
-        
-        alertView.addAction( defaultAction )
-        vc.presentViewController( alertView, animated: true, completion: nil )
-    }
     
-    static private func _alert(title: String, message: String, style: String) -> UIAlertController
+//    func errorAlert(title: String, message: String)
+//    {
+//        let alertView = _alert( title, message: message, style: "error" )
+//        let defaultAction = UIAlertAction( title: "Ok", style: .Default, handler: nil )
+//        
+//        alertView.addAction( defaultAction )
+//        presentViewController( alertView, animated: true, completion: nil )
+//    }
+//    
+//    private func _alert(title: String, message: String, style: String) -> UIAlertController
+//    {
+//        let alertStyle: UIAlertControllerStyle
+//        
+//        switch style {
+//        case "error":
+//            alertStyle = .Alert
+//        default:
+//            alertStyle = .Alert
+//        }
+//        
+//        let alertView = UIAlertController(
+//            title: title,
+//            message: message,
+//            preferredStyle: alertStyle
+//        )
+//        
+//        return alertView
+//    }
+    
+    func error(title: String, message: String, buttonText: String)
     {
-        let alertStyle: UIAlertControllerStyle
-        
-        switch style {
-            
-        case "error":
-            alertStyle = .Alert
-        default:
-            alertStyle = .Alert
-            
-        }
-        
-        let alertView = UIAlertController(
+        let alert = JSSAlertView().show(
+            self,
             title: title,
-            message: message,
-            preferredStyle: alertStyle
+            text:  message,
+            buttonText: buttonText,
+            color: UIHelper.red
         )
         
-        return alertView
+        alert.setTextTheme( .Light )
+        alert.setTextFont( "Raleway-Light" )
+        alert.setTextFont( "Raleway-Light" )
+        alert.setButtonFont( "Raleway-Light" )
+        
     }
+    
 }
