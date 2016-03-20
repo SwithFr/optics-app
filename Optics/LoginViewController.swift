@@ -24,6 +24,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
     }
     
+    override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
+    }
+    
     override func viewWillAppear(animated: Bool)
     {
         
@@ -71,12 +79,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         let login = loginField.text!
         let password = passwordField.text!
         
-        ModelUser.login( login, password: password ) {
+        ModelUser.login( login, password: password, completionHandler: {
             dispatch_async( dispatch_get_main_queue() ) {
                 let eventListVC = EventsListTableViewController()
                 let navigationController = UINavigationController( rootViewController: eventListVC )
                 
                 self.presentViewController( navigationController, animated: true, completion: nil )
+            }
+        }) {
+            errorType in
+            dispatch_async( dispatch_get_main_queue() ) {                
+                if ( errorType == "error connexion" ) {
+                    self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok" )
+                } else if ( errorType == "empty field" ) {
+                    self.error( "Infos manquantes", message: "Veuillez remplir tous les champs.", buttonText: "Je complète" )
+                } else if ( errorType == "unknown user" ) {
+                    self.error( "Utilisateur introuvable", message: "Veuillez verifier vos informations.", buttonText: "Nouvel essai" )
+                }
             }
         }
     }
