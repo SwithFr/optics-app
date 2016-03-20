@@ -18,11 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil )
+        let barAppearace = UIBarButtonItem.appearance()
+        
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
             
         User.logout()
         
         if !User.isAuthenticated() {
-            let loginViewController = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
+            let loginViewController  = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
             
             self.window?.rootViewController = loginViewController
         }
@@ -117,5 +121,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension UINavigationController {
+    
+    public override func childViewControllerForStatusBarHidden() -> UIViewController? {
+        return self.topViewController
+    }
+    
+    public override func childViewControllerForStatusBarStyle() -> UIViewController? {
+        return self.topViewController
+    }
 }
 
