@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="eventCell" selectionStyle="default" indentationWidth="10" id="I8u-Rg-Qjd">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="eventCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="I8u-Rg-Qjd">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I8u-Rg-Qjd" id="rmI-Qo-Hb0">
@@ -67,6 +67,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="QAQ-LA-vo4"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <segue destination="1yA-ER-Fq5" kind="showDetail" identifier="loginSegue" animates="NO" action="showViewController:sender:" id="wVa-Gz-IYA"/>
                     </connections>
@@ -160,6 +161,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="loginBtn" destination="Ck8-FR-Abk" id="VEM-zP-SRc"/>
                         <outlet property="loginField" destination="lxw-vK-hem" id="tq7-R5-0Bt"/>
@@ -260,6 +262,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="confirmField" destination="Bbs-tl-GbA" id="PPf-s5-nzg"/>
                         <outlet property="loginField" destination="o51-Fv-b45" id="9Gx-hw-Zwg"/>
