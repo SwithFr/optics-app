@@ -11,18 +11,17 @@ import Foundation
 class Event: Model
 {
     // Get all event for authenticated user
-    func getAll(completionHandler: (data: NSData) -> ())
+    func getAll(completionHandler: (data: NSData) -> (), errorHandler: () -> Void)
     {
         self.get( "events", authenticate: true ) {
             error, data in
             dispatch_async( dispatch_get_main_queue() ) {
                 
                 if error != nil {
-                    print( "Erreur lors du chargement de vos évènements" )
-                    exit( 1 )
+                    errorHandler()
                 }
                 
-                completionHandler(data: data)
+                completionHandler( data: data )
             }
         }
     }
