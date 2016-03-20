@@ -1,27 +1,27 @@
 //
-//  EventsTableViewController.swift
+//  EventDetailsTableViewController.swift
 //  Optics
 //
-//  Created by Jérémy Smith on 18/03/2016.
+//  Created by Jérémy Smith on 20/03/2016.
 //  Copyright © 2016 Jérémy Smith. All rights reserved.
 //
 
 import UIKit
+import CoreMedia
 
-class EventsListTableViewController: UITableViewController {
+class EventDetailsTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-    override func viewDidLoad()
-    {
+    var currentEvent: JSON!
+    var images: [JSON] = []
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    override func viewWillAppear(animated: Bool)
-    {
     }
 
     override func didReceiveMemoryWarning() {
