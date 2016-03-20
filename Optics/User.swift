@@ -7,42 +7,49 @@
 //
 
 import Foundation
+import UIKit
 
 class User : Model
 {
     // Log in an user
-    func login(login: String, password: String, completionHandler: () -> Void)
+    func login(login: String, password: String, completionHandler: () -> Void, errorHandler: (errorType: String) -> Void)
     {
         if ( login.isEmpty || password.isEmpty ) {
-            print("un des deux est vide")
+            errorHandler( errorType: "empty field" )
         } else {
             self.setData( "login=\(login)&password=\(password)" )
             self.post( "users/login", authenticate: nil ) {
                 error, data in
                 if error == nil {
-                    let data = JSON( data: data )
-                    let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-                    user.setValue( data[ "data"][ "token" ].string, forKey: "USER_TOKEN")
-                    user.setValue( data[ "data" ][ "id" ].int, forKey: "USER_ID" )
-                    user.synchronize()
+                    let response = JSON( data: data )
                     
-                    completionHandler()
+                    if ( response["error"] != false  ) {
+                        errorHandler( errorType: "unknown user" )
+                    } else {
+                        let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+                        
+                        user.setValue( response[ "data"][ "token" ].string, forKey: "USER_TOKEN")
+                        user.setValue( response[ "data" ][ "id" ].int, forKey: "USER_ID" )
+                        user.synchronize()
+                        
+                        completionHandler()
+                    }
+                    
+                    //completionHandler()
                 } else {
-                    print( "Erreur lors de la connexion" )
-                    exit( 1 )
+                    errorHandler( errorType: "error connexion" )
                 }
             }
         }
-        
     }
     
     // Register a new user
-    func register(login: String, password: String, confirm: String, completionHandler: () -> Void)
+    func register(login: String, password: String, confirm: String, completionHandler: () -> Void, errorHandler: (errorType: String) -> Void)
     {
         if ( login.isEmpty || password.isEmpty || confirm.isEmpty ) {
-            print("un des trois est vide")
+            errorHandler( errorType: "empty field" )
         } else if ( password != confirm ) {
-            print("confirmation nom valide")
+            errorHandler( errorType: "confirm failed" )
         } else {
             self.setData( "login=\(login)&password=\(password)" )
             self.post( "users/register", authenticate: nil ) {
@@ -51,16 +58,15 @@ class User : Model
                 
                 if error == nil {
                     if ( response["error"] != false  ) {
-                        print( response["error"] )
+                        errorHandler( errorType: "validation error" )
                     } else {
                         completionHandler()
                     }
                 } else {
-                    print( "Erreur lors de l'inscription" )
+                    errorHandler( errorType: "connexion error" )
                 }
             }
         }
-        
     }
 
     
