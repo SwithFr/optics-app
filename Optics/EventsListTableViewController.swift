@@ -10,47 +10,82 @@ import UIKit
 
 class EventsListTableViewController: UITableViewController {
 
+    var events:[JSON] = []
+    let ModelEvent    = Event()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     override func viewWillAppear(animated: Bool)
     {
+        ModelEvent.getAll( {
+            data in
+            dispatch {
+                self._setAndReloadData( data )
+            }
+        } ) {
+            dispatch {
+                self.error( "Une erreur", message: "Une erreur", buttonText: "Ok" )
+            }
+        }
+    }
+    
+    override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    private func _setAndReloadData(data: NSData)
+    {
+        let events = JSON( data: data )
+        
+        self.events = events[ "data" ].arrayValue
+        self.tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func _addAndReloadData(data: NSData) {
+        let events = JSON( data: data )
+        
+        self.events.append( events["data"] )
+        self.tableView.reloadData()
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return events.count
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier( "eventCell", forIndexPath: indexPath ) as! EventTableViewCell
 
-        // Configure the cell...
+        let event = events[ indexPath.row ]
+        let date = Date.convertDateFormater( event["created_at"].string! )
+        
+        tableView.separatorColor = UIHelper.red
+        
+        cell.eventTitle.text = event["title"].string
+        cell.eventDate.text = date
+        //cell.picturesCount.text = String(folder["pictures"]!)
+        cell.usersCount.text = String( event["users_count"] )
 
         return cell
     }
-    */
-
+    
+    @IBAction func menuBtnTapped(sender: AnyObject)
+    {
+        
+    }
+    
+    @IBAction func addEventBtnTapped(sender: AnyObject)
+    {
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -71,29 +106,15 @@ class EventsListTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "eventDetailSegue" {
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            let detailViewController = segue.destinationViewController as! EventDetailsTableViewController
+            
+            detailViewController.currentEvent = events[ indexPath.row ]
+        }
 
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
+        barAppearace.tintColor = UIHelper.red
             
-        User.logout()
+        //User.logout()
         
         if !User.isAuthenticated() {
             let loginViewController  = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
@@ -131,6 +132,13 @@ extension UINavigationController {
     
     public override func childViewControllerForStatusBarStyle() -> UIViewController? {
         return self.topViewController
+    }
+}
+
+func dispatch(completion: () -> Void)
+{
+    dispatch_async( dispatch_get_main_queue() ) {
+        completion()
     }
 }
 
