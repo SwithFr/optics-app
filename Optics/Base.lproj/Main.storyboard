@@ -100,14 +100,15 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="eventDate" destination="elE-Rq-6xq" id="tVe-7s-kOe"/>
-                                    <outlet property="eventTitle" destination="Mo0-aS-Ikj" id="mgr-MQ-Qca"/>
-                                    <outlet property="picturesCount" destination="Kpx-Pp-rht" id="3zY-Cg-aQ5"/>
-                                    <outlet property="usersCount" destination="Icf-Wl-qfi" id="duD-i7-s2c"/>
+                                    <outlet property="eventDate" destination="elE-Rq-6xq" id="s6q-H3-xeh"/>
+                                    <outlet property="eventTitle" destination="Mo0-aS-Ikj" id="0zu-uF-6Fe"/>
+                                    <outlet property="picturesCount" destination="Kpx-Pp-rht" id="j3y-p1-FNC"/>
+                                    <outlet property="usersCount" destination="Icf-Wl-qfi" id="Af0-Nw-ld5"/>
                                     <segue destination="fNL-AK-Q1v" kind="show" identifier="eventDetailSegue" action="showDetailViewController:sender:" id="Gp1-2Q-Tp2"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Z4Z-4F-b90" id="MYt-k7-cQE"/>
                             <outlet property="delegate" destination="Z4Z-4F-b90" id="SAT-Xh-7lS"/>

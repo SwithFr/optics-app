@@ -8,24 +8,22 @@
 
 import UIKit
 
-class EventTableViewCell: UITableViewCell
-{
+class EventTableViewCell: UITableViewCell {
 
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var usersCount: UILabel!
     @IBOutlet weak var picturesCount: UILabel!
     
-    override func awakeFromNib()
-    {
+    override func awakeFromNib() {
         super.awakeFromNib()
+        // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool)
-    {
+    override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
-
+    
 }

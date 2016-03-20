@@ -22,11 +22,11 @@ class EventsListTableViewController: UITableViewController {
     {
         ModelEvent.getAll( {
             data in
-            dispatch_async( dispatch_get_main_queue() ) {
+            dispatch {
                 self._setAndReloadData( data )
             }
         } ) {
-            dispatch_async( dispatch_get_main_queue() ) {
+            dispatch {
                 self.error( "Une erreur", message: "Une erreur", buttonText: "Ok" )
             }
         }
@@ -62,7 +62,6 @@ class EventsListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier( "eventCell", forIndexPath: indexPath ) as! EventTableViewCell
-        print(cell)
         let event = events[ indexPath.row ]
         let date = Date.convertDateFormater( event["created_at"].string! )
         
@@ -74,16 +73,6 @@ class EventsListTableViewController: UITableViewController {
         cell.usersCount.text = String( event["users_count"] )
 
         return cell
-    }
-    
-    @IBAction func menuBtnTapped(sender: AnyObject)
-    {
-        
-    }
-    
-    @IBAction func addEventBtnTapped(sender: AnyObject)
-    {
-        
     }
     
     /*
