@@ -25,7 +25,11 @@ class Navigator
     
     static func goBack(vc: UIViewController)
     {
-        vc.navigationController!.popViewControllerAnimated( true )
+        if let nav = vc.navigationController {
+            nav.popViewControllerAnimated( true )
+        } else {
+            closeModal( vc )
+        }
     }
     
 }

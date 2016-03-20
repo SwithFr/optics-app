@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UITextFieldDelegate
+class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate
 {
 
     @IBOutlet weak var loginField: UITextField!
@@ -23,6 +23,14 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
     {
         super.viewDidLoad()
         _setUI()
+    }
+    
+    override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
     }
 
     @IBAction func registerBtnTapped(sender: AnyObject)
@@ -53,10 +61,20 @@ class RegisterViewController: UIViewController, UITextFieldDelegate
         let password = passwordField.text!
         let confirm  = confirmField.text!
         
-        ModelUser.register( login, password: password, confirm: confirm ) {
+        ModelUser.register( login, password: password, confirm: confirm, completionHandler: {
             dispatch_async( dispatch_get_main_queue() ) {
                 self.dismissViewControllerAnimated( true, completion: nil )
-                //Navigator.goTo( "loginView", vc: self )
+            }
+        } ) {
+            errorType in
+            dispatch_async( dispatch_get_main_queue() ) {
+                if ( errorType == "connexion error" ) {
+                    self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok" )
+                } else if ( errorType == "empty field" ) {
+                    self.error( "Infos manquantes", message: "Veuillez remplir tous les champs.", buttonText: "Je complète" )
+                } else if ( errorType == "validation error" ) {
+                    self.error( "Identifiant indisponnible", message: "Cet identifiant est déjà utilisé.", buttonText: "J'en choisi un autre" )
+                }
             }
         }
 
