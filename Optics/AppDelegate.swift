@@ -17,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil )
+        let storyboard = UIStoryboard( name: "Main", bundle: nil )
         let barAppearace = UIBarButtonItem.appearance()
+        UINavigationBar.appearance().barTintColor = UIHelper.black
+        UINavigationBar.appearance().tintColor = UIHelper.red
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIHelper.red]
+        UINavigationBar.appearance().translucent = false
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)

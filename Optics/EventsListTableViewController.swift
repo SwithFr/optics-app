@@ -16,6 +16,7 @@ class EventsListTableViewController: UITableViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        navigationController?.toolbar.barTintColor = UIHelper.black
     }
     
     override func viewWillAppear(animated: Bool)
@@ -62,28 +63,17 @@ class EventsListTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier( "eventCell", forIndexPath: indexPath ) as! EventTableViewCell
-
         let event = events[ indexPath.row ]
         let date = Date.convertDateFormater( event["created_at"].string! )
         
         tableView.separatorColor = UIHelper.red
         
-        cell.eventTitle.text = event["title"].string
+        cell.eventTitle.text = event["title"].string!
         cell.eventDate.text = date
         //cell.picturesCount.text = String(folder["pictures"]!)
         cell.usersCount.text = String( event["users_count"] )
 
         return cell
-    }
-    
-    @IBAction func menuBtnTapped(sender: AnyObject)
-    {
-        
-    }
-    
-    @IBAction func addEventBtnTapped(sender: AnyObject)
-    {
-        
     }
     
     /*

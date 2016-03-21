@@ -21,6 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     {
         super.viewDidLoad()
         _setUI()
+        _hideBackButton()
         
     }
     
@@ -59,6 +60,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         loginField.delegate         = self
         passwordField.delegate      = self
         
+        
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    private func _hideBackButton()
+    {
+        self.navigationItem.leftBarButtonItem = nil
+        self.navigationItem.hidesBackButton = true
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool
@@ -81,7 +90,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         ModelUser.login( login, password: password, completionHandler: {
             dispatch_async( dispatch_get_main_queue() ) {
-                let eventListVC = EventsListTableViewController()
+                //let eventListVC = EventsListTableViewController()
+                let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" ) as! EventsListTableViewController
                 let navigationController = UINavigationController( rootViewController: eventListVC )
                 
                 self.presentViewController( navigationController, animated: true, completion: nil )

@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09077EDB1C9F279B00EBF05E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09077EDA1C9F279B00EBF05E /* MainMenuViewController.swift */; };
+		09077EDE1C9F3F2500EBF05E /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09077EDC1C9F3F2500EBF05E /* EventTableViewCell.swift */; };
 		09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDC1C9ADAFE0010C77E /* Model.swift */; };
 		09197BDF1C9ADC0A0010C77E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDE1C9ADC0A0010C77E /* User.swift */; };
 		09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE11C9ADC640010C77E /* SwiftyJSON.swift */; };
 		09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE61C9ADEA70010C77E /* UIHelper.swift */; };
 		09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE81C9AE1FE0010C77E /* DateHelper.swift */; };
 		093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933793F1C9ED4A800E83722 /* JSSAlertView.swift */; };
-		093379441C9EECF200E83722 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093379431C9EECF200E83722 /* EventTableViewCell.swift */; };
 		093379461C9EF28800E83722 /* EventDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093379451C9EF28800E83722 /* EventDetailsTableViewController.swift */; };
 		0954B1161C9C7353007398EF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1151C9C7353007398EF /* Event.swift */; };
 		0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1191C9C8898007398EF /* MainViewController.swift */; };
@@ -53,13 +54,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09077EDA1C9F279B00EBF05E /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		09077EDC1C9F3F2500EBF05E /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		09197BDC1C9ADAFE0010C77E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		09197BDE1C9ADC0A0010C77E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09197BE11C9ADC640010C77E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		09197BE61C9ADEA70010C77E /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		09197BE81C9AE1FE0010C77E /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		0933793F1C9ED4A800E83722 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
-		093379431C9EECF200E83722 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		093379451C9EF28800E83722 /* EventDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsTableViewController.swift; sourceTree = "<group>"; };
 		0954B1151C9C7353007398EF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0954B1191C9C8898007398EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				09197BD21C9AD6C70010C77E /* events */,
 				09197BD51C9AD6E10010C77E /* users */,
+				09077EDA1C9F279B00EBF05E /* MainMenuViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -227,7 +230,7 @@
 			children = (
 				09197BD91C9ADAC10010C77E /* comments */,
 				09197BDA1C9ADAC70010C77E /* pictures */,
-				093379431C9EECF200E83722 /* EventTableViewCell.swift */,
+				09077EDC1C9F3F2500EBF05E /* EventTableViewCell.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -488,6 +491,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09077EDE1C9F3F2500EBF05E /* EventTableViewCell.swift in Sources */,
+				09077EDB1C9F279B00EBF05E /* MainMenuViewController.swift in Sources */,
 				09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */,
 				0954B1161C9C7353007398EF /* Event.swift in Sources */,
 				0954B11E1C9C9D67007398EF /* EventsListTableViewController.swift in Sources */,
@@ -496,7 +501,6 @@
 				0982CD2A1C9DCEAA00DBDE47 /* ModalHelper.swift in Sources */,
 				09197BDF1C9ADC0A0010C77E /* User.swift in Sources */,
 				09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */,
-				093379441C9EECF200E83722 /* EventTableViewCell.swift in Sources */,
 				09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */,
 				09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */,
 				09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */,
