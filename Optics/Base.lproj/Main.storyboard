@@ -16,6 +16,9 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway</string>
@@ -50,6 +53,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APf-dC-BqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1674" y="667"/>
+        </scene>
+        <!--Ajouter un évènement-->
+        <scene sceneID="Puu-Xw-FQw">
+            <objects>
+                <viewController storyboardIdentifier="addEventView" title="Ajouter un évènement" modalTransitionStyle="partialCurl" id="8P8-Cf-J9f" customClass="AddEventViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l80-se-jWC"/>
+                        <viewControllerLayoutGuide type="bottom" id="h1p-gq-t7Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JVm-Kr-W8M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="byi-g6-tlW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titre de l'évènement" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s94-YV-WNb">
+                                <rect key="frame" x="20" y="79" width="335" height="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="titleFieldTapped:" destination="8P8-Cf-J9f" eventType="editingDidBegin" id="XxI-aP-DIs"/>
+                                    <action selector="titleFieldTapped:" destination="8P8-Cf-J9f" eventType="editingChanged" id="d19-2Z-g7a"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Déscription de l'évènement" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-am-wTN">
+                                <rect key="frame" x="20" y="170" width="335" height="191"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dku-cz-c8W">
+                                <rect key="frame" x="20" y="451" width="335" height="43"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="Ajouter">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addBtnTapped:" destination="8P8-Cf-J9f" eventType="touchUpInside" id="PLh-WL-VRt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addBtn" destination="dku-cz-c8W" id="73l-H9-Oks"/>
+                        <outlet property="eventDescriptionField" destination="Kqn-am-wTN" id="Ab9-HN-uA6"/>
+                        <outlet property="eventTitleField" destination="s94-YV-WNb" id="9oE-aq-n30"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6y-XS-VpT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="957.5" y="-471.5"/>
         </scene>
         <!--OPTICS-->
         <scene sceneID="TWM-TR-ntm">
@@ -123,7 +193,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="add-icon" id="RZU-G8-D8n">
                             <connections>
-                                <action selector="addEventBtnTapped:" destination="Z4Z-4F-b90" id="yCN-ga-uUj"/>
+                                <action selector="addEventBtnTapped:" destination="Z4Z-4F-b90" id="WdI-ID-XnB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
