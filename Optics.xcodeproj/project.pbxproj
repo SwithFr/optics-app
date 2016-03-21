@@ -33,6 +33,9 @@
 		09EF1EA81C9A063100796BF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA61C9A063100796BF6 /* LaunchScreen.storyboard */; };
 		09EF1EB31C9A063200796BF6 /* OpticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1EB21C9A063200796BF6 /* OpticsTests.swift */; };
 		09EF1EBE1C9A063200796BF6 /* OpticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1EBD1C9A063200796BF6 /* OpticsUITests.swift */; };
+		09F6F2E11CA08D8E00C5151D /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6F2E01CA08D8E00C5151D /* SCLAlertView.swift */; };
+		09F6F2E31CA092C700C5151D /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6F2E21CA092C700C5151D /* AddEventViewController.swift */; };
+		09F6F2E51CA097D700C5151D /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6F2E41CA097D700C5151D /* StringHelper.swift */; };
 		09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9D9001C9B4C2500777162 /* NavigationHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +89,9 @@
 		09EF1EB91C9A063200796BF6 /* OpticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1EBD1C9A063200796BF6 /* OpticsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticsUITests.swift; sourceTree = "<group>"; };
 		09EF1EBF1C9A063200796BF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F6F2E01CA08D8E00C5151D /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		09F6F2E21CA092C700C5151D /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		09F6F2E41CA097D700C5151D /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		09F9D9001C9B4C2500777162 /* NavigationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +196,7 @@
 				09197BD31C9AD6CF0010C77E /* pictures */,
 				0954B11D1C9C9D67007398EF /* EventsListTableViewController.swift */,
 				093379451C9EF28800E83722 /* EventDetailsTableViewController.swift */,
+				09F6F2E21CA092C700C5151D /* AddEventViewController.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -269,6 +276,7 @@
 			children = (
 				09197BE11C9ADC640010C77E /* SwiftyJSON.swift */,
 				0933793F1C9ED4A800E83722 /* JSSAlertView.swift */,
+				09F6F2E01CA08D8E00C5151D /* SCLAlertView.swift */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				09197BE81C9AE1FE0010C77E /* DateHelper.swift */,
 				09F9D9001C9B4C2500777162 /* NavigationHelper.swift */,
 				0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */,
+				09F6F2E41CA097D700C5151D /* StringHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -492,9 +501,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				09077EDE1C9F3F2500EBF05E /* EventTableViewCell.swift in Sources */,
+				09F6F2E31CA092C700C5151D /* AddEventViewController.swift in Sources */,
 				09077EDB1C9F279B00EBF05E /* MainMenuViewController.swift in Sources */,
 				09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */,
 				0954B1161C9C7353007398EF /* Event.swift in Sources */,
+				09F6F2E11CA08D8E00C5151D /* SCLAlertView.swift in Sources */,
 				0954B11E1C9C9D67007398EF /* EventsListTableViewController.swift in Sources */,
 				09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */,
 				0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */,
@@ -507,6 +518,7 @@
 				0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */,
 				093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */,
 				09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */,
+				09F6F2E51CA097D700C5151D /* StringHelper.swift in Sources */,
 				093379461C9EF28800E83722 /* EventDetailsTableViewController.swift in Sources */,
 				0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */,
 			);
