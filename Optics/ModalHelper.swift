@@ -40,6 +40,14 @@ extension UIViewController
 //        return alertView
 //    }
     
+    func alert(title: String, message: String, buttonText: String, cancelButton: String, completion: () -> Void)
+    {
+        SweetAlert().showAlert( title, subTitle: message, style: .None, buttonTitle: "Ajouter", buttonColor: UIHelper.green, otherButtonTitle: "TEST" ) {
+            isOtherButton in
+            print(isOtherButton)
+        }
+    }
+    
     func error(title: String, message: String, buttonText: String)
     {
         let alert = JSSAlertView().show(
@@ -54,7 +62,6 @@ extension UIViewController
         alert.setTextFont( "Raleway-Light" )
         alert.setTextFont( "Raleway-Light" )
         alert.setButtonFont( "Raleway-Light" )
-        
     }
     
 }

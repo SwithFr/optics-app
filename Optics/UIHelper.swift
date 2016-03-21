@@ -69,10 +69,10 @@ public struct UIHelper
     static func formatTextArea(text: UITextView)
     {
         text.backgroundColor = UIColor.clearColor()
-        text.layer.borderWidth = 2
-        text.layer.borderColor = green.CGColor
+        text.layer.borderWidth = width
+        text.layer.borderColor = red.CGColor
         text.layer.cornerRadius = CGFloat(5)
-        text.textColor = green
+        text.textColor = white
     }
 
 }

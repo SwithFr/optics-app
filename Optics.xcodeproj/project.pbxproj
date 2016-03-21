@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09077EDB1C9F279B00EBF05E /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09077EDA1C9F279B00EBF05E /* MainMenuViewController.swift */; };
+		09077EDE1C9F3F2500EBF05E /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09077EDC1C9F3F2500EBF05E /* EventTableViewCell.swift */; };
 		09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDC1C9ADAFE0010C77E /* Model.swift */; };
 		09197BDF1C9ADC0A0010C77E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BDE1C9ADC0A0010C77E /* User.swift */; };
 		09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE11C9ADC640010C77E /* SwiftyJSON.swift */; };
 		09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE61C9ADEA70010C77E /* UIHelper.swift */; };
 		09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09197BE81C9AE1FE0010C77E /* DateHelper.swift */; };
 		093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933793F1C9ED4A800E83722 /* JSSAlertView.swift */; };
+		093379461C9EF28800E83722 /* EventDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093379451C9EF28800E83722 /* EventDetailsTableViewController.swift */; };
 		0954B1161C9C7353007398EF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1151C9C7353007398EF /* Event.swift */; };
 		0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1191C9C8898007398EF /* MainViewController.swift */; };
 		0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B11B1C9C8A40007398EF /* LoginViewController.swift */; };
@@ -30,6 +33,9 @@
 		09EF1EA81C9A063100796BF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA61C9A063100796BF6 /* LaunchScreen.storyboard */; };
 		09EF1EB31C9A063200796BF6 /* OpticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1EB21C9A063200796BF6 /* OpticsTests.swift */; };
 		09EF1EBE1C9A063200796BF6 /* OpticsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1EBD1C9A063200796BF6 /* OpticsUITests.swift */; };
+		09F6F2E11CA08D8E00C5151D /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6F2E01CA08D8E00C5151D /* SCLAlertView.swift */; };
+		09F6F2E31CA092C700C5151D /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6F2E21CA092C700C5151D /* AddEventViewController.swift */; };
+		09F6F2E51CA097D700C5151D /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F6F2E41CA097D700C5151D /* StringHelper.swift */; };
 		09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F9D9001C9B4C2500777162 /* NavigationHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,12 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09077EDA1C9F279B00EBF05E /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		09077EDC1C9F3F2500EBF05E /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		09197BDC1C9ADAFE0010C77E /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		09197BDE1C9ADC0A0010C77E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		09197BE11C9ADC640010C77E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		09197BE61C9ADEA70010C77E /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		09197BE81C9AE1FE0010C77E /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		0933793F1C9ED4A800E83722 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		093379451C9EF28800E83722 /* EventDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsTableViewController.swift; sourceTree = "<group>"; };
 		0954B1151C9C7353007398EF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0954B1191C9C8898007398EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0954B11B1C9C8A40007398EF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +89,9 @@
 		09EF1EB91C9A063200796BF6 /* OpticsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpticsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1EBD1C9A063200796BF6 /* OpticsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpticsUITests.swift; sourceTree = "<group>"; };
 		09EF1EBF1C9A063200796BF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09F6F2E01CA08D8E00C5151D /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		09F6F2E21CA092C700C5151D /* AddEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
+		09F6F2E41CA097D700C5151D /* StringHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringHelper.swift; sourceTree = "<group>"; };
 		09F9D9001C9B4C2500777162 /* NavigationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +125,7 @@
 			children = (
 				09197BD21C9AD6C70010C77E /* events */,
 				09197BD51C9AD6E10010C77E /* users */,
+				09077EDA1C9F279B00EBF05E /* MainMenuViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -182,6 +195,8 @@
 				09197BD41C9AD6D80010C77E /* comments */,
 				09197BD31C9AD6CF0010C77E /* pictures */,
 				0954B11D1C9C9D67007398EF /* EventsListTableViewController.swift */,
+				093379451C9EF28800E83722 /* EventDetailsTableViewController.swift */,
+				09F6F2E21CA092C700C5151D /* AddEventViewController.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -222,6 +237,7 @@
 			children = (
 				09197BD91C9ADAC10010C77E /* comments */,
 				09197BDA1C9ADAC70010C77E /* pictures */,
+				09077EDC1C9F3F2500EBF05E /* EventTableViewCell.swift */,
 			);
 			name = events;
 			sourceTree = "<group>";
@@ -260,6 +276,7 @@
 			children = (
 				09197BE11C9ADC640010C77E /* SwiftyJSON.swift */,
 				0933793F1C9ED4A800E83722 /* JSSAlertView.swift */,
+				09F6F2E01CA08D8E00C5151D /* SCLAlertView.swift */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -271,6 +288,7 @@
 				09197BE81C9AE1FE0010C77E /* DateHelper.swift */,
 				09F9D9001C9B4C2500777162 /* NavigationHelper.swift */,
 				0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */,
+				09F6F2E41CA097D700C5151D /* StringHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -482,8 +500,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09077EDE1C9F3F2500EBF05E /* EventTableViewCell.swift in Sources */,
+				09F6F2E31CA092C700C5151D /* AddEventViewController.swift in Sources */,
+				09077EDB1C9F279B00EBF05E /* MainMenuViewController.swift in Sources */,
 				09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */,
 				0954B1161C9C7353007398EF /* Event.swift in Sources */,
+				09F6F2E11CA08D8E00C5151D /* SCLAlertView.swift in Sources */,
 				0954B11E1C9C9D67007398EF /* EventsListTableViewController.swift in Sources */,
 				09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */,
 				0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */,
@@ -496,6 +518,8 @@
 				0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */,
 				093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */,
 				09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */,
+				09F6F2E51CA097D700C5151D /* StringHelper.swift in Sources */,
+				093379461C9EF28800E83722 /* EventDetailsTableViewController.swift in Sources */,
 				0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
