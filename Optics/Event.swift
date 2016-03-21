@@ -25,4 +25,39 @@ class Event: Model
             }
         }
     }
+    
+    // Add an event
+    func add(title: String, description: String, completionHandler: () -> Void)
+    {
+        if ( title.isEmpty || description.isEmpty ) {
+            // TODO: Verification et erroHandler
+            print( "Error" )
+        } else {
+            self.setData( "title=\(title)&description=\(description)" )
+            self.post( "events/create", authenticate: true ) {
+                error, data in
+                
+                if error != nil {
+                    print( "error" )
+                }
+                
+                dispatch_async( dispatch_get_main_queue(), {
+                    completionHandler()
+                } )
+            }
+        }
+
+    }
+    
+    // Join an event
+    func join(iEventID: String, completionHandler: (data: NSData) -> Void)
+    {
+        self.get("events/join/\(iEventID)", authenticate: true) {
+            error, data in
+            // TODO: Verifications
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler( data: data )
+            }
+        }
+    }
 }
