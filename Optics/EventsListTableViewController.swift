@@ -16,6 +16,7 @@ class EventsListTableViewController: UITableViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        navigationController?.toolbar.barTintColor = UIHelper.black
     }
     
     override func viewWillAppear(animated: Bool)
