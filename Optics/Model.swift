@@ -54,7 +54,14 @@ class Model
         
         _ = NSURLSession.sharedSession().dataTaskWithRequest( request ) {
             data, response, error in
-                next( error: error, data: data! )
+                if ( data == nil ) {
+                    dispatch {
+                        SweetAlert().showAlert( "Erreur du serveur", subTitle: "La connexion au serveur n'a pas pu être établie", style: .Warning )
+                    }
+                } else {
+                    next( error: error, data: data! )
+                }
+            
             }.resume()
     }
     
