@@ -26,6 +26,8 @@
 		0954B1261C9CB0E7007398EF /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */; };
 		0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */; };
 		0982CD2A1C9DCEAA00DBDE47 /* ModalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */; };
+		09BE0EC01CA1C61100DE0871 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0EBF1CA1C61100DE0871 /* Picture.swift */; };
+		09BE0EC21CA1DF3B00DE0871 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */; };
 		09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E981C9A063100796BF6 /* AppDelegate.swift */; };
 		09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9A1C9A063100796BF6 /* Optics.xcdatamodeld */; };
 		09EF1EA31C9A063100796BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA11C9A063100796BF6 /* Main.storyboard */; };
@@ -76,6 +78,8 @@
 		0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
 		0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalHelper.swift; sourceTree = "<group>"; };
+		09BE0EBF1CA1C61100DE0871 /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
+		09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
 		09EF1E951C9A063100796BF6 /* Optics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1E981C9A063100796BF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EF1E9B1C9A063100796BF6 /* Optics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Optics.xcdatamodel; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		09197BCB1C9AD5140010C77E /* models */ = {
 			isa = PBXGroup;
 			children = (
+				09197BD01C9AD6890010C77E /* comments */,
+				09197BD11C9AD6990010C77E /* pictures */,
 				09197BCE1C9AD6650010C77E /* events */,
 				09197BCD1C9AD6540010C77E /* users */,
 				09197BDC1C9ADAFE0010C77E /* Model.swift */,
@@ -161,8 +167,6 @@
 		09197BCE1C9AD6650010C77E /* events */ = {
 			isa = PBXGroup;
 			children = (
-				09197BD01C9AD6890010C77E /* comments */,
-				09197BD11C9AD6990010C77E /* pictures */,
 				0954B1151C9C7353007398EF /* Event.swift */,
 			);
 			name = events;
@@ -185,6 +189,7 @@
 		09197BD11C9AD6990010C77E /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				09BE0EBF1CA1C61100DE0871 /* Picture.swift */,
 			);
 			name = pictures;
 			sourceTree = "<group>";
@@ -260,6 +265,7 @@
 		09197BDA1C9ADAC70010C77E /* pictures */ = {
 			isa = PBXGroup;
 			children = (
+				09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */,
 			);
 			name = pictures;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 				09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */,
 				09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */,
 				09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */,
+				09BE0EC01CA1C61100DE0871 /* Picture.swift in Sources */,
 				09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */,
 				0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */,
 				093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */,
@@ -521,6 +528,7 @@
 				09F6F2E51CA097D700C5151D /* StringHelper.swift in Sources */,
 				093379461C9EF28800E83722 /* EventDetailsTableViewController.swift in Sources */,
 				0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */,
+				09BE0EC21CA1DF3B00DE0871 /* PictureTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
