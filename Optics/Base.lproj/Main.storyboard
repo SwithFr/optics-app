@@ -19,6 +19,7 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway</string>
@@ -29,6 +30,8 @@
             <string>Raleway-SemiBold</string>
             <string>Raleway-SemiBold</string>
             <string>Raleway-SemiBold</string>
+            <string>Raleway-SemiBold</string>
+            <string>Raleway-SemiBold</string>
         </mutableArray>
         <mutableArray key="Raleway-Thin.ttf">
             <string>Raleway-Thin</string>
@@ -36,24 +39,6 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Event Details Table View Controller-->
-        <scene sceneID="iR9-CH-GUd">
-            <objects>
-                <viewController storyboardIdentifier="eventDetailView" id="fNL-AK-Q1v" customClass="EventDetailsTableViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="t8b-rZ-Keh"/>
-                        <viewControllerLayoutGuide type="bottom" id="Erz-bE-QMW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tJl-lU-2ny">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="APf-dC-BqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1674" y="667"/>
-        </scene>
         <!--Ajouter un évènement-->
         <scene sceneID="Puu-Xw-FQw">
             <objects>
@@ -174,7 +159,7 @@
                                     <outlet property="eventTitle" destination="Mo0-aS-Ikj" id="0zu-uF-6Fe"/>
                                     <outlet property="picturesCount" destination="Kpx-Pp-rht" id="j3y-p1-FNC"/>
                                     <outlet property="usersCount" destination="Icf-Wl-qfi" id="Af0-Nw-ld5"/>
-                                    <segue destination="fNL-AK-Q1v" kind="show" identifier="eventDetailSegue" action="showDetailViewController:sender:" id="Gp1-2Q-Tp2"/>
+                                    <segue destination="EJR-oq-Fc1" kind="show" identifier="eventDetailsSegue" id="PpD-HB-Mnu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -248,6 +233,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXp-sW-zEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958.5" y="1062.5"/>
+        </scene>
+        <!--Event Details Table View Controller-->
+        <scene sceneID="ePO-Yb-toz">
+            <objects>
+                <tableViewController storyboardIdentifier="eventDetailsView" id="EJR-oq-Fc1" customClass="EventDetailsTableViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="373" sectionHeaderHeight="28" sectionFooterHeight="28" id="k0Q-eW-wiC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="pictureCell" rowHeight="373" id="as2-GB-6QS" customClass="PictureTableViewCell" customModule="Optics" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="373"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="as2-GB-6QS" id="BTc-Xz-tfC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="372.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XhZ-Oi-0C1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="277"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="comment-icon" translatesAutoresizingMaskIntoConstraints="NO" id="viC-Vl-DEf">
+                                            <rect key="frame" x="316" y="294" width="27" height="29"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPN-ql-5Wr">
+                                            <rect key="frame" x="27" y="298" width="167" height="21"/>
+                                            <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                            <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3a-VL-2pG">
+                                            <rect key="frame" x="252" y="298" width="56" height="24"/>
+                                            <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                            <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3A-mR-RuU">
+                                            <rect key="frame" x="27" y="322" width="96" height="21"/>
+                                            <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
+                                            <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorName" destination="UPN-ql-5Wr" id="cQk-nw-iMA"/>
+                                    <outlet property="commentsCount" destination="Q3a-VL-2pG" id="25U-Ae-P6s"/>
+                                    <outlet property="picture" destination="XhZ-Oi-0C1" id="Znz-IR-9GB"/>
+                                    <outlet property="pictureTimeAgo" destination="k3A-mR-RuU" id="g8L-U6-cwi"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EJR-oq-Fc1" id="Jmf-zd-QVq"/>
+                            <outlet property="delegate" destination="EJR-oq-Fc1" id="Ygh-iI-m0P"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcP-Cf-V3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672.5" y="680.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="vOl-dd-B6Q">
@@ -478,6 +523,7 @@
     <resources>
         <image name="add-icon" width="25" height="25"/>
         <image name="bkg-flou" width="383" height="679"/>
+        <image name="comment-icon" width="42" height="35"/>
         <image name="lock-input" width="20" height="27"/>
         <image name="logo" width="246" height="118"/>
         <image name="menu-icon" width="33" height="26"/>

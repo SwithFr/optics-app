@@ -180,7 +180,7 @@ class EventsListTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        if ( segue.identifier == "eventDetailSegue" ) {
+        if ( segue.identifier == "eventDetailsSegue" ) {
             let indexPath = self.tableView.indexPathForSelectedRow!
             let detailViewController = segue.destinationViewController as! EventDetailsTableViewController
             
