@@ -34,6 +34,9 @@ class EventsListTableViewController: UITableViewController {
         }
     }
     
+    /*
+        LIIGHT STATUS BAR
+    */
     override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
@@ -42,26 +45,33 @@ class EventsListTableViewController: UITableViewController {
         return false
     }
     
-    private func _setAndReloadData(data: NSData)
-    {
-        let events = JSON( data: data )
-        
-        self.events = events[ "data" ].arrayValue
-        self.tableView.reloadData()
-    }
-
-    private func _addAndReloadData(data: NSData) {
-        let events = JSON( data: data )
-        
-        self.events.append( events["data"] )
-        self.tableView.reloadData()
-    }
-
+    /*
+        TABLE CONTROLS
+    */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return events.count
     }
     
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell  = tableView.dequeueReusableCellWithIdentifier( "eventCell", forIndexPath: indexPath ) as! EventTableViewCell
+        let event = events[ indexPath.row ]
+        let date  = Date.convertDateFormater( event["created_at"].string! )
+        
+        tableView.separatorColor = UIHelper.red
+        
+        cell.eventTitle.text = event["title"].string!
+        cell.eventDate.text = date
+        //cell.picturesCount.text = String(folder["pictures"]!)
+        cell.usersCount.text = String( event["users_count"] )
+        
+        return cell
+    }
+    
+    /*
+        ACTIONS
+    */
+    // Add or Join event
     @IBAction func addEventBtnTapped(sender: AnyObject)
     {
         let popView = UIAlertController(
@@ -77,7 +87,7 @@ class EventsListTableViewController: UITableViewController {
         
         let otherAction = UIAlertAction( title: "Rejoindre", style: .Default) {
             ( alert: UIAlertAction! ) in
-            self._displayGetScreen()
+            self._displayJoinScreen()
         }
         
         let cancelAction = UIAlertAction( title: "Annuler", style: .Destructive, handler: nil )
@@ -91,25 +101,39 @@ class EventsListTableViewController: UITableViewController {
     }
     
     /*
-    *   Show the add event screen
+        PRIVATE
     */
+    // setData
+    private func _setAndReloadData(data: NSData)
+    {
+        let events = JSON( data: data )
+        
+        self.events = events[ "data" ].arrayValue
+        self.tableView.reloadData()
+    }
+    
+    // addEvent
+    private func _addAndReloadData(data: NSData) {
+        let events = JSON( data: data )
+        
+        self.events.insert( events["data"], atIndex: 0 )
+        self.tableView.reloadData()
+    }
+    
+    // Show the add event screen
     private func _displayAddScreen() {
         let addEventVC = self.storyboard?.instantiateViewControllerWithIdentifier( "addEventView" )
         self.navigationController?.pushViewController( addEventVC!, animated: true )
     }
     
-    /*
-    *   Add input in UIAlertView
-    */
+    // Add input in UIAlertView
     private func _addTextField( textField: UITextField! ){
         textField.placeholder = "85171249"
         self.eventIdField = textField
     }
     
-    /*
-    *   Show the event join alert
-    */
-    private func _displayGetScreen() {
+    // Show the event join alert
+    private func _displayJoinScreen() {
         
         let popView = UIAlertController( title: "Rejoindre un évènement", message: "Saisissez le code de l'évènement", preferredStyle: .Alert )
         
@@ -133,20 +157,6 @@ class EventsListTableViewController: UITableViewController {
         self.presentViewController( popView, animated: true, completion: nil )
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier( "eventCell", forIndexPath: indexPath ) as! EventTableViewCell
-        let event = events[ indexPath.row ]
-        let date = Date.convertDateFormater( event["created_at"].string! )
-        
-        tableView.separatorColor = UIHelper.red
-        
-        cell.eventTitle.text = event["title"].string!
-        cell.eventDate.text = date
-        //cell.picturesCount.text = String(folder["pictures"]!)
-        cell.usersCount.text = String( event["users_count"] )
-
-        return cell
-    }
     
     /*
     // Override to support conditional editing of the table view.
@@ -170,7 +180,7 @@ class EventsListTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
-        if segue.identifier == "eventDetailSegue" {
+        if ( segue.identifier == "eventDetailSegue" ) {
             let indexPath = self.tableView.indexPathForSelectedRow!
             let detailViewController = segue.destinationViewController as! EventDetailsTableViewController
             
