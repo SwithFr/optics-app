@@ -20,6 +20,10 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway</string>
@@ -233,6 +237,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXp-sW-zEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958.5" y="1062.5"/>
+        </scene>
+        <!--Event Options Menu View Controller-->
+        <scene sceneID="dxo-zh-W7s">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6b-Af-bu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="eventOptionsMenuView" id="tgX-Ys-A6D" customClass="EventOptionsMenuViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I8d-eK-m3C"/>
+                        <viewControllerLayoutGuide type="bottom" id="vyE-ej-0ZE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Qe-Ud-KYB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="H5k-zK-e9K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mGB-SM-KlP">
+                                <rect key="frame" x="20" y="113" width="335" height="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oqf-65-Wy8">
+                                <rect key="frame" x="20" y="181" width="335" height="203"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSh-bn-uoZ">
+                                <rect key="frame" x="20" y="531" width="335" height="44"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="Modifier les informations">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfQ-uR-Gdj">
+                                <rect key="frame" x="113" y="464" width="148" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="eventDescription" destination="oqf-65-Wy8" id="wNy-P5-syQ"/>
+                        <outlet property="eventID" destination="zfQ-uR-Gdj" id="hVn-5d-xcw"/>
+                        <outlet property="eventTitle" destination="mGB-SM-KlP" id="Z38-C3-Spv"/>
+                        <outlet property="saveBtn" destination="aSh-bn-uoZ" id="46f-p0-Ow6"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1673.5" y="1437.5"/>
         </scene>
         <!--Event Details Table View Controller-->
         <scene sceneID="ePO-Yb-toz">
