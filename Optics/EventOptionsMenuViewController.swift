@@ -21,6 +21,8 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     {
         super.viewDidLoad()
         //_setNavigationButtons()
+        _loadData()
+        _setUI()
     }
     
     /*
@@ -55,6 +57,20 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         returnBtn.sizeToFit()
         
         self.navigationItem.setLeftBarButtonItems( [ returnBtnItem ], animated: true )
+    }
+    
+    private func _setUI()
+    {
+        UIHelper.formatBtn( saveBtn )
+        UIHelper.formatTextArea( eventDescription )
+        UIHelper.formatInput( eventTitle )
+    }
+    
+    private func _loadData()
+    {
+        eventTitle.text       = currentEvent[ "title" ] .string
+        eventDescription.text = currentEvent[ "description" ].string
+        eventID.text          = currentEvent[ "uuid" ].string
     }
     
     func _goBack(sender: UIBarButtonItem)
