@@ -90,7 +90,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         ModelUser.login( login, password: password, completionHandler: {
             dispatch_async( dispatch_get_main_queue() ) {
-                //let eventListVC = EventsListTableViewController()
                 let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" ) as! EventsListTableViewController
                 let navigationController = UINavigationController( rootViewController: eventListVC )
                 
