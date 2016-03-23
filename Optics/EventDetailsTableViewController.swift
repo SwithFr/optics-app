@@ -81,15 +81,41 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     {
         
         let addPictureBtn = UIButton( type: .Custom )
+        let menuBtn = UIButton( type: .Custom )
+        let backBtn = UIButton( type: .Custom )
         let addPictureImg = UIImage( named: "picture-icon" )
+        let menuImg = UIImage( named: "menu-icon" )
+        let backImg = UIImage( named: "back-icon" )
+        let backBtnItem = UIBarButtonItem( customView: backBtn )
         
         addPictureBtn.addTarget( self, action: "_addPicture:", forControlEvents: UIControlEvents.TouchUpInside )
         addPictureBtn.setImage( addPictureImg, forState: .Normal )
         addPictureBtn.sizeToFit()
+        menuBtn.addTarget( self, action: "_displayEventOptionsMenu:", forControlEvents: UIControlEvents.TouchUpInside )
+        menuBtn.setImage( menuImg, forState: .Normal )
+        menuBtn.sizeToFit()
+        backBtn.addTarget( self, action: "_goBack:", forControlEvents: UIControlEvents.TouchUpInside )
+        backBtn.setImage( backImg, forState: .Normal )
+        backBtn.sizeToFit()
         
         let addPictureBtnItem = UIBarButtonItem( customView: addPictureBtn )
+        let menuBtnItem       = UIBarButtonItem( customView: menuBtn )
         
         self.navigationItem.setRightBarButtonItems( [ addPictureBtnItem ], animated: true )
+        self.navigationItem.setLeftBarButtonItems( [ backBtnItem, menuBtnItem ], animated: true )
+    }
+    
+    func _goBack(sender: UIBarButtonItem)
+    {
+        self.navigationController?.popToRootViewControllerAnimated( true )
+    }
+    
+    func _displayEventOptionsMenu(sender: UIBarButtonItem)
+    {
+        let optionsMenu = self.storyboard?.instantiateViewControllerWithIdentifier( "eventOptionsMenuView" ) as! EventOptionsMenuViewController
+        
+        optionsMenu.currentEvent = currentEvent
+        self.navigationController?.pushViewController( optionsMenu , animated: true)
     }
     
     private func _displayPictures()
@@ -192,10 +218,6 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
             //let detailViewController = segue.destinationViewController as! PictureDetailViewController
             
             //detailViewController.currentPicture = images[ indexPath.row ]
-        } else if ( segue.identifier == "eventMenuSegue" ) {
-            //let eventMenuViewController = segue.destinationViewController as! EventMenuViewController
-            
-            //eventMenuViewController.currentEvent = self.currentEvent
         }
 
     }
