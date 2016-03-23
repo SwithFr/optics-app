@@ -16,11 +16,12 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     @IBOutlet weak var saveBtn: UIButton!
     
     var currentEvent: JSON!
+    let ModelEvent = Event()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //_setNavigationButtons()
+        _setNavigationButtons()
         _loadData()
         _setUI()
     }
@@ -48,15 +49,48 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     */
     private func _setNavigationButtons()
     {
-        let returnImg = UIImage( named: "back-icon" )
-        let returnBtn = UIButton(type: .Custom )
-        let returnBtnItem = UIBarButtonItem( customView: returnBtn )
+        let shareImg = UIImage( named: "share-icon" )
+        let shareBtn = UIButton(type: .Custom )
         
-        returnBtn.addTarget( self, action: "_goBack:", forControlEvents: UIControlEvents.TouchUpInside )
-        returnBtn.setImage( returnImg, forState: .Normal )
-        returnBtn.sizeToFit()
+        shareBtn.addTarget( self, action: "_shareEvent:", forControlEvents: UIControlEvents.TouchUpInside )
+        shareBtn.setImage( shareImg, forState: .Normal )
+        shareBtn.sizeToFit()
         
-        self.navigationItem.setLeftBarButtonItems( [ returnBtnItem ], animated: true )
+        let shareBtnItem = UIBarButtonItem( customView: shareBtn )
+        
+        if ( User.isOwner( currentEvent[ "user_id" ] ) ) {
+            let deleteImg = UIImage( named: "delete-icon" )
+            let deleteBtn = UIButton(type: .Custom )
+            
+            deleteBtn.addTarget( self, action: "_deleteEvent:", forControlEvents: UIControlEvents.TouchUpInside )
+            deleteBtn.setImage( deleteImg, forState: .Normal )
+            deleteBtn.sizeToFit()
+            
+            let deleteBtnItem = UIBarButtonItem( customView: deleteBtn )
+            self.navigationItem.setRightBarButtonItems( [ shareBtnItem, deleteBtnItem ], animated: true )
+        } else {
+            self.navigationItem.setRightBarButtonItems( [ shareBtnItem ], animated: true )
+        }
+        
+    }
+    
+    func _shareEvent(sender: AnyObject)
+    {
+        let shareVC = UIActivityViewController( activityItems: [ eventID.text! ], applicationActivities: nil )
+        presentViewController( shareVC, animated: true, completion: nil )
+    }
+
+    func _deleteEvent(sender: AnyObject)
+    {
+        self.alert( "Supprimer l'évènement", message: "Voulez-vous vraiment supprimer cet évènement ?", buttonText: "Oui", cancelButton: "Oula non !" ) {
+            
+            self.ModelEvent.delete( self.eventID.text! ) {
+                dispatch {
+                    Navigator.goTo( "eventsListView", vc: self )
+                }
+            }
+        }
+        
     }
     
     private func _setUI()
@@ -64,6 +98,8 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         UIHelper.formatBtn( saveBtn )
         UIHelper.formatTextArea( eventDescription )
         UIHelper.formatInput( eventTitle )
+        
+        self.title = "Infos de l'évènement"
     }
     
     private func _loadData()

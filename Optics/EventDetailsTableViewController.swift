@@ -211,15 +211,4 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     }
     */
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        if ( segue.identifier == "pictureDetailsSegue" ) {
-            let indexPath = self.tableView.indexPathForSelectedRow!
-            //let detailViewController = segue.destinationViewController as! PictureDetailViewController
-            
-            //detailViewController.currentPicture = images[ indexPath.row ]
-        }
-
-    }
-
 }

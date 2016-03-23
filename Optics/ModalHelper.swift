@@ -42,9 +42,11 @@ extension UIViewController
     
     func alert(title: String, message: String, buttonText: String, cancelButton: String, completion: () -> Void)
     {
-        SweetAlert().showAlert( title, subTitle: message, style: .None, buttonTitle: "Ajouter", buttonColor: UIHelper.green, otherButtonTitle: "TEST" ) {
+        SweetAlert().showAlert( title, subTitle: message, style: .None, buttonTitle: buttonText, buttonColor: UIHelper.green, otherButtonTitle: "Annuler" ) {
             isOtherButton in
-            print(isOtherButton)
+            if ( isOtherButton ) {
+                completion()
+            }
         }
     }
     

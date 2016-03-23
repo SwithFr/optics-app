@@ -39,6 +39,7 @@ class Event: Model
                 
                 if error != nil {
                     print( "error" )
+                    return
                 }
                 
                 dispatch_async( dispatch_get_main_queue(), {
@@ -47,6 +48,23 @@ class Event: Model
             }
         }
 
+    }
+    
+    // Delete an event
+    func delete(sEventID: String, completionHandler: () -> Void)
+    {
+        self.delete( "events/\(sEventID)", authenticate: true) {
+            error, data in
+            
+            if ( error != nil ) {
+                print("error on deletion")
+                return
+            }
+            
+            dispatch {
+                completionHandler()
+            }
+        }
     }
     
     // Join an event
