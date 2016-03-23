@@ -24,6 +24,7 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway</string>
@@ -241,7 +242,6 @@
         <!--Event Options Menu View Controller-->
         <scene sceneID="dxo-zh-W7s">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6b-Af-bu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="eventOptionsMenuView" id="tgX-Ys-A6D" customClass="EventOptionsMenuViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I8d-eK-m3C"/>
@@ -275,8 +275,14 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfQ-uR-Gdj">
-                                <rect key="frame" x="113" y="464" width="148" height="21"/>
+                                <rect key="frame" x="113" y="433" width="148" height="21"/>
                                 <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utilisez ce code pour partagez l'évènement." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiJ-7E-hCC">
+                                <rect key="frame" x="20" y="465" width="335" height="19"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -291,6 +297,7 @@
                         <outlet property="saveBtn" destination="aSh-bn-uoZ" id="46f-p0-Ow6"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Y6b-Af-bu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1673.5" y="1437.5"/>
         </scene>

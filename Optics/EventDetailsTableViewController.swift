@@ -83,8 +83,8 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         let addPictureBtn = UIButton( type: .Custom )
         let menuBtn = UIButton( type: .Custom )
         let backBtn = UIButton( type: .Custom )
-        let addPictureImg = UIImage( named: "picture-icon" )
-        let menuImg = UIImage( named: "menu-icon" )
+        let addPictureImg = UIImage( named: "add-picture-icon" )
+        let menuImg = UIImage( named: "settings-icon" )
         let backImg = UIImage( named: "back-icon" )
         let backBtnItem = UIBarButtonItem( customView: backBtn )
         
