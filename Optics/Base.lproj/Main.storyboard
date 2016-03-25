@@ -599,8 +599,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock-input" translatesAutoresizingMaskIntoConstraints="NO" id="O1h-2x-PV0">
                                 <rect key="frame" x="20" y="385" width="27" height="25"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="text-input" translatesAutoresizingMaskIntoConstraints="NO" id="VqF-LZ-U3d">
-                                <rect key="frame" x="20" y="261" width="27" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="VqF-LZ-U3d">
+                                <rect key="frame" x="20" y="262" width="22" height="24"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -651,8 +651,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="text-input" translatesAutoresizingMaskIntoConstraints="NO" id="ObX-8f-Pq6">
-                                <rect key="frame" x="20" y="261" width="27" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="IFN-xr-s7V">
+                                <rect key="frame" x="21" y="260" width="22" height="24"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mot de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1t-lq-co4">
                                 <rect key="frame" x="20" y="362" width="335" height="30"/>
@@ -747,15 +747,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add-icon" width="25" height="25"/>
+        <image name="add-icon" width="24" height="24"/>
         <image name="bkg-flou" width="383" height="679"/>
         <image name="comment-icon" width="42" height="35"/>
-        <image name="lock-input" width="20" height="27"/>
+        <image name="lock-input" width="31" height="20"/>
         <image name="logo" width="246" height="118"/>
-        <image name="menu-icon" width="33" height="26"/>
+        <image name="menu-icon" width="23" height="18"/>
         <image name="picture-icon" width="36" height="27"/>
         <image name="text-input" width="33" height="22"/>
-        <image name="users-icon" width="36" height="28"/>
+        <image name="user-icon" width="20" height="24"/>
+        <image name="users-icon" width="35" height="27"/>
     </resources>
     <color key="tintColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

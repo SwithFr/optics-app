@@ -32,6 +32,8 @@
 		09B4D3DA1CA524BB00E24FE5 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3D91CA524BB00E24FE5 /* CommentTableViewCell.swift */; };
 		09B4D3DE1CA5605B00E24FE5 /* AddCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3DD1CA5605B00E24FE5 /* AddCommentViewController.swift */; };
 		09B4D3E01CA56B6300E24FE5 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3DF1CA56B6300E24FE5 /* Comment.swift */; };
+		09B4D3E31CA5A5A900E24FE5 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3E21CA5A5A900E24FE5 /* Global.swift */; };
+		09B4D3E51CA5A5F100E24FE5 /* UINavigationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3E41CA5A5F100E24FE5 /* UINavigationExtensions.swift */; };
 		09BE0EC01CA1C61100DE0871 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0EBF1CA1C61100DE0871 /* Picture.swift */; };
 		09BE0EC21CA1DF3B00DE0871 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */; };
 		09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E981C9A063100796BF6 /* AppDelegate.swift */; };
@@ -90,6 +92,8 @@
 		09B4D3D91CA524BB00E24FE5 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		09B4D3DD1CA5605B00E24FE5 /* AddCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentViewController.swift; sourceTree = "<group>"; };
 		09B4D3DF1CA56B6300E24FE5 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		09B4D3E21CA5A5A900E24FE5 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		09B4D3E41CA5A5F100E24FE5 /* UINavigationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationExtensions.swift; sourceTree = "<group>"; };
 		09BE0EBF1CA1C61100DE0871 /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
 		09EF1E951C9A063100796BF6 /* Optics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optics.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -336,6 +340,15 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
+		09B4D3E11CA5A57D00E24FE5 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				09B4D3E21CA5A5A900E24FE5 /* Global.swift */,
+				09B4D3E41CA5A5F100E24FE5 /* UINavigationExtensions.swift */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
 		09EF1E8C1C9A063100796BF6 = {
 			isa = PBXGroup;
 			children = (
@@ -359,6 +372,7 @@
 		09EF1E971C9A063100796BF6 /* Optics */ = {
 			isa = PBXGroup;
 			children = (
+				09B4D3E11CA5A57D00E24FE5 /* core */,
 				0954B1271C9CB0F2007398EF /* fonts */,
 				09197BE51C9ADE820010C77E /* helpers */,
 				09197BE01C9ADC4B0010C77E /* libs */,
@@ -540,6 +554,7 @@
 				09B4D3D61CA516B200E24FE5 /* PictureDetailsViewController.swift in Sources */,
 				09F6F2E11CA08D8E00C5151D /* SCLAlertView.swift in Sources */,
 				0954B11E1C9C9D67007398EF /* EventsListTableViewController.swift in Sources */,
+				09B4D3E31CA5A5A900E24FE5 /* Global.swift in Sources */,
 				09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */,
 				0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */,
 				0982CD2A1C9DCEAA00DBDE47 /* ModalHelper.swift in Sources */,
@@ -553,6 +568,7 @@
 				09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */,
 				0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */,
 				090A7C931CA2826C00129570 /* EventOptionsMenuViewController.swift in Sources */,
+				09B4D3E51CA5A5F100E24FE5 /* UINavigationExtensions.swift in Sources */,
 				093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */,
 				09F9D9011C9B4C2500777162 /* NavigationHelper.swift in Sources */,
 				09B4D3D81CA51B3900E24FE5 /* ImageHelper.swift in Sources */,

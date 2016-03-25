@@ -128,21 +128,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension UINavigationController {
-    
-    public override func childViewControllerForStatusBarHidden() -> UIViewController? {
-        return self.topViewController
-    }
-    
-    public override func childViewControllerForStatusBarStyle() -> UIViewController? {
-        return self.topViewController
-    }
-}
-
-func dispatch(completion: () -> Void)
-{
-    dispatch_async( dispatch_get_main_queue() ) {
-        completion()
-    }
-}
-

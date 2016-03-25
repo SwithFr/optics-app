@@ -56,9 +56,7 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
 
     private func _loadData()
     {
-        let decodedimage = Image.decode( String( currentPicture[ "image" ] ) )
-        
-        picture.image = decodedimage as UIImage
+        picture.image = Image.decode( String( currentPicture[ "image" ] ) )
         authorName.text = currentPicture[ "author" ].string
         pictureTime.text = Date.ago( currentPicture[ "date" ].string! )
         
@@ -70,6 +68,9 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    /*
+        TABLE CONTROLS
+    */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comments.count
     }
@@ -88,6 +89,9 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    /*
+        NEXT
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if ( segue.identifier == "addCommentSegue" ) {
@@ -98,11 +102,4 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
             commentViewController.picture = String( currentPicture[ "image" ] )
         }
     }
-    
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
