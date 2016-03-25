@@ -39,6 +39,17 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    /*
+    LIIGHT STATUS BAR
+    */
+    override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
+    }
+    
     @IBAction func addCommentBtnTapped(sender: AnyObject)
     {
         

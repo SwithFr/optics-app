@@ -403,7 +403,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzu-Io-eca">
                                 <rect key="frame" x="324" y="362" width="27" height="23"/>
-                                <state key="normal" image="comment-icon"/>
+                                <state key="normal" image="add-comment-icon"/>
                                 <connections>
                                     <action selector="addCommentBtnTapped:" destination="oDr-Uo-hcV" eventType="touchUpInside" id="aei-rf-AoI"/>
                                     <segue destination="6g7-Zl-jNm" kind="show" identifier="addCommentSegue" id="ARS-gu-Ccv"/>
@@ -433,7 +433,7 @@
                                                     <rect key="frame" x="25" y="8" width="40" height="40"/>
                                                 </imageView>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comment." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q1d-Rb-aLt">
-                                                    <rect key="frame" x="73" y="25" width="261" height="46.5"/>
+                                                    <rect key="frame" x="73" y="25" width="261" height="47"/>
                                                     <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -747,13 +747,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add-comment-icon" width="39" height="32"/>
         <image name="add-icon" width="24" height="24"/>
         <image name="bkg-flou" width="383" height="679"/>
-        <image name="comment-icon" width="42" height="35"/>
-        <image name="lock-input" width="31" height="20"/>
+        <image name="comment-icon" width="39" height="32"/>
+        <image name="lock-input" width="35" height="31"/>
         <image name="logo" width="246" height="118"/>
         <image name="menu-icon" width="23" height="18"/>
-        <image name="picture-icon" width="36" height="27"/>
+        <image name="picture-icon" width="35" height="26"/>
         <image name="text-input" width="33" height="22"/>
         <image name="user-icon" width="20" height="24"/>
         <image name="users-icon" width="35" height="27"/>

@@ -25,10 +25,16 @@ class AddCommentViewController: UIViewController {
         super.viewDidLoad()
         _setUI()
     }
-
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
+    
+    /*
+    LIIGHT STATUS BAR
+    */
+    override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
+    }
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return false
     }
     
     @IBAction func addBtnTapped(sender: AnyObject)
