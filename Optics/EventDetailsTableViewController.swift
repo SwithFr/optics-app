@@ -175,6 +175,17 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated( true, completion: nil )
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if ( segue.identifier == "pictureDetailsSegue" ) {
+            let indexPath = self.tableView.indexPathForSelectedRow!
+            let pictureDetailsViewController = segue.destinationViewController as! PictureDetailsViewController
+            
+            pictureDetailsViewController.currentPicture = images[ indexPath.row ]
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

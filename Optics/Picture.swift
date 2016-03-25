@@ -39,7 +39,14 @@ class Picture: Model
                 completionHandler( data: data )
             }
         }
-
+    }    
+    
+    static func getImageFromUrl(url: String) -> UIImage
+    {
+        let url = NSURL( string: url )
+        let data = NSData( contentsOfURL: url! )
+        
+        return UIImage( data: data! )!
     }
     
 }
