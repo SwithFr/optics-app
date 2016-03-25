@@ -25,13 +25,19 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway</string>
             <string>Raleway</string>
             <string>Raleway</string>
+            <string>Raleway</string>
+            <string>Raleway</string>
         </mutableArray>
         <mutableArray key="Raleway-SemiBold.ttf">
+            <string>Raleway-SemiBold</string>
+            <string>Raleway-SemiBold</string>
+            <string>Raleway-SemiBold</string>
             <string>Raleway-SemiBold</string>
             <string>Raleway-SemiBold</string>
             <string>Raleway-SemiBold</string>
@@ -348,6 +354,7 @@
                                     <outlet property="commentsCount" destination="Q3a-VL-2pG" id="25U-Ae-P6s"/>
                                     <outlet property="picture" destination="XhZ-Oi-0C1" id="Znz-IR-9GB"/>
                                     <outlet property="pictureTimeAgo" destination="k3A-mR-RuU" id="g8L-U6-cwi"/>
+                                    <segue destination="oDr-Uo-hcV" kind="show" identifier="pictureDetailsSegue" id="Oyy-cE-sVX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -360,6 +367,158 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hcP-Cf-V3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1672.5" y="680.5"/>
+        </scene>
+        <!--Picture Details View Controller-->
+        <scene sceneID="6if-Jg-SWa">
+            <objects>
+                <viewController storyboardIdentifier="pictureDetailsView" id="oDr-Uo-hcV" customClass="PictureDetailsViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="osK-1l-Q3D"/>
+                        <viewControllerLayoutGuide type="bottom" id="PaJ-yY-Mz5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5em-MZ-1x9">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-5P-Q4Q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YN9-Xn-Bl0">
+                                <rect key="frame" x="92" y="364" width="167" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvx-TW-i88">
+                                <rect key="frame" x="92" y="387" width="103" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
+                                <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgh-ix-g4X">
+                                <rect key="frame" x="252" y="364" width="65" height="24"/>
+                                <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzu-Io-eca">
+                                <rect key="frame" x="324" y="362" width="27" height="23"/>
+                                <state key="normal" image="comment-icon"/>
+                                <connections>
+                                    <action selector="addCommentBtnTapped:" destination="oDr-Uo-hcV" eventType="touchUpInside" id="aei-rf-AoI"/>
+                                    <segue destination="6g7-Zl-jNm" kind="show" identifier="addCommentSegue" id="ARS-gu-Ccv"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Lz-FU-n7h">
+                                <rect key="frame" x="24" y="357" width="55" height="55"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q8e-hT-XdO">
+                                <rect key="frame" x="0.0" y="426" width="375" height="177"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" rowHeight="80" id="UW5-Xp-kPz" customClass="CommentTableViewCell" customModule="Optics" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UW5-Xp-kPz" id="YND-km-5LT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Viz-Xd-2Ff">
+                                                    <rect key="frame" x="76" y="8" width="266" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="16"/>
+                                                    <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="STF-ai-Jkk">
+                                                    <rect key="frame" x="25" y="8" width="40" height="40"/>
+                                                </imageView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comment." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q1d-Rb-aLt">
+                                                    <rect key="frame" x="73" y="25" width="261" height="46.5"/>
+                                                    <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorAvatar" destination="STF-ai-Jkk" id="qLk-X4-sSO"/>
+                                            <outlet property="authorName" destination="Viz-Xd-2Ff" id="bae-AB-WC8"/>
+                                            <outlet property="comment" destination="Q1d-Rb-aLt" id="wqA-dA-FaE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oDr-Uo-hcV" id="Gmk-Qk-KhP"/>
+                                    <outlet property="delegate" destination="oDr-Uo-hcV" id="oqB-rQ-Mh7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="authorAvatar" destination="2Lz-FU-n7h" id="hT7-d5-r4A"/>
+                        <outlet property="authorName" destination="YN9-Xn-Bl0" id="Iv2-ui-ZFk"/>
+                        <outlet property="commentsTableView" destination="Q8e-hT-XdO" id="ii0-bw-TNU"/>
+                        <outlet property="picture" destination="0Ci-5P-Q4Q" id="jwB-5b-ctO"/>
+                        <outlet property="pictureTime" destination="fvx-TW-i88" id="2o1-b5-OWR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNT-Na-y5W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2223.5" y="680.5"/>
+        </scene>
+        <!--Ajouter un commentaire-->
+        <scene sceneID="cT0-kg-szJ">
+            <objects>
+                <viewController storyboardIdentifier="addCommentView" title="Ajouter un commentaire" id="6g7-Zl-jNm" customClass="AddCommentViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fa9-Ab-D1l"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vrd-Mc-b25"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ebj-Mu-Mrw">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6DN-Qi-gZc">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Votre commentaire" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjH-Ey-WCm">
+                                <rect key="frame" x="79" y="102" width="235" height="24"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tgV-z6-cvT">
+                                <rect key="frame" x="30" y="138" width="315" height="214"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="text-input" translatesAutoresizingMaskIntoConstraints="NO" id="Igy-H3-JoE">
+                                <rect key="frame" x="30" y="100" width="26" height="23"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm9-Ze-15c">
+                                <rect key="frame" x="30" y="458" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addBtnTapped:" destination="6g7-Zl-jNm" eventType="touchUpInside" id="49q-dd-GYg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="addBtn" destination="Tm9-Ze-15c" id="GKR-zQ-7v6"/>
+                        <outlet property="backgroundImage" destination="6DN-Qi-gZc" id="6AQ-rU-8FK"/>
+                        <outlet property="comment" destination="tgV-z6-cvT" id="Uq1-Om-M9K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XDb-8R-iO0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2800.5" y="680.5"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="vOl-dd-B6Q">

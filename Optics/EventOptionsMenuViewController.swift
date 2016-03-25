@@ -8,7 +8,8 @@
 
 import UIKit
 
-class EventOptionsMenuViewController: UIViewController, UINavigationControllerDelegate {
+class EventOptionsMenuViewController: UIViewController, UINavigationControllerDelegate
+{
 
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var eventDescription: UITextView!

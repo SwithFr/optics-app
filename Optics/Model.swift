@@ -14,6 +14,8 @@ class Model
     // local server
     let baseUrl = "http://192.168.99.100/"
     
+    //let baseUrl = "http://api.optics.swith.fr:2345/"
+    
     // online server
     //let baseUrl = "http://178.62.75.78/"
     
