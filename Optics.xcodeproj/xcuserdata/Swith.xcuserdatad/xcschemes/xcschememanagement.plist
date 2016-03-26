@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Optics-extension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Optics.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>09A9A4EE1CA6B2B600714D38</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>09EF1E941C9A063100796BF6</key>
 		<dict>
 			<key>primary</key>

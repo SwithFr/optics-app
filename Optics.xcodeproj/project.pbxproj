@@ -28,6 +28,9 @@
 		0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */; };
 		0982CD2A1C9DCEAA00DBDE47 /* ModalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */; };
 		09A9A4EA1CA68F3E00714D38 /* ScrollVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9A4E91CA68F3E00714D38 /* ScrollVIewExtensions.swift */; };
+		09A9A4F21CA6B2B600714D38 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9A4F11CA6B2B600714D38 /* ShareViewController.swift */; };
+		09A9A4F51CA6B2B600714D38 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09A9A4F31CA6B2B600714D38 /* MainInterface.storyboard */; };
+		09A9A4F91CA6B2B600714D38 /* Optics-extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 09A9A4EF1CA6B2B600714D38 /* Optics-extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		09B4D3D61CA516B200E24FE5 /* PictureDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3D51CA516B200E24FE5 /* PictureDetailsViewController.swift */; };
 		09B4D3D81CA51B3900E24FE5 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3D71CA51B3900E24FE5 /* ImageHelper.swift */; };
 		09B4D3DA1CA524BB00E24FE5 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3D91CA524BB00E24FE5 /* CommentTableViewCell.swift */; };
@@ -51,6 +54,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		09A9A4F71CA6B2B600714D38 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09EF1E8D1C9A063100796BF6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 09A9A4EE1CA6B2B600714D38;
+			remoteInfo = "Optics-extension";
+		};
 		09EF1EAF1C9A063200796BF6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 09EF1E8D1C9A063100796BF6 /* Project object */;
@@ -66,6 +76,20 @@
 			remoteInfo = Optics;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		09A9A4FD1CA6B2B600714D38 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				09A9A4F91CA6B2B600714D38 /* Optics-extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		09077EDA1C9F279B00EBF05E /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +113,11 @@
 		0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalHelper.swift; sourceTree = "<group>"; };
 		09A9A4E91CA68F3E00714D38 /* ScrollVIewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollVIewExtensions.swift; sourceTree = "<group>"; };
+		09A9A4EF1CA6B2B600714D38 /* Optics-extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Optics-extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A9A4F11CA6B2B600714D38 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		09A9A4F41CA6B2B600714D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		09A9A4F61CA6B2B600714D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09A9A4FE1CA6B31000714D38 /* Optics.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Optics.entitlements; sourceTree = "<group>"; };
 		09B4D3D51CA516B200E24FE5 /* PictureDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureDetailsViewController.swift; sourceTree = "<group>"; };
 		09B4D3D71CA51B3900E24FE5 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		09B4D3D91CA524BB00E24FE5 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -118,6 +147,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		09A9A4EC1CA6B2B600714D38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09EF1E921C9A063100796BF6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -342,6 +378,16 @@
 			name = fonts;
 			sourceTree = "<group>";
 		};
+		09A9A4F01CA6B2B600714D38 /* Optics-extension */ = {
+			isa = PBXGroup;
+			children = (
+				09A9A4F11CA6B2B600714D38 /* ShareViewController.swift */,
+				09A9A4F31CA6B2B600714D38 /* MainInterface.storyboard */,
+				09A9A4F61CA6B2B600714D38 /* Info.plist */,
+			);
+			path = "Optics-extension";
+			sourceTree = "<group>";
+		};
 		09B4D3E11CA5A57D00E24FE5 /* core */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +404,7 @@
 				09EF1E971C9A063100796BF6 /* Optics */,
 				09EF1EB11C9A063200796BF6 /* OpticsTests */,
 				09EF1EBC1C9A063200796BF6 /* OpticsUITests */,
+				09A9A4F01CA6B2B600714D38 /* Optics-extension */,
 				09EF1E961C9A063100796BF6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -368,6 +415,7 @@
 				09EF1E951C9A063100796BF6 /* Optics.app */,
 				09EF1EAE1C9A063200796BF6 /* OpticsTests.xctest */,
 				09EF1EB91C9A063200796BF6 /* OpticsUITests.xctest */,
+				09A9A4EF1CA6B2B600714D38 /* Optics-extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -375,6 +423,7 @@
 		09EF1E971C9A063100796BF6 /* Optics */ = {
 			isa = PBXGroup;
 			children = (
+				09A9A4FE1CA6B31000714D38 /* Optics.entitlements */,
 				09B4D3E11CA5A57D00E24FE5 /* core */,
 				0954B1271C9CB0F2007398EF /* fonts */,
 				09197BE51C9ADE820010C77E /* helpers */,
@@ -414,6 +463,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		09A9A4EE1CA6B2B600714D38 /* Optics-extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09A9A4FC1CA6B2B600714D38 /* Build configuration list for PBXNativeTarget "Optics-extension" */;
+			buildPhases = (
+				09A9A4EB1CA6B2B600714D38 /* Sources */,
+				09A9A4EC1CA6B2B600714D38 /* Frameworks */,
+				09A9A4ED1CA6B2B600714D38 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Optics-extension";
+			productName = "Optics-extension";
+			productReference = 09A9A4EF1CA6B2B600714D38 /* Optics-extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		09EF1E941C9A063100796BF6 /* Optics */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09EF1EC21C9A063200796BF6 /* Build configuration list for PBXNativeTarget "Optics" */;
@@ -421,10 +487,12 @@
 				09EF1E911C9A063100796BF6 /* Sources */,
 				09EF1E921C9A063100796BF6 /* Frameworks */,
 				09EF1E931C9A063100796BF6 /* Resources */,
+				09A9A4FD1CA6B2B600714D38 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				09A9A4F81CA6B2B600714D38 /* PBXTargetDependency */,
 			);
 			name = Optics;
 			productName = Optics;
@@ -477,9 +545,18 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Jérémy Smith";
 				TargetAttributes = {
+					09A9A4EE1CA6B2B600714D38 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 32XCWCN8AR;
+					};
 					09EF1E941C9A063100796BF6 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 32XCWCN8AR;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					09EF1EAD1C9A063200796BF6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -509,11 +586,20 @@
 				09EF1E941C9A063100796BF6 /* Optics */,
 				09EF1EAD1C9A063200796BF6 /* OpticsTests */,
 				09EF1EB81C9A063200796BF6 /* OpticsUITests */,
+				09A9A4EE1CA6B2B600714D38 /* Optics-extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		09A9A4ED1CA6B2B600714D38 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A9A4F51CA6B2B600714D38 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09EF1E931C9A063100796BF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -545,6 +631,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		09A9A4EB1CA6B2B600714D38 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09A9A4F21CA6B2B600714D38 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09EF1E911C9A063100796BF6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +697,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		09A9A4F81CA6B2B600714D38 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 09A9A4EE1CA6B2B600714D38 /* Optics-extension */;
+			targetProxy = 09A9A4F71CA6B2B600714D38 /* PBXContainerItemProxy */;
+		};
 		09EF1EB01C9A063200796BF6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 09EF1E941C9A063100796BF6 /* Optics */;
@@ -616,6 +715,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		09A9A4F31CA6B2B600714D38 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09A9A4F41CA6B2B600714D38 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		09EF1EA11C9A063100796BF6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -635,6 +742,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		09A9A4FA1CA6B2B600714D38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Optics-extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swith.Optics.Optics-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		09A9A4FB1CA6B2B600714D38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Optics-extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "swith.Optics.Optics-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		09EF1EC01C9A063200796BF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -720,10 +849,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Optics/Optics.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Optics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swith.Optics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -731,10 +865,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Optics/Optics.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = Optics/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swith.Optics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -789,6 +928,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		09A9A4FC1CA6B2B600714D38 /* Build configuration list for PBXNativeTarget "Optics-extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09A9A4FA1CA6B2B600714D38 /* Debug */,
+				09A9A4FB1CA6B2B600714D38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		09EF1E901C9A063100796BF6 /* Build configuration list for PBXProject "Optics" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
