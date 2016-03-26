@@ -15,9 +15,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmField: UITextField!
     @IBOutlet weak var registerBtn: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let ModelUser = User()
-    
     
     override func viewDidLoad()
     {
@@ -25,6 +25,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
         _setUI()
     }
     
+    /*
+        LIGHT STATUS BAR
+    */
     override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
@@ -33,6 +36,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
         return false
     }
 
+    /*
+        ACTIONS
+    */
     @IBAction func registerBtnTapped(sender: AnyObject)
     {
         _register()
@@ -43,6 +49,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
         Navigator.goBack( self )
     }
     
+    /*
+        PRIVATE
+    */
     private func _setUI()
     {
         UIHelper.formatBtn( registerBtn )
@@ -80,6 +89,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
 
     }
     
+    /*
+        KEYBOARD
+    */
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         if ( textField == loginField ) {
@@ -94,20 +106,17 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
         return false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
+        if ( textField == confirmField ) {
+            scrollView.scrollContent()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+        scrollView.cancelKeyboard()
     }
-    */
+
 
 }

@@ -14,6 +14,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let ModelUser = User()
     
@@ -25,6 +26,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
     }
     
+    /*
+        LIGHT STATUS BAR
+    */
     override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
@@ -32,22 +36,45 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     override func prefersStatusBarHidden() -> Bool {
         return false
     }
-    
-    override func viewWillAppear(animated: Bool)
-    {
-        
-    }
 
+    /*
+        ACTIONS
+    */
     @IBAction func loginBtnTapped(sender: AnyObject)
     {
         _logUser()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    /*
+        KEYBOARD
+    */
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        if ( textField == loginField ) {
+            passwordField.becomeFirstResponder()
+        } else if ( textField == passwordField ) {
+            _logUser()
+            self.view.endEditing( true )
+        }
+        
+        return false
     }
     
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
+        if ( textField == passwordField ) {
+            scrollView.scrollContent()
+        }
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+        scrollView.cancelKeyboard()
+    }
+    
+    /*
+        PRIVATE
+    */
     // Set the UI with good appearance
     private func _setUI()
     {
@@ -68,18 +95,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate
     {
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.hidesBackButton = true
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool
-    {
-        if ( textField == loginField ) {
-            passwordField.becomeFirstResponder()
-        } else if ( textField == passwordField ) {
-            _logUser()
-            self.view.endEditing( true )
-        }
-        
-        return false
     }
     
     // Do the login action
@@ -108,15 +123,4 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             }
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

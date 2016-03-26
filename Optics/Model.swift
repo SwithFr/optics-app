@@ -12,7 +12,7 @@ import UIKit
 class Model
 {
     // local server
-    let baseUrl = "http://192.168.99.100/"
+    //let baseUrl = "http://192.168.99.100/"
     
     //let baseUrl = "http://api.optics.swith.fr:2345/"
     
@@ -125,7 +125,23 @@ class Model
     // Create a request with an URL
     private func _makeRequest(route: String) -> NSMutableURLRequest
     {
-        return NSMutableURLRequest( URL: NSURL( string: self.baseUrl + route )! )
+        
+        var baseUrl: String!
+        let deviceName = UIDevice.currentDevice().name
+        
+        switch deviceName {
+        case "Iphone Simulator":
+            baseUrl = "http://192.168.99.100/"
+            break
+        case "Swith":
+            baseUrl = "http://api.optics.swith.fr:2345/"
+            break
+        default:
+            baseUrl = "http://192.168.99.100/"
+            break
+        }
+        
+        return NSMutableURLRequest( URL: NSURL( string: baseUrl + route )! )
     }
     
     // Generate boundary string

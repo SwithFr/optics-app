@@ -8,13 +8,14 @@
 
 import UIKit
 
-class EventOptionsMenuViewController: UIViewController, UINavigationControllerDelegate
+class EventOptionsMenuViewController: UIViewController, UINavigationControllerDelegate, UITextViewDelegate, UITextFieldDelegate
 {
 
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var eventDescription: UITextView!
     @IBOutlet weak var eventID: UILabel!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var currentEvent: JSON!
     let ModelEvent = Event()
@@ -40,11 +41,6 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         return false
     }
     
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-    }
-    
     /*
         PRIVATE
     */
@@ -68,6 +64,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
             deleteBtn.sizeToFit()
             
             let deleteBtnItem = UIBarButtonItem( customView: deleteBtn )
+            
             self.navigationItem.setRightBarButtonItems( [ shareBtnItem, deleteBtnItem ], animated: true )
         } else {
             self.navigationItem.setRightBarButtonItems( [ shareBtnItem ], animated: true )
@@ -100,6 +97,12 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         UIHelper.formatTextArea( eventDescription )
         UIHelper.formatInput( eventTitle )
         
+        eventTitle.delegate       = self
+        eventDescription.delegate = self
+        
+        eventDescription.returnKeyType = .Continue
+        eventTitle.returnKeyType       = .Next
+        
         self.title = "Infos de l'évènement"
     }
     
@@ -115,15 +118,33 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         self.navigationController?.popToRootViewControllerAnimated( true )
     }
     
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
+    KEYBOARD
     */
-
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        if ( textField == eventTitle ) {
+            eventDescription.becomeFirstResponder()
+        }
+        
+        return false
+    }
+    
+    func textViewdDidBeginEditing(textView: UITextView)
+    {
+        if ( textView == eventDescription ) {
+            scrollView.scrollContent()
+        }
+    }
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if ( text == "\n" ) {
+            textView.resignFirstResponder()
+            scrollView.cancelKeyboard()
+            
+            return false
+        }
+        
+        return true
+    }
 }
