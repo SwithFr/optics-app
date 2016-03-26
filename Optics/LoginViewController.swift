@@ -45,6 +45,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         _logUser()
     }
     
+    /*
+        KEYBOARD
+    */
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         if ( textField == loginField ) {
