@@ -40,6 +40,32 @@ extension UIViewController
 //        return alertView
 //    }
     
+    func chooseCameraOrGallery(actionForCamera: () -> Void, actionForGallery: () -> Void)
+    {
+        let alert = UIAlertController( title: "Choisir une image", message: nil, preferredStyle: .ActionSheet )
+        
+        let cameraAction = UIAlertAction( title: "Prendre une photo", style: .Default )
+        {
+            UIAlertAction in
+            actionForCamera()
+        }
+        let gallaryAction = UIAlertAction( title: "Choisir une existante", style: .Default )
+        {
+            UIAlertAction in
+            actionForGallery()
+        }
+        let cancelAction = UIAlertAction( title: "Cancel", style: .Cancel )
+        {
+            UIAlertAction in
+        }
+        
+        alert.addAction(cameraAction)
+        alert.addAction(gallaryAction)
+        alert.addAction(cancelAction)
+        
+        self.presentViewController( alert, animated: true, completion: nil )
+    }
+    
     func alert(title: String, message: String, buttonText: String, cancelButton: String, completion: () -> Void)
     {
         SweetAlert().showAlert( title, subTitle: message, style: .None, buttonTitle: buttonText, buttonColor: UIHelper.green, otherButtonTitle: "Annuler" ) {

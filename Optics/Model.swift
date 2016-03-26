@@ -96,7 +96,7 @@ class Model
         _setHeaders( request )
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        let imageData = UIImageJPEGRepresentation( image, 1 )
+        let imageData = UIImageJPEGRepresentation( image, 0.5 )
         if(imageData==nil) {
             return
         }

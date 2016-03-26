@@ -49,7 +49,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         let shareImg = UIImage( named: "share-icon" )
         let shareBtn = UIButton(type: .Custom )
         
-        shareBtn.addTarget( self, action: "_shareEvent:", forControlEvents: UIControlEvents.TouchUpInside )
+        shareBtn.addTarget( self, action: #selector(EventOptionsMenuViewController._shareEvent(_:)), forControlEvents: UIControlEvents.TouchUpInside )
         shareBtn.setImage( shareImg, forState: .Normal )
         shareBtn.sizeToFit()
         
@@ -59,7 +59,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
             let deleteImg = UIImage( named: "delete-icon" )
             let deleteBtn = UIButton(type: .Custom )
             
-            deleteBtn.addTarget( self, action: "_deleteEvent:", forControlEvents: UIControlEvents.TouchUpInside )
+            deleteBtn.addTarget( self, action: #selector(EventOptionsMenuViewController._deleteEvent(_:)), forControlEvents: UIControlEvents.TouchUpInside )
             deleteBtn.setImage( deleteImg, forState: .Normal )
             deleteBtn.sizeToFit()
             
