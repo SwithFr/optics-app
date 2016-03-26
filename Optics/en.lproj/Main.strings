@@ -1,0 +1,105 @@
+
+/* Class = "UIButton"; normalTitle = "ou s'inscrire"; ObjectID = "3II-bJ-oMv"; */
+"3II-bJ-oMv.normalTitle" = "ou s'inscrire";
+
+/* Class = "UIViewController"; title = "Ajouter un évènement"; ObjectID = "8P8-Cf-J9f"; */
+"8P8-Cf-J9f.title" = "Ajouter un évènement";
+
+/* Class = "UITextField"; placeholder = "Confirmez le mot de passe"; ObjectID = "Bbs-tl-GbA"; */
+"Bbs-tl-GbA.placeholder" = "Confirmez le mot de passe";
+
+/* Class = "UILabel"; text = "Connexion"; ObjectID = "BoS-0O-L6v"; */
+"BoS-0O-L6v.text" = "Connexion";
+
+/* Class = "UIButton"; normalTitle = "Se connecter"; ObjectID = "Ck8-FR-Abk"; */
+"Ck8-FR-Abk.normalTitle" = "Se connecter";
+
+/* Class = "UIButton"; normalTitle = "Déjà un compte ?"; ObjectID = "FuC-j2-E6o"; */
+"FuC-j2-E6o.normalTitle" = "Déjà un compte ?";
+
+/* Class = "UIButton"; normalTitle = "Mot de passe oublié ?"; ObjectID = "Gqd-bi-uzG"; */
+"Gqd-bi-uzG.normalTitle" = "Mot de passe oublié ?";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "Icf-Wl-qfi"; */
+"Icf-Wl-qfi.text" = "10";
+
+/* Class = "UILabel"; text = "Inscription"; ObjectID = "KBt-DN-XdC"; */
+"KBt-DN-XdC.text" = "Inscription";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "Kpx-Pp-rht"; */
+"Kpx-Pp-rht.text" = "10";
+
+/* Class = "UITextView"; text = "Déscription de l'évènement"; ObjectID = "Kqn-am-wTN"; */
+"Kqn-am-wTN.text" = "Déscription de l'évènement";
+
+/* Class = "UIButton"; normalTitle = "Déconnexion"; ObjectID = "MLr-wJ-udE"; */
+"MLr-wJ-udE.normalTitle" = "Déconnexion";
+
+/* Class = "UILabel"; text = "Utilisez ce code pour partagez l'évènement."; ObjectID = "MiJ-7E-hCC"; */
+"MiJ-7E-hCC.text" = "Utilisez ce code pour partagez l'évènement.";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Mo0-aS-Ikj"; */
+"Mo0-aS-Ikj.text" = "Title";
+
+/* Class = "UILabel"; text = "Mes amis"; ObjectID = "Pnm-4i-jdK"; */
+"Pnm-4i-jdK.text" = "Mes amis";
+
+/* Class = "UITextView"; text = "Comment."; ObjectID = "Q1d-Rb-aLt"; */
+"Q1d-Rb-aLt.text" = "Comment.";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "Q3a-VL-2pG"; */
+"Q3a-VL-2pG.text" = "10";
+
+/* Class = "UINavigationItem"; title = "OPTICS"; ObjectID = "QAQ-LA-vo4"; */
+"QAQ-LA-vo4.title" = "OPTICS";
+
+/* Class = "UIButton"; normalTitle = "S'inscrire"; ObjectID = "T5d-ZO-mkV"; */
+"T5d-ZO-mkV.normalTitle" = "S'inscrire";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "UPN-ql-5Wr"; */
+"UPN-ql-5Wr.text" = "Author";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "Viz-Xd-2Ff"; */
+"Viz-Xd-2Ff.text" = "Author";
+
+/* Class = "UILabel"; text = "Author"; ObjectID = "YN9-Xn-Bl0"; */
+"YN9-Xn-Bl0.text" = "Author";
+
+/* Class = "UITextField"; placeholder = "Mot de passe"; ObjectID = "Yel-bL-Hkx"; */
+"Yel-bL-Hkx.placeholder" = "Mot de passe";
+
+/* Class = "UIButton"; normalTitle = "Modifier les informations"; ObjectID = "aSh-bn-uoZ"; */
+"aSh-bn-uoZ.normalTitle" = "Modifier les informations";
+
+/* Class = "UIButton"; normalTitle = "Ajouter"; ObjectID = "dku-cz-c8W"; */
+"dku-cz-c8W.normalTitle" = "Ajouter";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "elE-Rq-6xq"; */
+"elE-Rq-6xq.text" = "Date";
+
+/* Class = "UILabel"; text = "7min"; ObjectID = "fvx-TW-i88"; */
+"fvx-TW-i88.text" = "7min";
+
+/* Class = "UITextField"; placeholder = "Mot de passe"; ObjectID = "k1t-lq-co4"; */
+"k1t-lq-co4.placeholder" = "Mot de passe";
+
+/* Class = "UILabel"; text = "7min"; ObjectID = "k3A-mR-RuU"; */
+"k3A-mR-RuU.text" = "7min";
+
+/* Class = "UILabel"; text = "Mon compte"; ObjectID = "keo-u9-sh7"; */
+"keo-u9-sh7.text" = "Mon compte";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "lgh-ix-g4X"; */
+"lgh-ix-g4X.text" = "10";
+
+/* Class = "UITextField"; placeholder = "Identifiant"; ObjectID = "lxw-vK-hem"; */
+"lxw-vK-hem.placeholder" = "Identifiant";
+
+/* Class = "UITextField"; placeholder = "Identifiant"; ObjectID = "o51-Fv-b45"; */
+"o51-Fv-b45.placeholder" = "Identifiant";
+
+/* Class = "UITextField"; placeholder = "Titre de l'évènement"; ObjectID = "s94-YV-WNb"; */
+"s94-YV-WNb.placeholder" = "Titre de l'évènement";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zfQ-uR-Gdj"; */
+"zfQ-uR-Gdj.text" = "Label";
