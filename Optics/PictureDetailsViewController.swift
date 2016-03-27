@@ -16,6 +16,7 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     
     let ModelComment = Comment()
     let ModelPicture = Picture()
+    let cache        = NSCache()
 
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var authorAvatar: UIImageView!
@@ -31,7 +32,8 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         _loadData()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool)
+    {
         showLoader( "Chargement" )
         
         ModelComment.getAllFromPicture( String( currentPicture[ "id" ] ) ) {

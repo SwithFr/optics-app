@@ -148,8 +148,6 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         ModelPicture.getAllFromEventID( sEventID ) {
             data in
             dispatch {
-                self.cache.setObject( data, forKey: "images_\(sEventID)" )
-                    
                 self.hideLoader()
                 self._setAndReloadData( data )
             }
