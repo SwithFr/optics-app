@@ -84,7 +84,6 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     // Add icons on navigation bar
     private func _setNavigationButtons()
     {
-        
         let addPictureBtn = UIButton( type: .Custom )
         let menuBtn       = UIButton( type: .Custom )
         let backBtn       = UIButton( type: .Custom )
