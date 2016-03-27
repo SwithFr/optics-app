@@ -21,10 +21,12 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var pictureTime: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
+    @IBOutlet weak var addCommentBtn: UIButton!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        UIHelper.formatBtn( addCommentBtn )
         _loadData()
     }
     
@@ -50,11 +52,6 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     override func prefersStatusBarHidden() -> Bool {
         return false
     }
-    
-    @IBAction func addCommentBtnTapped(sender: AnyObject)
-    {
-        
-    }
 
     /*
         PRIAVTE
@@ -69,9 +66,9 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
 
     private func _loadData()
     {
-        picture.image    = Image.decode( String( currentPicture[ "image" ] ) )
-        authorName.text  = currentPicture[ "author" ].string
-        pictureTime.text = Date.ago( currentPicture[ "date" ].string! )
+        picture.image      = Image.decode( String( currentPicture[ "image" ] ) )
+        authorName.text    = currentPicture[ "author" ].string
+        pictureTime.text   = Date.ago( currentPicture[ "date" ].string! )
         
         UIHelper.formatRoundedImage( authorAvatar, radius: 26, color: UIHelper.black, border: 1.5 )
         authorAvatar.image = Picture.getImageFromUrl( currentPicture[ "avatar" ].string! )
