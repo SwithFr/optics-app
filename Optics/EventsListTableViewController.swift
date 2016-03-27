@@ -62,7 +62,7 @@ class EventsListTableViewController: UITableViewController {
         
         cell.eventTitle.text = event["title"].string!
         cell.eventDate.text = date
-        //cell.picturesCount.text = String(folder["pictures"]!)
+        cell.picturesCount.text = String( event[ "pictures_count" ] )
         cell.usersCount.text = String( event["users_count"] )
         
         return cell
