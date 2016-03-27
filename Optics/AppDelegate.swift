@@ -14,24 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let storyboard = UIStoryboard( name: "Main", bundle: nil )
+        let storyboard   = UIStoryboard( name: "Main", bundle: nil )
         let barAppearace = UIBarButtonItem.appearance()
-        UINavigationBar.appearance().barTintColor = UIHelper.black
-        UINavigationBar.appearance().tintColor = UIHelper.red
+        
+        UINavigationBar.appearance().barTintColor        = UIHelper.black
+        UINavigationBar.appearance().tintColor           = UIHelper.red
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIHelper.red]
-        UINavigationBar.appearance().translucent = false
+        UINavigationBar.appearance().translucent         = false
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
         barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
         barAppearace.tintColor = UIHelper.red
-            
-        //User.logout()
         
         if !User.isAuthenticated() {
-            let loginViewController  = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
+            let loginViewController = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
             
             self.window?.rootViewController = loginViewController
         }
@@ -126,23 +125,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-}
-
-extension UINavigationController {
-    
-    public override func childViewControllerForStatusBarHidden() -> UIViewController? {
-        return self.topViewController
-    }
-    
-    public override func childViewControllerForStatusBarStyle() -> UIViewController? {
-        return self.topViewController
-    }
-}
-
-func dispatch(completion: () -> Void)
-{
-    dispatch_async( dispatch_get_main_queue() ) {
-        completion()
-    }
 }
 

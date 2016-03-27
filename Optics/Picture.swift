@@ -39,7 +39,30 @@ class Picture: Model
                 completionHandler( data: data )
             }
         }
-
+    }
+    
+    func delete(sPictureID: String, completionHandler: () -> Void)
+    {
+        self.delete( "pictures/\(sPictureID)", authenticate: true) {
+            error, data in
+            
+            if error != nil {
+                print("error on deletion")
+                return
+            }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                completionHandler()
+            }
+        }
+    }
+    
+    static func getImageFromUrl(url: String) -> UIImage
+    {
+        let url = NSURL( string: url )
+        let data = NSData( contentsOfURL: url! )
+        
+        return UIImage( data: data! )!
     }
     
 }
