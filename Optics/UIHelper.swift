@@ -21,24 +21,25 @@ public struct UIHelper
     // UTILS
     static let width  = CGFloat( 1.0 )
     
-    static func formatInput(input: UITextField)
+    static func formatInput(input: UITextField, withLeftPadding: Bool = true)
     {
         input.backgroundColor = transparent
-        _borderBottom( input )
-        _setLeftPadding( input )
+        input.textColor = white
         
-        //input.layer.borderWidth = 1
-        //input.layer.borderColor = red.CGColor
-        //input.layer.cornerRadius = CGFloat(5)
-        //input.textColor = white
+        _borderBottom( input )
+        
+        if ( withLeftPadding ) {
+            _setLeftPadding( input )
+        }
+        
     }
     
     static private func _setLeftPadding(input: UITextField)
     {
         let paddingView = UIView( frame: CGRectMake( 0, 0, 30, input.frame.height ) )
         
-        input.leftView = paddingView
-        input.leftViewMode = UITextFieldViewMode.Always
+        input.leftView     = paddingView
+        input.leftViewMode = .Always
     }
     
     static private func _borderBottom(input: UITextField)
@@ -59,20 +60,20 @@ public struct UIHelper
     
     static func formatRoundedImage(img: UIImageView, radius: CGFloat, color: UIColor, border: CGFloat)
     {
-        img.layer.cornerRadius = radius
-        img.layer.borderWidth = border
+        img.layer.cornerRadius    = radius
+        img.layer.borderWidth     = border
         img.layer.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0).CGColor
-        img.layer.borderColor = color.CGColor
-        img.clipsToBounds = true
+        img.layer.borderColor     = color.CGColor
+        img.clipsToBounds         = true
     }
     
     static func formatTextArea(text: UITextView)
     {
-        text.backgroundColor = UIColor.clearColor()
-        text.layer.borderWidth = width
-        text.layer.borderColor = red.CGColor
+        text.backgroundColor    = UIColor.clearColor()
+        text.layer.borderWidth  = width
+        text.layer.borderColor  = red.CGColor
         text.layer.cornerRadius = CGFloat(5)
-        text.textColor = white
+        text.textColor          = white
     }
 
 }
