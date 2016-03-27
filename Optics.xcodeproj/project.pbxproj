@@ -25,6 +25,7 @@
 		0954B1241C9CB0E7007398EF /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1201C9CB0E7007398EF /* Raleway-Regular.ttf */; };
 		0954B1251C9CB0E7007398EF /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1211C9CB0E7007398EF /* Raleway-SemiBold.ttf */; };
 		0954B1261C9CB0E7007398EF /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */; };
+		09793E7E1CA84A1A00C41658 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09793E7D1CA84A1A00C41658 /* UIViewControllerExtensions.swift */; };
 		0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */; };
 		0982CD2A1C9DCEAA00DBDE47 /* ModalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */; };
 		09A9A4EA1CA68F3E00714D38 /* ScrollVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A9A4E91CA68F3E00714D38 /* ScrollVIewExtensions.swift */; };
@@ -86,6 +87,7 @@
 		0954B1201C9CB0E7007398EF /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		0954B1211C9CB0E7007398EF /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
 		0954B1221C9CB0E7007398EF /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		09793E7D1CA84A1A00C41658 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		0982CD271C9DBDE100DBDE47 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalHelper.swift; sourceTree = "<group>"; };
 		09A9A4E91CA68F3E00714D38 /* ScrollVIewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollVIewExtensions.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 				09B4D3E21CA5A5A900E24FE5 /* Global.swift */,
 				09B4D3E41CA5A5F100E24FE5 /* UINavigationExtensions.swift */,
 				09A9A4E91CA68F3E00714D38 /* ScrollVIewExtensions.swift */,
+				09793E7D1CA84A1A00C41658 /* UIViewControllerExtensions.swift */,
 			);
 			name = core;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09077EDE1C9F3F2500EBF05E /* EventTableViewCell.swift in Sources */,
+				09793E7E1CA84A1A00C41658 /* UIViewControllerExtensions.swift in Sources */,
 				09F6F2E31CA092C700C5151D /* AddEventViewController.swift in Sources */,
 				09077EDB1C9F279B00EBF05E /* MainMenuViewController.swift in Sources */,
 				09197BDD1C9ADAFE0010C77E /* Model.swift in Sources */,

@@ -11,6 +11,7 @@ import UIKit
 class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     
     var currentPicture: JSON!
+    var currentImage: UIImage!
     var comments: [JSON] = []
     
     let ModelComment = Comment()
@@ -66,7 +67,8 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
 
     private func _loadData()
     {
-        picture.image      = Image.decode( String( currentPicture[ "image" ] ) )
+        currentImage       = Picture.getImageFromUrl( "http://192.168.99.100/\( String( currentPicture[ "title" ] ) )" )
+        picture.image      = currentImage
         authorName.text    = currentPicture[ "author" ].string
         pictureTime.text   = Date.ago( currentPicture[ "date" ].string! )
         
@@ -130,7 +132,7 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
             
             commentViewController.sPictureid = String( currentPicture[ "id" ] )
             commentViewController.sEventId   = currentPicture[ "event_id" ].string
-            commentViewController.picture    = String( currentPicture[ "image" ] )
+            commentViewController.picture    = currentImage
         }
     }
 }

@@ -16,9 +16,12 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     
     let ModelPicture    = Picture()
     let imageFromSource = UIImagePickerController()
+    var cache: NSCache!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cache = NSCache()
         
         imageFromSource.delegate      = self
         imageFromSource.allowsEditing = false
@@ -63,10 +66,19 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         let cell = tableView.dequeueReusableCellWithIdentifier( "pictureCell", forIndexPath: indexPath ) as! PictureTableViewCell
         
         let image        = images[ indexPath.row ]
-        let decodedData  = NSData( base64EncodedString: String( image[ "image" ] ), options: NSDataBase64DecodingOptions( rawValue: 0 ) )
-        let decodedimage = UIImage( data: decodedData! )
+//        let decodedData  = NSData( base64EncodedString: String( image[ "image" ] ), options: NSDataBase64DecodingOptions( rawValue: 0 ) )
+//        let decodedimage = UIImage( data: decodedData! )
+        let imageName = String( image[ "title" ] )
         
-        cell.picture.image = decodedimage! as UIImage
+        if let imageCached = cache.objectForKey( imageName ) as? UIImage {
+            cell.picture.image = imageCached
+        } else {
+            let image = Picture.getImageFromUrl( "http://192.168.99.100/\(imageName)" )
+            
+            cache.setObject( image, forKey: imageName )
+            cell.picture.image = image
+        }
+        //cell.picture.image = decodedimage! as UIImage
         
         tableView.separatorColor = UIHelper.red
         
@@ -80,7 +92,6 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     /*
         PRIVATE
     */
-    
     // Add icons on navigation bar
     private func _setNavigationButtons()
     {
@@ -130,20 +141,24 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         self.navigationItem.title = currentEvent[ "title" ].string
         self.navigationController?.setNavigationBarHidden( false, animated:true )
         
+        let sEventID = String( currentEvent[ "id" ] )
+        
         self.showLoader( "Chargement" )
         
-        ModelPicture.getAllFromEventID( String( currentEvent[ "id" ] ) ) {
+        ModelPicture.getAllFromEventID( sEventID ) {
             data in
             dispatch {
+                self.cache.setObject( data, forKey: "images_\(sEventID)" )
+                    
                 self.hideLoader()
                 self._setAndReloadData( data )
             }
         }
-
     }
     
     // Reload data
-    private func _setAndReloadData(data: NSData) {
+    private func _setAndReloadData(data: NSData)
+    {
         let pictures = JSON( data: data )
         
         self.images  = pictures[ "data" ].arrayValue
