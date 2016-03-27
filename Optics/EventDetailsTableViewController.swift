@@ -21,7 +21,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         super.viewDidLoad()
         
         imageFromSource.delegate      = self
-        imageFromSource.allowsEditing = true
+        imageFromSource.allowsEditing = false
         
         _setNavigationButtons()
     }
