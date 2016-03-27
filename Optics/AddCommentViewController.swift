@@ -8,11 +8,12 @@
 
 import UIKit
 
-class AddCommentViewController: UIViewController {
+class AddCommentViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var comment: UITextView!
     @IBOutlet weak var addBtn: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var sPictureid: String!
     var sEventId: String!
@@ -56,16 +57,27 @@ class AddCommentViewController: UIViewController {
         UIHelper.formatBtn( addBtn )
         backgroundImage.image = Image.decode( picture )
         Image.blur( backgroundImage )
+        comment.delegate = self
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+     KEYBOARD
+     */
+    func textViewdDidBeginEditing(textView: UITextView)
+    {
+        if ( textView == comment ) {
+            scrollView.scrollContent()
+        }
     }
-    */
-
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if ( text == "\n" ) {
+            textView.resignFirstResponder()
+            scrollView.cancelKeyboard()
+            
+            return false
+        }
+        
+        return true
+    }
 }
