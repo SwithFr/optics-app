@@ -14,16 +14,19 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     var comments: [JSON] = []
     
     let ModelComment = Comment()
+    let ModelPicture = Picture()
 
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var authorAvatar: UIImageView!
     @IBOutlet weak var authorName: UILabel!
     @IBOutlet weak var pictureTime: UILabel!
     @IBOutlet weak var commentsTableView: UITableView!
+    @IBOutlet weak var addCommentBtn: UIButton!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        UIHelper.formatBtn( addCommentBtn )
         _loadData()
     }
     
@@ -49,16 +52,12 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     override func prefersStatusBarHidden() -> Bool {
         return false
     }
-    
-    @IBAction func addCommentBtnTapped(sender: AnyObject)
-    {
-        
-    }
 
     /*
         PRIAVTE
     */
-    private func _setAndReloadData(data: NSData) {
+    private func _setAndReloadData(data: NSData)
+    {
         let coms = JSON( data: data )
         
         self.comments = coms[ "data" ].arrayValue
@@ -67,15 +66,36 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
 
     private func _loadData()
     {
-        picture.image = Image.decode( String( currentPicture[ "image" ] ) )
-        authorName.text = currentPicture[ "author" ].string
-        pictureTime.text = Date.ago( currentPicture[ "date" ].string! )
+        picture.image      = Image.decode( String( currentPicture[ "image" ] ) )
+        authorName.text    = currentPicture[ "author" ].string
+        pictureTime.text   = Date.ago( currentPicture[ "date" ].string! )
         
         UIHelper.formatRoundedImage( authorAvatar, radius: 26, color: UIHelper.black, border: 1.5 )
         authorAvatar.image = Picture.getImageFromUrl( currentPicture[ "avatar" ].string! )
         
         if ( User.isOwner( currentPicture[ "user_id" ] ) ) {
-            // Add delete button
+            self._addDeleteButton()
+        }
+    }
+    
+    private func _addDeleteButton()
+    {
+        let deleteBtn = UIButton( type: .Custom )
+        let deleteImg = UIImage( named: "delete-icon" )
+        
+        deleteBtn.addTarget( self, action: #selector(PictureDetailsViewController._deletePicture(_:)), forControlEvents: UIControlEvents.TouchUpInside )
+        deleteBtn.setImage( deleteImg, forState: .Normal )
+        deleteBtn.sizeToFit()
+        
+        let deleteImgItem = UIBarButtonItem( customView: deleteBtn )
+        
+        self.navigationItem.setRightBarButtonItems( [ deleteImgItem ], animated: true )
+    }
+    
+    func _deletePicture(sender: UIBarButtonItem)
+    {
+        ModelPicture.delete( String( self.currentPicture[ "id" ] ) ) {
+            Navigator.goBack( self )
         }
     }
     
@@ -87,13 +107,13 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier( "commentCell", forIndexPath: indexPath ) as! CommentTableViewCell
+        let cell    = tableView.dequeueReusableCellWithIdentifier( "commentCell", forIndexPath: indexPath ) as! CommentTableViewCell
         let comment = comments[ indexPath.row ]
         
         tableView.separatorColor = UIHelper.red
         
         cell.authorName.text = comment[ "author" ].string
-        cell.comment.text = comment[ "comment" ].string
+        cell.comment.text    = comment[ "comment" ].string
         UIHelper.formatRoundedImage( cell.authorAvatar, radius: 20, color: UIHelper.black, border: 1.5 )
         cell.authorAvatar.image = Picture.getImageFromUrl( String( comment[ "avatar" ] ) )
         
@@ -109,8 +129,8 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
             let commentViewController = segue.destinationViewController as! AddCommentViewController
             
             commentViewController.sPictureid = String( currentPicture[ "id" ] )
-            commentViewController.sEventId = currentPicture[ "event_id" ].string
-            commentViewController.picture = String( currentPicture[ "image" ] )
+            commentViewController.sEventId   = currentPicture[ "event_id" ].string
+            commentViewController.picture    = String( currentPicture[ "image" ] )
         }
     }
 }
