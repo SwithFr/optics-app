@@ -375,13 +375,13 @@
 		09EF1E971C9A063100796BF6 /* Optics */ = {
 			isa = PBXGroup;
 			children = (
+				09197BCA1C9AD50A0010C77E /* controllers */,
 				09B4D3E11CA5A57D00E24FE5 /* core */,
 				0954B1271C9CB0F2007398EF /* fonts */,
 				09197BE51C9ADE820010C77E /* helpers */,
 				09197BE01C9ADC4B0010C77E /* libs */,
-				09197BCC1C9AD51A0010C77E /* views */,
 				09197BCB1C9AD5140010C77E /* models */,
-				09197BCA1C9AD50A0010C77E /* controllers */,
+				09197BCC1C9AD51A0010C77E /* views */,
 				09EF1E981C9A063100796BF6 /* AppDelegate.swift */,
 				0954B1191C9C8898007398EF /* MainViewController.swift */,
 				09EF1EA41C9A063100796BF6 /* Assets.xcassets */,
@@ -721,6 +721,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Optics/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swith.Optics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -732,6 +733,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Optics/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = swith.Optics;
 				PRODUCT_NAME = "$(TARGET_NAME)";
