@@ -95,7 +95,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     {
         UIHelper.formatBtn( saveBtn )
         UIHelper.formatTextArea( eventDescription )
-        UIHelper.formatInput( eventTitle )
+        UIHelper.formatInput( eventTitle, withLeftPadding: false )
         
         eventTitle.delegate       = self
         eventDescription.delegate = self

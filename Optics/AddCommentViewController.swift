@@ -17,7 +17,7 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
     
     var sPictureid: String!
     var sEventId: String!
-    var picture: String!
+    var picture: UIImage!
     
     let ModelComment = Comment()
     
@@ -55,7 +55,7 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
     {
         UIHelper.formatTextArea( comment )
         UIHelper.formatBtn( addBtn )
-        backgroundImage.image = Image.decode( picture )
+        backgroundImage.image = picture
         Image.blur( backgroundImage )
         comment.delegate = self
     }
