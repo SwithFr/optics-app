@@ -73,8 +73,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         if let imageCached = cache.objectForKey( imageName ) as? UIImage {
             cell.picture.image = imageCached
         } else {
-            let image = Picture.getImageFromUrl( "http://192.168.99.100/\(imageName)" )
-            
+            let image = Picture.getImageFromUrl( "http://api.optics.swith.fr:2345/\(imageName)" )
             cache.setObject( image, forKey: imageName )
             cell.picture.image = image
         }

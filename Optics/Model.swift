@@ -88,15 +88,16 @@ class Model
     // Upload an image
     func uploadImage( eventId: String, image: UIImage, next: (error: NSError?, data: NSData) -> Void )
     {
-        let request = _makeRequest( "pictures" )
-        let boundary = _generateBoundaryString()
+        let request      = _makeRequest( "pictures" )
+        let boundary     = _generateBoundaryString()
+        let resizedImage = Image.cropToSquare( image: image )
+        let imageData    = UIImageJPEGRepresentation( resizedImage, 0.7 )
         
         request.HTTPMethod = "POST"
         
         _setHeaders( request )
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        let imageData = UIImageJPEGRepresentation( image, 0.5 )
         if(imageData==nil) {
             return
         }

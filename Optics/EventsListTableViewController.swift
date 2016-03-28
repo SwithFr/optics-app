@@ -11,6 +11,7 @@ import UIKit
 class EventsListTableViewController: UITableViewController {
 
     @IBOutlet var eventIdField: UITextField?
+    
     var events:[JSON] = []
     let ModelEvent    = Event()
     

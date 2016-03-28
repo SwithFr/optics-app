@@ -69,13 +69,23 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
 
     private func _loadData()
     {
-        currentImage       = Picture.getImageFromUrl( "http://192.168.99.100/\( String( currentPicture[ "title" ] ) )" )
+        let avatarUrl      = currentPicture[ "avatar" ].string!
+        
+        currentImage       = Picture.getImageFromUrl( "http://api.optics.swith.fr:2345/\( String( currentPicture[ "title" ] ) )" )
         picture.image      = currentImage
         authorName.text    = currentPicture[ "author" ].string
         pictureTime.text   = Date.ago( currentPicture[ "date" ].string! )
         
         UIHelper.formatRoundedImage( authorAvatar, radius: 26, color: UIHelper.black, border: 1.5 )
-        authorAvatar.image = Picture.getImageFromUrl( currentPicture[ "avatar" ].string! )
+        
+        if let avatarCached = cache.objectForKey( "\(avatarUrl)" ) as? UIImage {
+            authorAvatar.image = avatarCached
+        } else {
+            let avatar = Picture.getImageFromUrl( avatarUrl )
+            
+            cache.setObject( avatar, forKey: avatarUrl )
+            authorAvatar.image = avatar
+        }
         
         if ( User.isOwner( currentPicture[ "user_id" ] ) ) {
             self._addDeleteButton()
