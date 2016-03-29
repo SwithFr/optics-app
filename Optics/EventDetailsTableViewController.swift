@@ -17,6 +17,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     let ModelPicture    = Picture()
     let imageFromSource = UIImagePickerController()
     var cache: NSCache!
+    var imageToPass: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         cache = NSCache()
         
         imageFromSource.delegate      = self
-        imageFromSource.allowsEditing = false
+        imageFromSource.allowsEditing = true
         
         _setNavigationButtons()
     }
@@ -208,10 +209,12 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
         if ( segue.identifier == "pictureDetailsSegue" ) {
-            let indexPath = self.tableView.indexPathForSelectedRow!
+            let indexPath                    = self.tableView.indexPathForSelectedRow!
+            let selectedCell                 = tableView.cellForRowAtIndexPath( indexPath )! as! PictureTableViewCell
             let pictureDetailsViewController = segue.destinationViewController as! PictureDetailsViewController
             
             pictureDetailsViewController.currentPicture = images[ indexPath.row ]
+            pictureDetailsViewController.currentImage   = selectedCell.picture.image
         }
     }
 

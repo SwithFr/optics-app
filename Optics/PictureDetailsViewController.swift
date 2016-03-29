@@ -71,8 +71,12 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     {
         let avatarUrl      = currentPicture[ "avatar" ].string!
         
-        currentImage       = Picture.getImageFromUrl( "http://api.optics.swith.fr:2345/\( String( currentPicture[ "title" ] ) )" )
-        picture.image      = currentImage
+        if let cachedImage = cache.objectForKey( "currentImage_\(String( currentPicture[ "id" ]) )" ) as? UIImage {
+            picture.image = cachedImage
+        } else {
+            cache.setObject( currentImage, forKey: "currentImage_\(String( currentPicture[ "id" ]) )" )
+            picture.image      = currentImage
+        }
         authorName.text    = currentPicture[ "author" ].string
         pictureTime.text   = Date.ago( currentPicture[ "date" ].string! )
         
@@ -108,8 +112,10 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     
     func _deletePicture(sender: UIBarButtonItem)
     {
-        ModelPicture.delete( String( self.currentPicture[ "id" ] ) ) {
-            Navigator.goBack( self )
+        self.askBeforeDelete( "Supprimer ?", message: "Voulez-vous vraiment supprimer cette photo ?", buttonText: "Oui !", otherButtonTitle: "Oups, non !" ) {
+            self.ModelPicture.delete( String( self.currentPicture[ "id" ] ) ) {
+                Navigator.goBack( self )
+            }
         }
     }
     

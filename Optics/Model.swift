@@ -91,7 +91,7 @@ class Model
         let request      = _makeRequest( "pictures" )
         let boundary     = _generateBoundaryString()
         let resizedImage = Image.cropToSquare( image: image )
-        let imageData    = UIImageJPEGRepresentation( resizedImage, 0.7 )
+        let imageData    = UIImageJPEGRepresentation( resizedImage, 0.8 )
         
         request.HTTPMethod = "POST"
         
