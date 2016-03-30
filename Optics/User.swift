@@ -69,6 +69,39 @@ class User : Model
         }
     }
 
+    // Get current user settings
+    func getSettings(completionHandler: (data: NSData) -> Void)
+    {
+        self.get( "users/settings", authenticate: true ) {
+            error, data in
+            
+            if error != nil {
+                print("error")
+            } else {
+                dispatch {
+                    completionHandler( data: data )
+                }
+            }
+        }
+    }
+    
+    // Update current user settings
+    func updateSettings(username: String, password: String, completionHandler: (data: NSData) -> Void)
+    {
+        let data = [
+            "login": username,
+            "password": password
+        ]
+        self.setData( JSONStringify( data ) )
+        self.update( "users/\(User.getUserProperty( "USER_ID" )!)", authenticate: true ) {
+            error, data in
+            if ( error == nil ) {
+                dispatch {
+                    completionHandler( data: data )
+                }
+            }
+        }
+    }
     
     // Check if current user is the owner of a ressource
     static func isOwner(ownerID: JSON) -> Bool

@@ -37,7 +37,7 @@ class Model
     private func _performRequest(route: String, method: String, authenticate: Bool?, next: (error: NSError?, data: NSData) -> Void )
     {
         let request = _makeRequest( route )
-        
+     
         request.HTTPMethod = method
         
         if authenticate != nil {
@@ -50,11 +50,15 @@ class Model
             }
         }
         
+        if method == "PATCH" {
+            request.addValue( "application/json", forHTTPHeaderField: "Content-Type" )
+        }
+        
         if method == "POST" || self.data != "" {
             request.HTTPBody = self.data.dataUsingEncoding( NSUTF8StringEncoding )
         }
         
-        _ = NSURLSession.sharedSession().dataTaskWithRequest( request ) {
+        NSURLSession.sharedSession().dataTaskWithRequest( request ) {
             data, response, error in
                 if ( data == nil ) {
                     dispatch {
@@ -64,7 +68,7 @@ class Model
                     next( error: error, data: data! )
                 }
             
-            }.resume()
+        }.resume()
     }
     
     // Make a POST request
@@ -83,6 +87,12 @@ class Model
     func delete( route: String, authenticate: Bool?, next: (error: NSError?, data: NSData) -> Void )
     {
         _performRequest(route, method: "DELETE", authenticate: authenticate, next: next)
+    }
+
+    // Make a DELETE request
+    func update( route: String, authenticate: Bool?, next: (error: NSError?, data: NSData) -> Void )
+    {
+        _performRequest(route, method: "PATCH", authenticate: authenticate, next: next)
     }
     
     // Upload an image

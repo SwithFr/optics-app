@@ -26,6 +26,9 @@
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-Regular.ttf">
             <string>Raleway</string>
@@ -240,6 +243,91 @@
             </objects>
             <point key="canvasLocation" x="958.5" y="283.5"/>
         </scene>
+        <!--Account View Controller-->
+        <scene sceneID="kip-6L-pAy">
+            <objects>
+                <viewController storyboardIdentifier="accountView" id="HrO-I3-xBW" customClass="AccountViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rf5-jK-jUX"/>
+                        <viewControllerLayoutGuide type="bottom" id="yJY-5D-GuU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yV5-RW-9dw">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="KP5-pK-2KX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipb-ow-at2">
+                                <rect key="frame" x="87" y="20" width="200" height="200"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pm8-QM-UYn">
+                                <rect key="frame" x="29" y="262" width="317" height="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Changer le mot de passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAa-9b-gpW">
+                                <rect key="frame" x="29" y="351" width="317" height="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmer le mot de passe" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-CY-mlf">
+                                <rect key="frame" x="29" y="449" width="317" height="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxX-Ey-pPB">
+                                <rect key="frame" x="29" y="517" width="317" height="43"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Mettre à jour">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBtnTapped:" destination="HrO-I3-xBW" eventType="touchUpInside" id="cNN-NE-pqJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="d95-Gf-wnD">
+                                <rect key="frame" x="29" y="262" width="22" height="22"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock-input" translatesAutoresizingMaskIntoConstraints="NO" id="4JT-W8-oRB">
+                                <rect key="frame" x="29" y="353" width="22" height="22"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock-input" translatesAutoresizingMaskIntoConstraints="NO" id="yZG-ZJ-GOv">
+                                <rect key="frame" x="29" y="451" width="22" height="22"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirmField" destination="dTA-CY-mlf" id="FK4-mw-cWB"/>
+                        <outlet property="passwordField" destination="bAa-9b-gpW" id="yWj-DC-3kZ"/>
+                        <outlet property="saveBtn" destination="MxX-Ey-pPB" id="D9G-CE-IGT"/>
+                        <outlet property="userAvatar" destination="Ipb-ow-at2" id="pTs-AN-sqe"/>
+                        <outlet property="usernameField" destination="pm8-QM-UYn" id="uwz-Ft-qzY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghq-re-tL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="958.5" y="1884.5"/>
+        </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="kjU-cc-984">
             <objects>
@@ -255,18 +343,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-bW-amC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon compte" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keo-u9-sh7">
-                                <rect key="frame" x="49" y="124" width="118" height="24"/>
-                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mes amis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnm-4i-jdK">
-                                <rect key="frame" x="49" y="238" width="97" height="24"/>
-                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-wJ-udE">
                                 <rect key="frame" x="49" y="346" width="123" height="30"/>
                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
@@ -275,6 +351,22 @@
                                     <action selector="logoutBtnTapped:" destination="32k-Aw-qOl" eventType="touchUpInside" id="CK4-jm-XCG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvx-Cv-La1">
+                                <rect key="frame" x="49" y="122" width="118" height="30"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                <state key="normal" title="Mon compte">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="HrO-I3-xBW" kind="show" identifier="accountSegue" id="TCS-Sn-bNU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mes amis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnm-4i-jdK">
+                                <rect key="frame" x="49" y="230" width="97" height="24"/>
+                                <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
