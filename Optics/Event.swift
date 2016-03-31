@@ -72,7 +72,7 @@ class Event: Model
     {
         self.get("events/join/\(iEventID)", authenticate: true) {
             error, data in
-            // TODO: Verifications
+            // TODO: Verifications ALREADY_JOINED...
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler( data: data )
             }
