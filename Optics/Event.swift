@@ -67,12 +67,31 @@ class Event: Model
         }
     }
     
+    // Update event infos
+    func update(sEventID: String, title: String, description: String, completionHandler: (data: NSData) -> Void)
+    {
+        let data = [
+            "title": title,
+            "description": description
+        ]
+        
+        self.setData( JSONStringify( data ) )
+        self.update( "events/\(sEventID)", authenticate: true ) {
+            error, data in
+            if ( error == nil ) {
+                dispatch {
+                    completionHandler( data: data )
+                }
+            }
+        }
+    }
+    
     // Join an event
     func join(iEventID: String, completionHandler: (data: NSData) -> Void)
     {
         self.get("events/join/\(iEventID)", authenticate: true) {
             error, data in
-            // TODO: Verifications
+            // TODO: Verifications ALREADY_JOINED...
             dispatch_async(dispatch_get_main_queue()) {
                 completionHandler( data: data )
             }

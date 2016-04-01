@@ -61,7 +61,7 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, UITextViewD
     private func _setUI()
     {
         UIHelper.formatBtn( addBtn )
-        UIHelper.formatInput( eventTitleField )
+        UIHelper.formatInput( eventTitleField, withLeftPadding: false )
         UIHelper.formatTextArea( eventDescriptionField )
         
         eventTitleField.returnKeyType       = .Next

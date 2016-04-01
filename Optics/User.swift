@@ -92,6 +92,7 @@ class User : Model
             "login": username,
             "password": password
         ]
+        
         self.setData( JSONStringify( data ) )
         self.update( "users/\(User.getUserProperty( "USER_ID" )!)", authenticate: true ) {
             error, data in
