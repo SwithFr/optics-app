@@ -9,12 +9,18 @@
 import UIKit
 
 class MainMenuViewController: UIViewController {
+    
+    var user: JSON!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        _loadData()
     }
     
+    /*
+        LIGHT STATUS BAR
+     */
     override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
@@ -23,6 +29,9 @@ class MainMenuViewController: UIViewController {
         return false
     }
     
+    /*
+        ACTIONS
+     */
     @IBAction func logoutBtnTapped(sender: AnyObject)
     {
         User.logout()
@@ -30,20 +39,23 @@ class MainMenuViewController: UIViewController {
         Navigator.goTo( "loginView", vc: self )
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    /*
+        PRIVATE
+     */
+    private func _loadData()
+    {
+        User().getSettings {
+            data in
+            self.user = JSON( data: data )
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if ( segue.identifier == "accountSegue" ) {
+            let accountController = segue.destinationViewController as! AccountViewController
+            
+            accountController.user = user
+        }
     }
-    */
-
 }

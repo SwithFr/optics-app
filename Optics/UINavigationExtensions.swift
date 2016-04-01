@@ -12,11 +12,13 @@ import UIKit
 // To custom status bar to light content
 extension UINavigationController {
     
-    public override func childViewControllerForStatusBarHidden() -> UIViewController? {
+    public override func childViewControllerForStatusBarHidden() -> UIViewController?
+    {
         return self.topViewController
     }
     
-    public override func childViewControllerForStatusBarStyle() -> UIViewController? {
+    public override func childViewControllerForStatusBarStyle() -> UIViewController?
+    {
         return self.topViewController
     }
     
