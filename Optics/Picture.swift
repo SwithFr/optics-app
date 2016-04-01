@@ -16,11 +16,11 @@ class Picture: Model
         self.setParams( [ "eventid": sEventID ] )
         self.get( "pictures" , authenticate: true) {
             error, data in
-            dispatch_async( dispatch_get_main_queue() ) {
-                if error != nil {
-                    print("error")
-                }
+            if error != nil {
+                print("error")
+            }
                 
+            dispatch {
                 completionHandler( data: data )
             }
         }
@@ -35,7 +35,7 @@ class Picture: Model
                 return
             }
             
-            dispatch_async( dispatch_get_main_queue() ) {
+            dispatch {
                 completionHandler( data: data )
             }
         }
@@ -51,7 +51,7 @@ class Picture: Model
                 return
             }
             
-            dispatch_async(dispatch_get_main_queue()) {
+            dispatch {
                 completionHandler()
             }
         }
@@ -59,7 +59,7 @@ class Picture: Model
     
     static func getImageFromUrl(url: String) -> UIImage
     {
-        let url = NSURL( string: url )
+        let url  = NSURL( string: url )
         let data = NSData( contentsOfURL: url! )
         
         return UIImage( data: data! )!

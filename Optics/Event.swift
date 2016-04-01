@@ -15,12 +15,12 @@ class Event: Model
     {
         self.get( "events", authenticate: true ) {
             error, data in
-            dispatch_async( dispatch_get_main_queue() ) {
                 
-                if error != nil {
-                    errorHandler()
-                }
+            if ( error != nil ) {
+                errorHandler()
+            }
                 
+            dispatch {
                 completionHandler( data: data )
             }
         }
@@ -37,14 +37,14 @@ class Event: Model
             self.post( "events/create", authenticate: true ) {
                 error, data in
                 
-                if error != nil {
+                if ( error != nil ) {
                     print( "error" )
                     return
                 }
                 
-                dispatch_async( dispatch_get_main_queue(), {
+                dispatch {
                     completionHandler()
-                } )
+                }
             }
         }
 
@@ -92,7 +92,7 @@ class Event: Model
         self.get("events/join/\(iEventID)", authenticate: true) {
             error, data in
             // TODO: Verifications ALREADY_JOINED...
-            dispatch_async(dispatch_get_main_queue()) {
+            dispatch {
                 completionHandler( data: data )
             }
         }

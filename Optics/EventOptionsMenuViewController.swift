@@ -71,24 +71,10 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
      */
     private func _setNavigationButtons()
     {
-        let shareImg = UIImage( named: "share-icon" )
-        let shareBtn = UIButton(type: .Custom )
-        
-        shareBtn.addTarget( self, action: #selector(EventOptionsMenuViewController._shareEvent(_:)), forControlEvents: UIControlEvents.TouchUpInside )
-        shareBtn.setImage( shareImg, forState: .Normal )
-        shareBtn.sizeToFit()
-        
-        let shareBtnItem = UIBarButtonItem( customView: shareBtn )
+        let shareBtnItem = Button.forge( self, image: "share-icon", action: #selector(EventOptionsMenuViewController._shareEvent(_:)) )
         
         if ( User.isOwner( currentEvent[ "user_id" ] ) ) {
-            let deleteImg = UIImage( named: "delete-icon" )
-            let deleteBtn = UIButton(type: .Custom )
-            
-            deleteBtn.addTarget( self, action: #selector(EventOptionsMenuViewController._deleteEvent(_:)), forControlEvents: UIControlEvents.TouchUpInside )
-            deleteBtn.setImage( deleteImg, forState: .Normal )
-            deleteBtn.sizeToFit()
-            
-            let deleteBtnItem = UIBarButtonItem( customView: deleteBtn )
+            let deleteBtnItem = Button.forge( self, image: "delete-icon", action: #selector(EventOptionsMenuViewController._deleteEvent(_:)) )
             
             self.navigationItem.setRightBarButtonItems( [ shareBtnItem, deleteBtnItem ], animated: true )
         } else {

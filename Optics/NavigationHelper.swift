@@ -15,6 +15,7 @@ class Navigator
     static func goTo(viewControllerId: String, vc: UIViewController)
     {
         let targetVC = vc.storyboard?.instantiateViewControllerWithIdentifier( viewControllerId )
+        
         vc.navigationController?.pushViewController( targetVC!, animated: true )
     }
     

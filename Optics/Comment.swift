@@ -20,9 +20,12 @@ class Comment: Model
             
             if ( error != nil ) {
                 print( "Error when add comment" )
+                return
             }
             
-            next( data: data )
+            dispatch {
+                next( data: data )
+            }
         }
     }
     
@@ -35,6 +38,7 @@ class Comment: Model
             
             if ( error != nil ) {
                 print( "Error when getting comments" )
+                return
             }
             
             dispatch {

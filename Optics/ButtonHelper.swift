@@ -30,6 +30,7 @@ class Button
         return UIBarButtonItem( customView: button)
     }
     
+    // create a new bar button item
     static func forge(target: UIViewController, image: String, action: Selector, type: UIButtonType = .Custom) -> UIBarButtonItem
     {
         let btn     = self.create( type )

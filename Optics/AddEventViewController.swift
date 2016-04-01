@@ -48,9 +48,7 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, UITextViewD
         
         ModelEvent.add( title, description: description ) {
             dispatch {
-                let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" )
-                
-                self.navigationController!.pushViewController( eventListVC!, animated: true )
+                Navigator.goTo( "eventsListView", vc: self )
             }
         }
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // Dispatch closure in main thread
 func dispatch(completion: () -> Void)
@@ -35,6 +36,28 @@ func JSONStringify(value: AnyObject,prettyPrinted:Bool = false) -> String{
         }
         
     }
-    return ""
     
+    return ""
+}
+
+// Temporary method for developement!
+func getBaseUrl() -> String
+{
+    let deviceName = UIDevice.currentDevice().name
+        
+    var baseUrl = ""
+        
+    switch deviceName {
+        case "Iphone Simulator":
+            baseUrl = "http://192.168.99.100/"
+            break
+        case "Swith":
+            baseUrl = "http://api.optics.swith.fr:2345/"
+            break
+        default:
+            baseUrl = "http://192.168.99.100/"
+            break
+    }
+        
+    return baseUrl
 }

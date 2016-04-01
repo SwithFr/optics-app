@@ -37,4 +37,9 @@ extension UIViewController {
             viewWithTag.removeFromSuperview()
         }
     }
+    
+    func present(target: UIViewController)
+    {
+        self.presentViewController( target, animated: true, completion: nil )
+    }
 }

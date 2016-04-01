@@ -97,8 +97,7 @@ class EventsListTableViewController: UITableViewController {
         popView.addAction(otherAction)
         popView.addAction(cancelAction)
         
-        self.presentViewController( popView, animated: true, completion: nil )
-
+        self.present( popView )
     }
     
     /*
@@ -123,8 +122,7 @@ class EventsListTableViewController: UITableViewController {
     
     // Show the add event screen
     private func _displayAddScreen() {
-        let addEventVC = self.storyboard?.instantiateViewControllerWithIdentifier( "addEventView" )
-        self.navigationController?.pushViewController( addEventVC!, animated: true )
+        Navigator.goTo( "addEventView", vc: self )
     }
     
     // Add input in UIAlertView
@@ -155,7 +153,7 @@ class EventsListTableViewController: UITableViewController {
         popView.addAction(defaultAction)
         popView.addAction(cancelAction)
         
-        self.presentViewController( popView, animated: true, completion: nil )
+        self.present( popView )
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

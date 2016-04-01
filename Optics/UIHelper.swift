@@ -16,7 +16,7 @@ public struct UIHelper
     static let green        = UIColor( red:0.75, green:0.89, blue:0.86, alpha:1.0 )
     static let red          = UIColor( red:0.94, green:0.32, blue:0.26, alpha:1.0 )
     static let grey         = UIColor( red:0.58, green:0.60, blue:0.60, alpha:1.0 )
-    static let transparent  = UIColor( red:0, green:0, blue:0, alpha:0 )
+    static let transparent  = UIColor( red:0.00, green:0.00, blue:0.00, alpha:0.0 )
     
     // UTILS
     static let width  = CGFloat( 1.0 )
@@ -49,6 +49,7 @@ public struct UIHelper
         border.borderColor = red.CGColor
         border.frame       = CGRect( x: 0, y: input.frame.size.height - width, width:  input.frame.size.width, height: input.frame.size.height )
         border.borderWidth = width
+        
         input.layer.addSublayer( border )
         input.layer.masksToBounds = true
     }
@@ -62,18 +63,21 @@ public struct UIHelper
     {
         img.layer.cornerRadius    = radius
         img.layer.borderWidth     = border
-        img.layer.backgroundColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:1.0).CGColor
+        img.layer.backgroundColor = black.CGColor
         img.layer.borderColor     = color.CGColor
         img.clipsToBounds         = true
     }
     
-    static func formatTextArea(text: UITextView)
+    static func formatTextArea(text: UITextView, withBorderRadius: Bool = true)
     {
         text.backgroundColor    = UIColor.clearColor()
         text.layer.borderWidth  = width
         text.layer.borderColor  = red.CGColor
-        text.layer.cornerRadius = CGFloat(5)
         text.textColor          = white
+
+        if ( withBorderRadius ) {
+            text.layer.cornerRadius = CGFloat(5)
+        }
     }
 
 }

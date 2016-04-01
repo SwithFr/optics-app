@@ -44,26 +44,23 @@ extension UIViewController
     {
         let alert = UIAlertController( title: "Choisir une image", message: nil, preferredStyle: .ActionSheet )
         
-        let cameraAction = UIAlertAction( title: "Prendre une photo", style: .Default )
-        {
+        let cameraAction = UIAlertAction( title: "Prendre une photo", style: .Default ) {
             UIAlertAction in
             actionForCamera()
         }
-        let gallaryAction = UIAlertAction( title: "Choisir une existante", style: .Default )
-        {
+        let gallaryAction = UIAlertAction( title: "Choisir une existante", style: .Default ) {
             UIAlertAction in
             actionForGallery()
         }
-        let cancelAction = UIAlertAction( title: "Cancel", style: .Cancel )
-        {
+        let cancelAction = UIAlertAction( title: "Cancel", style: .Cancel ) {
             UIAlertAction in
         }
         
-        alert.addAction(cameraAction)
-        alert.addAction(gallaryAction)
-        alert.addAction(cancelAction)
+        alert.addAction( cameraAction )
+        alert.addAction( gallaryAction )
+        alert.addAction( cancelAction )
         
-        self.presentViewController( alert, animated: true, completion: nil )
+        self.present( alert )
     }
     
     func alert(title: String, message: String, buttonText: String, cancelButton: String, completion: () -> Void)

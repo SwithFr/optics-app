@@ -130,29 +130,13 @@ class Model
     private func _setHeaders(request: NSMutableURLRequest)
     {
         request.addValue( User.getUserProperty( "USER_TOKEN" ) as! String, forHTTPHeaderField: "usertoken")
-        request.addValue( (User.getUserProperty( "USER_ID" )?.stringValue)!, forHTTPHeaderField: "userid" )
+        request.addValue( ( User.getUserProperty( "USER_ID" )?.stringValue )!, forHTTPHeaderField: "userid" )
     }
     
     // Create a request with an URL
     private func _makeRequest(route: String) -> NSMutableURLRequest
     {
-        
-        var baseUrl: String!
-        let deviceName = UIDevice.currentDevice().name
-        
-        switch deviceName {
-        case "Iphone Simulator":
-            baseUrl = "http://192.168.99.100/"
-            break
-        case "Swith":
-            baseUrl = "http://api.optics.swith.fr:2345/"
-            break
-        default:
-            baseUrl = "http://192.168.99.100/"
-            break
-        }
-        
-        return NSMutableURLRequest( URL: NSURL( string: baseUrl + route )! )
+        return NSMutableURLRequest( URL: NSURL( string: getBaseUrl() + route )! )
     }
     
     // Generate boundary string

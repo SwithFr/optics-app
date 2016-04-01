@@ -19,4 +19,5 @@ extension UINavigationController {
     public override func childViewControllerForStatusBarStyle() -> UIViewController? {
         return self.topViewController
     }
+    
 }

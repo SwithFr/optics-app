@@ -111,27 +111,33 @@ class User : Model
     }
     
     // Get current user
-    static func getCurrentUser() -> NSUserDefaults {
+    static func getCurrentUser() -> NSUserDefaults
+    {
         let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
         return user
     }
     
     // Get Current user property (token or id)
-    static func getUserProperty(key: String) -> AnyObject? {
+    static func getUserProperty(key: String) -> AnyObject?
+    {
         let user = getCurrentUser()
+        
         return user.valueForKey( key )
     }
     
     // Check if a user is authenticated
-    static func isAuthenticated() -> Bool {
+    static func isAuthenticated() -> Bool
+    {
         return getUserProperty( "USER_TOKEN" ) != nil
     }
     
     // Disconnect the user
-    static func logout() -> Void {
+    static func logout() -> Void
+    {
         if ( isAuthenticated() ) {
             let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+            
             user.removeObjectForKey( "USER_ID" )
             user.removeObjectForKey( "USER_TOKEN" )
         }
