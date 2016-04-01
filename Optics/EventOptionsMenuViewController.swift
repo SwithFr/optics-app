@@ -18,19 +18,23 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     @IBOutlet weak var scrollView: UIScrollView!
     
     var currentEvent: JSON!
+    
     let ModelEvent = Event()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        navigationController?.delegate = self
+        
         _setNavigationButtons()
         _loadData()
         _setUI()
     }
     
     /*
-    LIIGHT STATUS BAR
-    */
+        LIGHT STATUS BAR
+     */
     override internal func preferredStatusBarStyle() -> UIStatusBarStyle
     {
         return .LightContent
@@ -42,8 +46,29 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     }
     
     /*
+        ACTIONS
+     */
+    @IBAction func saveBtnTapped(sender: AnyObject)
+    {
+        ModelEvent.update( String( currentEvent[ "uuid" ] ), title: eventTitle.text!, description: eventDescription.text! ) {
+            data in
+            dispatch {
+                self.currentEvent = JSON( data: data )[ "data" ]
+                Navigator.goBack( self )
+            }
+        }
+    }
+    
+    func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool)
+    {
+        if let controller = viewController as? EventDetailsTableViewController {
+            controller.currentEvent = currentEvent
+        }
+    }
+    
+    /*
         PRIVATE
-    */
+     */
     private func _setNavigationButtons()
     {
         let shareImg = UIImage( named: "share-icon" )
@@ -93,15 +118,23 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     
     private func _setUI()
     {
-        UIHelper.formatBtn( saveBtn )
+        if ( User.isOwner( currentEvent[ "user_id" ] ) ) {
+            UIHelper.formatBtn( saveBtn )
+
+            eventTitle.delegate       = self
+            eventDescription.delegate = self
+            
+            eventDescription.returnKeyType = .Continue
+            eventTitle.returnKeyType       = .Next
+        } else {
+            saveBtn.hidden                         = true
+            eventDescription.editable              = false
+            eventTitle.allowsEditingTextAttributes = false
+            
+        }
+        
         UIHelper.formatTextArea( eventDescription )
         UIHelper.formatInput( eventTitle, withLeftPadding: false )
-        
-        eventTitle.delegate       = self
-        eventDescription.delegate = self
-        
-        eventDescription.returnKeyType = .Continue
-        eventTitle.returnKeyType       = .Next
         
         self.title = "Infos de l'évènement"
     }
@@ -119,8 +152,8 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     }
     
     /*
-    KEYBOARD
-    */
+        KEYBOARD
+     */
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         if ( textField == eventTitle ) {
@@ -128,6 +161,15 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         }
         
         return false
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool
+    {
+        if ( !User.isOwner( currentEvent[ "user_id" ] ) ) {
+            return false
+        }
+        
+        return true
     }
     
     func textViewdDidBeginEditing(textView: UITextView)

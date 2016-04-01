@@ -12,17 +12,15 @@ import CoreMedia
 class EventDetailsTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     var currentEvent: JSON!
-    var images: [JSON]  = []
+    var images: [JSON] = []
+    var imageToPass: UIImage!
     
+    let cache           = NSCache()
     let ModelPicture    = Picture()
     let imageFromSource = UIImagePickerController()
-    var cache: NSCache!
-    var imageToPass: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cache = NSCache()
         
         imageFromSource.delegate      = self
         imageFromSource.allowsEditing = true
@@ -36,7 +34,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     }
     
     /*
-    LIIGHT STATUS BAR
+        LIGHT STATUS BAR
     */
     override internal func preferredStatusBarStyle() -> UIStatusBarStyle
     {
@@ -67,9 +65,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         let cell = tableView.dequeueReusableCellWithIdentifier( "pictureCell", forIndexPath: indexPath ) as! PictureTableViewCell
         
         let image        = images[ indexPath.row ]
-//        let decodedData  = NSData( base64EncodedString: String( image[ "image" ] ), options: NSDataBase64DecodingOptions( rawValue: 0 ) )
-//        let decodedimage = UIImage( data: decodedData! )
-        let imageName = String( image[ "title" ] )
+        let imageName    = String( image[ "title" ] )
         
         if let imageCached = cache.objectForKey( imageName ) as? UIImage {
             cell.picture.image = imageCached
@@ -78,7 +74,6 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
             cache.setObject( image, forKey: imageName )
             cell.picture.image = image
         }
-        //cell.picture.image = decodedimage! as UIImage
         
         tableView.separatorColor = UIHelper.red
         

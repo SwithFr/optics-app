@@ -418,6 +418,9 @@
                                         <state key="normal" title="Modifier les informations">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveBtnTapped:" destination="tgX-Ys-A6D" eventType="touchUpInside" id="rVT-6G-4tL"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfQ-uR-Gdj">
                                         <rect key="frame" x="113" y="461" width="148" height="21"/>
