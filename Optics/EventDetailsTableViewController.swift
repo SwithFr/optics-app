@@ -90,28 +90,9 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     // Add icons on navigation bar
     private func _setNavigationButtons()
     {
-        let addPictureBtn = UIButton( type: .Custom )
-        let menuBtn       = UIButton( type: .Custom )
-        let backBtn       = UIButton( type: .Custom )
-        let addPictureImg = UIImage( named: "add-picture-icon" )
-        let menuImg       = UIImage( named: "settings-icon" )
-        let backImg       = UIImage( named: "back-icon" )
-        let backBtnItem   = UIBarButtonItem( customView: backBtn )
-        
-        addPictureBtn.addTarget( self, action: #selector(EventDetailsTableViewController._addPicture(_:)), forControlEvents: UIControlEvents.TouchUpInside )
-        addPictureBtn.setImage( addPictureImg, forState: .Normal )
-        addPictureBtn.sizeToFit()
-        
-        menuBtn.addTarget( self, action: #selector(EventDetailsTableViewController._displayEventOptionsMenu(_:)), forControlEvents: UIControlEvents.TouchUpInside )
-        menuBtn.setImage( menuImg, forState: .Normal )
-        menuBtn.sizeToFit()
-        
-        backBtn.addTarget( self, action: #selector(EventDetailsTableViewController._goBack(_:)), forControlEvents: UIControlEvents.TouchUpInside )
-        backBtn.setImage( backImg, forState: .Normal )
-        backBtn.sizeToFit()
-        
-        let addPictureBtnItem = UIBarButtonItem( customView: addPictureBtn )
-        let menuBtnItem       = UIBarButtonItem( customView: menuBtn )
+        let backBtnItem       = Button.forge( self, image: "back-icon", action: #selector(EventDetailsTableViewController._goBack(_:)) )
+        let addPictureBtnItem = Button.forge( self, image: "add-picture-icon", action: #selector(EventDetailsTableViewController._addPicture(_:)) )
+        let menuBtnItem       = Button.forge( self, image: "settings-icon", action: #selector(EventDetailsTableViewController._displayEventOptionsMenu(_:)) )
         
         self.navigationItem.setRightBarButtonItems( [ addPictureBtnItem ], animated: true )
         self.navigationItem.setLeftBarButtonItems( [ backBtnItem, menuBtnItem ], animated: true )

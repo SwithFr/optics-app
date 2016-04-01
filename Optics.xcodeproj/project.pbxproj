@@ -39,6 +39,7 @@
 		09B4D3E51CA5A5F100E24FE5 /* UINavigationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B4D3E41CA5A5F100E24FE5 /* UINavigationExtensions.swift */; };
 		09BE0EC01CA1C61100DE0871 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0EBF1CA1C61100DE0871 /* Picture.swift */; };
 		09BE0EC21CA1DF3B00DE0871 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */; };
+		09BF1B621CAED6F8007C5FDA /* ButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BF1B611CAED6F8007C5FDA /* ButtonHelper.swift */; };
 		09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E981C9A063100796BF6 /* AppDelegate.swift */; };
 		09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9A1C9A063100796BF6 /* Optics.xcdatamodeld */; };
 		09EF1EA31C9A063100796BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA11C9A063100796BF6 /* Main.storyboard */; };
@@ -102,6 +103,7 @@
 		09B4D3E41CA5A5F100E24FE5 /* UINavigationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationExtensions.swift; sourceTree = "<group>"; };
 		09BE0EBF1CA1C61100DE0871 /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
+		09BF1B611CAED6F8007C5FDA /* ButtonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonHelper.swift; sourceTree = "<group>"; };
 		09EF1E951C9A063100796BF6 /* Optics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1E981C9A063100796BF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EF1E9B1C9A063100796BF6 /* Optics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Optics.xcdatamodel; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				0982CD291C9DCEAA00DBDE47 /* ModalHelper.swift */,
 				09F6F2E41CA097D700C5151D /* StringHelper.swift */,
 				09B4D3D71CA51B3900E24FE5 /* ImageHelper.swift */,
+				09BF1B611CAED6F8007C5FDA /* ButtonHelper.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				093379461C9EF28800E83722 /* EventDetailsTableViewController.swift in Sources */,
 				0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */,
 				09BE0EC21CA1DF3B00DE0871 /* PictureTableViewCell.swift in Sources */,
+				09BF1B621CAED6F8007C5FDA /* ButtonHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
