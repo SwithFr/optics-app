@@ -381,16 +381,16 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="OtS-bW-amC">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-wJ-udE">
-                                <rect key="frame" x="49" y="346" width="123" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLr-wJ-udE">
+                                <rect key="frame" x="49" y="380" width="221" height="72"/>
                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
                                 <state key="normal" title="Déconnexion"/>
                                 <connections>
                                     <action selector="logoutBtnTapped:" destination="32k-Aw-qOl" eventType="touchUpInside" id="CK4-jm-XCG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvx-Cv-La1">
-                                <rect key="frame" x="49" y="122" width="118" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvx-Cv-La1">
+                                <rect key="frame" x="49" y="90" width="221" height="52"/>
                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
                                 <state key="normal" title="Mon compte">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -400,7 +400,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mes amis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnm-4i-jdK">
-                                <rect key="frame" x="49" y="230" width="97" height="24"/>
+                                <rect key="frame" x="49" y="234" width="221" height="60"/>
                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -755,10 +755,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="pfF-Fa-Q6r">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="-2" width="375" height="669"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connexion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BoS-0O-L6v">
-                                        <rect key="frame" x="91" y="146" width="192" height="48"/>
+                                        <rect key="frame" x="91" y="166" width="192" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="RDY-Xe-imC"/>
                                         </constraints>
@@ -781,7 +781,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Identifiant" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxw-vK-hem">
-                                        <rect key="frame" x="20" y="259" width="335" height="30"/>
+                                        <rect key="frame" x="20" y="254" width="335" height="30"/>
                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
@@ -826,7 +826,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gqd-bi-uzG">
-                                        <rect key="frame" x="183" y="409" width="172" height="30"/>
+                                        <rect key="frame" x="183" y="404" width="172" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="I5g-EP-Dlj"/>
                                             <constraint firstAttribute="width" constant="172" id="url-gE-bvN"/>
@@ -837,14 +837,14 @@
                                         </state>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gJN-0M-nbf">
-                                        <rect key="frame" x="110" y="50" width="154" height="82"/>
+                                        <rect key="frame" x="110" y="70" width="154" height="82"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="154" id="VPd-0a-Df0"/>
                                             <constraint firstAttribute="height" constant="82" id="a1E-kM-707"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="VqF-LZ-U3d">
-                                        <rect key="frame" x="20" y="258" width="22" height="24"/>
+                                        <rect key="frame" x="20" y="253" width="22" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="va8-5Y-6ij"/>
                                         </constraints>
@@ -855,16 +855,16 @@
                                     <constraint firstItem="O1h-2x-PV0" firstAttribute="top" secondItem="Yel-bL-Hkx" secondAttribute="top" id="2yv-vH-O5x"/>
                                     <constraint firstItem="VqF-LZ-U3d" firstAttribute="leading" secondItem="vlw-qu-Dy2" secondAttribute="leading" constant="20" id="5bS-Q1-Ky5"/>
                                     <constraint firstItem="BoS-0O-L6v" firstAttribute="centerX" secondItem="vlw-qu-Dy2" secondAttribute="centerX" id="5yh-RI-wmb"/>
-                                    <constraint firstItem="gJN-0M-nbf" firstAttribute="top" secondItem="vlw-qu-Dy2" secondAttribute="top" constant="50" id="7Y2-zH-Vha"/>
+                                    <constraint firstItem="gJN-0M-nbf" firstAttribute="top" secondItem="vlw-qu-Dy2" secondAttribute="top" constant="70" id="7Y2-zH-Vha"/>
                                     <constraint firstAttribute="bottom" secondItem="3II-bJ-oMv" secondAttribute="bottom" constant="30" id="DkO-31-df4"/>
-                                    <constraint firstItem="lxw-vK-hem" firstAttribute="top" secondItem="BoS-0O-L6v" secondAttribute="bottom" constant="65" id="FcN-K4-Xms"/>
+                                    <constraint firstItem="lxw-vK-hem" firstAttribute="top" secondItem="BoS-0O-L6v" secondAttribute="bottom" constant="40" id="FcN-K4-Xms"/>
                                     <constraint firstItem="O1h-2x-PV0" firstAttribute="leading" secondItem="Yel-bL-Hkx" secondAttribute="leading" id="JwS-4W-hQB"/>
                                     <constraint firstItem="lxw-vK-hem" firstAttribute="leading" secondItem="O1h-2x-PV0" secondAttribute="leading" id="Lkd-EW-LU9"/>
                                     <constraint firstItem="BoS-0O-L6v" firstAttribute="centerX" secondItem="lxw-vK-hem" secondAttribute="centerX" id="M5X-Q5-1M8"/>
-                                    <constraint firstItem="pfF-Fa-Q6r" firstAttribute="centerY" secondItem="vlw-qu-Dy2" secondAttribute="centerY" id="MQ5-Bp-lsP"/>
-                                    <constraint firstItem="pfF-Fa-Q6r" firstAttribute="top" secondItem="vlw-qu-Dy2" secondAttribute="top" id="N3B-84-b7s"/>
+                                    <constraint firstItem="pfF-Fa-Q6r" firstAttribute="centerY" secondItem="vlw-qu-Dy2" secondAttribute="centerY" constant="-1" id="MQ5-Bp-lsP"/>
+                                    <constraint firstItem="pfF-Fa-Q6r" firstAttribute="top" secondItem="vlw-qu-Dy2" secondAttribute="top" constant="-2" id="N3B-84-b7s"/>
                                     <constraint firstItem="pfF-Fa-Q6r" firstAttribute="leading" secondItem="vlw-qu-Dy2" secondAttribute="leading" id="NcV-9h-YPN"/>
-                                    <constraint firstItem="O1h-2x-PV0" firstAttribute="top" secondItem="VqF-LZ-U3d" secondAttribute="bottom" constant="89" id="R9r-f2-gFZ"/>
+                                    <constraint firstItem="O1h-2x-PV0" firstAttribute="top" secondItem="VqF-LZ-U3d" secondAttribute="bottom" constant="94" id="R9r-f2-gFZ"/>
                                     <constraint firstItem="3II-bJ-oMv" firstAttribute="top" secondItem="Ck8-FR-Abk" secondAttribute="bottom" constant="19" id="Tek-oS-fat"/>
                                     <constraint firstAttribute="bottom" secondItem="pfF-Fa-Q6r" secondAttribute="bottom" id="Uld-RJ-LDz"/>
                                     <constraint firstItem="lxw-vK-hem" firstAttribute="leading" secondItem="VqF-LZ-U3d" secondAttribute="leading" id="aj0-aO-CSp"/>
@@ -872,9 +872,9 @@
                                     <constraint firstItem="pfF-Fa-Q6r" firstAttribute="centerX" secondItem="gJN-0M-nbf" secondAttribute="centerX" id="jTN-fP-UNd"/>
                                     <constraint firstItem="Gqd-bi-uzG" firstAttribute="trailing" secondItem="Yel-bL-Hkx" secondAttribute="trailing" id="lOf-cV-3TA"/>
                                     <constraint firstItem="gJN-0M-nbf" firstAttribute="centerX" secondItem="BoS-0O-L6v" secondAttribute="centerX" id="nNB-yr-Ulg"/>
-                                    <constraint firstItem="O1h-2x-PV0" firstAttribute="top" secondItem="lxw-vK-hem" secondAttribute="bottom" constant="82" id="nZd-iS-hYF"/>
+                                    <constraint firstItem="O1h-2x-PV0" firstAttribute="top" secondItem="lxw-vK-hem" secondAttribute="bottom" constant="87" id="nZd-iS-hYF"/>
                                     <constraint firstItem="BoS-0O-L6v" firstAttribute="top" secondItem="gJN-0M-nbf" secondAttribute="bottom" constant="14" id="pmU-vh-DNa"/>
-                                    <constraint firstItem="Gqd-bi-uzG" firstAttribute="top" secondItem="Yel-bL-Hkx" secondAttribute="bottom" constant="8" symbolic="YES" id="raS-tT-r44"/>
+                                    <constraint firstItem="Gqd-bi-uzG" firstAttribute="top" secondItem="Yel-bL-Hkx" secondAttribute="bottom" constant="3" id="raS-tT-r44"/>
                                     <constraint firstItem="3II-bJ-oMv" firstAttribute="centerX" secondItem="Ck8-FR-Abk" secondAttribute="centerX" id="u8j-8J-xEX"/>
                                     <constraint firstItem="Gqd-bi-uzG" firstAttribute="trailing" secondItem="Ck8-FR-Abk" secondAttribute="trailing" id="ve4-zf-S3i"/>
                                     <constraint firstItem="O1h-2x-PV0" firstAttribute="leading" secondItem="Ck8-FR-Abk" secondAttribute="leading" id="w0e-35-9iv"/>
@@ -1006,7 +1006,7 @@
                                         <rect key="frame" x="20" y="479" width="335" height="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
                                                 <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

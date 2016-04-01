@@ -17,7 +17,6 @@ class MainMenuViewController: UIViewController {
         
         _loadData()
     }
-    
     /*
         LIGHT STATUS BAR
      */
@@ -44,6 +43,8 @@ class MainMenuViewController: UIViewController {
      */
     private func _loadData()
     {
+        self.navigationController?.title = "Menu"
+        
         User().getSettings {
             data in
             self.user = JSON( data: data )

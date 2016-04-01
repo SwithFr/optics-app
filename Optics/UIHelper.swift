@@ -23,8 +23,9 @@ public struct UIHelper
     
     static func formatInput(input: UITextField, withLeftPadding: Bool = true)
     {
-        input.backgroundColor = transparent
-        input.textColor = white
+        input.backgroundColor   = transparent
+        input.textColor         = white
+        input.frame.size.height = 30
         
         _borderBottom( input )
         
