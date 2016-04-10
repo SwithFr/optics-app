@@ -43,4 +43,12 @@ class Button
         
         return barItem
     }
+    
+    static func space(width: CGFloat) -> UIBarButtonItem
+    {
+        let space = UIBarButtonItem( barButtonSystemItem: .FixedSpace, target: nil, action: nil )
+        space.width = width
+        
+        return space
+    }
 }

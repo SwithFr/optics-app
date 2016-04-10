@@ -70,7 +70,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         if let imageCached = cache.objectForKey( imageName ) as? UIImage {
             cell.picture.image = imageCached
         } else {
-            let image = Picture.getImageFromUrl( "http://api.optics.swith.fr:2345/\(imageName)" )
+            let image = Picture.getImageFromUrl( "\(getBaseUrl())\(imageName)" )
             cache.setObject( image, forKey: imageName )
             cell.picture.image = image
         }
@@ -93,9 +93,10 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         let backBtnItem       = Button.forge( self, image: "back-icon", action: #selector(EventDetailsTableViewController._goBack(_:)) )
         let addPictureBtnItem = Button.forge( self, image: "add-picture-icon", action: #selector(EventDetailsTableViewController._addPicture(_:)) )
         let menuBtnItem       = Button.forge( self, image: "settings-icon", action: #selector(EventDetailsTableViewController._displayEventOptionsMenu(_:)) )
+        let spacer            = Button.space( 30 )
         
         self.navigationItem.setRightBarButtonItems( [ addPictureBtnItem ], animated: true )
-        self.navigationItem.setLeftBarButtonItems( [ backBtnItem, menuBtnItem ], animated: true )
+        self.navigationItem.setLeftBarButtonItems( [ backBtnItem, spacer, menuBtnItem ], animated: true )
     }
     
     func _goBack(sender: UIBarButtonItem)

@@ -43,6 +43,8 @@ class Event: Model
                 }
                 
                 dispatch {
+                    print("RESPONSE ADD EVENT")
+                    print(JSON(data: data))
                     completionHandler()
                 }
             }
@@ -62,6 +64,8 @@ class Event: Model
             }
             
             dispatch {
+                print("RESPONSE DELETE EVENT")
+                print(JSON(data: data))
                 completionHandler()
             }
         }
@@ -80,6 +84,8 @@ class Event: Model
             error, data in
             if ( error == nil ) {
                 dispatch {
+                    print("RESPONSE UPDATE EVENT")
+                    print(JSON(data: data))
                     completionHandler( data: data )
                 }
             }

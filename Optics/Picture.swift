@@ -36,6 +36,8 @@ class Picture: Model
             }
             
             dispatch {
+                print("REPONSE UPLOAD")
+                print(JSON(data: data))
                 completionHandler( data: data )
             }
         }

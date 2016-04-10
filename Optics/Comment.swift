@@ -24,6 +24,8 @@ class Comment: Model
             }
             
             dispatch {
+                print("RESPONSE")
+                print(JSON(data: data))
                 next( data: data )
             }
         }

@@ -28,7 +28,9 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        UIHelper.formatBtn( addCommentBtn )
+        
+        _setUI()
+        
         _loadData()
     }
     
@@ -65,6 +67,11 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         
         self.comments = coms[ "data" ].arrayValue
         self.commentsTableView.reloadData()
+    }
+    
+    private func _setUI()
+    {
+        UIHelper.formatBtn( addCommentBtn )
     }
 
     private func _loadData()

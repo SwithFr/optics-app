@@ -75,8 +75,9 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         
         if ( User.isOwner( currentEvent[ "user_id" ] ) ) {
             let deleteBtnItem = Button.forge( self, image: "delete-icon", action: #selector(EventOptionsMenuViewController._deleteEvent(_:)) )
+            let spacer        = Button.space( 25 )
             
-            self.navigationItem.setRightBarButtonItems( [ shareBtnItem, deleteBtnItem ], animated: true )
+            self.navigationItem.setRightBarButtonItems( [ shareBtnItem, spacer, deleteBtnItem ], animated: true )
         } else {
             self.navigationItem.setRightBarButtonItems( [ shareBtnItem ], animated: true )
         }

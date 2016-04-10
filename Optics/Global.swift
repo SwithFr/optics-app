@@ -48,16 +48,14 @@ func getBaseUrl() -> String
     var baseUrl = ""
         
     switch deviceName {
-        case "Iphone Simulator":
+        case "iPhone Simulator":
             baseUrl = "http://192.168.99.100/"
-            break
-        case "Swith":
-            baseUrl = "http://api.optics.swith.fr:2345/"
             break
         default:
-            baseUrl = "http://192.168.99.100/"
+            print("pas ok")
+            baseUrl = "http://api.optics.swith.fr:2345/"
             break
     }
-        
+    
     return baseUrl
 }

@@ -108,7 +108,7 @@ class Model
         _setHeaders( request )
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        if(imageData==nil) {
+        if( imageData==nil ) {
             return
         }
         

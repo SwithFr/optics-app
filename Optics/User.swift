@@ -98,6 +98,8 @@ class User : Model
             error, data in
             if ( error == nil ) {
                 dispatch {
+                    print("RESPONSE UPDATE USER")
+                    print(JSON(data: data))
                     completionHandler( data: data )
                 }
             }
