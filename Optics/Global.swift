@@ -52,7 +52,6 @@ func getBaseUrl() -> String
             baseUrl = "http://192.168.99.100/"
             break
         default:
-            print("pas ok")
             baseUrl = "http://api.optics.swith.fr:2345/"
             break
     }

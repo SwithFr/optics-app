@@ -67,6 +67,8 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         let image        = images[ indexPath.row ]
         let imageName    = String( image[ "title" ] )
         
+        //cell.picture.image = UIImage( named: "img-placeholder.png" )
+        
         if let imageCached = cache.objectForKey( imageName ) as? UIImage {
             cell.picture.image = imageCached
         } else {
@@ -134,9 +136,13 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     // Reload data
     private func _setAndReloadData(data: NSData)
     {
-        let pictures = JSON( data: data )
-        
-        self.images  = pictures[ "data" ].arrayValue
+        if let imagesCached = cache.objectForKey( "images" ) as? NSData {
+            self.images = JSON( data: imagesCached )[ "data" ].arrayValue
+        } else {
+            cache.setObject( data, forKey: "images" )
+            self.images = JSON( data: data )[ "data" ].arrayValue
+        }
+
         self.tableView.reloadData()
     }
     
