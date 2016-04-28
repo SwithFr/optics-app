@@ -106,9 +106,15 @@ class User : Model
         }
     }
     
-    func getFriends(firendName: String?, completionHandler: (data: NSData) -> Void)
+    func getFriends(friendName: String?, completionHandler: (data: NSData) -> Void)
     {
-        self.get( "users/friends", authenticate: true ) {
+        var route = "users/friends"
+        
+        if let searchName = friendName {
+            route += "/\(searchName)"
+        }
+        
+        self.get( route, authenticate: true ) {
             error, data in
             
             if error != nil {

@@ -20,7 +20,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     {
         super.viewDidLoad()
         
-        //_setupSearchController()
+        _setupSearchController()
         _getFriends()
     }
     
@@ -84,10 +84,15 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
             data in
             dispatch {
                 self.hideLoader()
-                self.friends = JSON( data: data )[ "data" ].arrayValue
-                self.tableView.reloadData()
+                self._setAndRealoadData( data )
             }
         }
+    }
+    
+    private func _setAndRealoadData(data: NSData)
+    {
+        self.friends = JSON( data: data )[ "data" ].arrayValue
+        self.tableView.reloadData()
     }
     
     /*
@@ -95,10 +100,15 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
      */
     func searchBarSearchButtonClicked(searchBar: UISearchBar)
     {
-        ModelUser.getFriends( searchBar.text ) {
+        let searchText = searchBar.text!
+        
+        self.showLoader( "Recherche de \( searchText )" )
+        
+        ModelUser.getFriends( searchText ) {
             data in
             dispatch {
-                print( JSON( data ) )
+                self.hideLoader()
+                self._setAndRealoadData( data )
             }
         }
     }
