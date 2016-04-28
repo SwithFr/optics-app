@@ -64,6 +64,27 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
         return cell
     }
     
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
+    {
+        let action = UITableViewRowAction( style: .Normal, title: "Ajouter" ) {
+            ( action, indexPath ) -> Void in
+            let friend = self.friends[ indexPath.row ]
+            
+            print(friend)
+            
+            self.ModelUser.addFriend( friend[ "id" ].intValue ) {
+                data in
+                dispatch {
+                    print(JSON(data))
+                }
+            }
+        }
+        
+        action.backgroundColor = UIHelper.green
+        
+        return [ action ]
+    }
+    
 
     /*
         PRIAVTE
