@@ -143,7 +143,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
             self.images = JSON( data: data )[ "data" ].arrayValue
         }
 
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     // Add picture (private method but cant set to private)

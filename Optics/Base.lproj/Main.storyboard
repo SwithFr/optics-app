@@ -244,6 +244,34 @@
             </objects>
             <point key="canvasLocation" x="958.5" y="283.5"/>
         </scene>
+        <!--Mes amis-->
+        <scene sceneID="O0E-tw-vJM">
+            <objects>
+                <tableViewController storyboardIdentifier="friendsView" title="Mes amis" id="RZt-ri-F4g" customClass="FriendsTableViewController" customModule="Optics" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="ufj-K5-fcv">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendCell" rowHeight="84" id="sBp-t5-8xb">
+                                <rect key="frame" x="0.0" y="28" width="375" height="84"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sBp-t5-8xb" id="65w-T1-I1V">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RZt-ri-F4g" id="BQO-dJ-agO"/>
+                            <outlet property="delegate" destination="RZt-ri-F4g" id="jLV-4l-Boi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2uv-U2-WEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698.5" y="1908.5"/>
+        </scene>
         <!--Account View Controller-->
         <scene sceneID="kip-6L-pAy">
             <objects>
@@ -365,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghq-re-tL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958.5" y="1884.5"/>
+            <point key="canvasLocation" x="1196.5" y="1908.5"/>
         </scene>
         <!--Menu-->
         <scene sceneID="kjU-cc-984">
@@ -400,12 +428,16 @@
                                     <segue destination="HrO-I3-xBW" kind="show" identifier="accountSegue" id="TCS-Sn-bNU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mes amis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnm-4i-jdK">
-                                <rect key="frame" x="49" y="234" width="221" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUD-JP-BgV">
+                                <rect key="frame" x="49" y="245" width="221" height="49"/>
                                 <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Mes amis">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="RZt-ri-F4g" kind="show" identifier="friendsSegue" id="GrQ-Ix-axL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

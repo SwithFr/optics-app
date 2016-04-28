@@ -106,6 +106,23 @@ class User : Model
         }
     }
     
+    func getFriends(firendName: String?, completionHandler: (data: NSData) -> Void)
+    {
+        self.get( "users/friends", authenticate: true ) {
+            error, data in
+            
+            if error != nil {
+                print("error on getting friends")
+            } else {
+                dispatch {
+                    print("RESPONSE GET FRIENDS")
+                    print(JSON(data: data))
+                    completionHandler( data: data )
+                }
+            }
+        }
+    }
+    
     // Check if current user is the owner of a ressource
     static func isOwner(ownerID: JSON) -> Bool
     {
