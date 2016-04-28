@@ -55,7 +55,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
         
         cell.textLabel?.text = friend[ "login" ].string
         cell.imageView?.image = UIImage( named: "img-placeholder.png" )
-        Picture.getImgFromUrl( NSURL( string: friend[ "avatar" ].string! )! ) {
+        Picture.getImgFromUrl( friend[ "avatar" ].string! ) {
             data, response, error in
             cell.imageView?.image = UIImage( data: data! )
         }

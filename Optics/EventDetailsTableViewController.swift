@@ -67,14 +67,17 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         let image        = images[ indexPath.row ]
         let imageName    = String( image[ "title" ] )
         
-        //cell.picture.image = UIImage( named: "img-placeholder.png" )
+        cell.picture.image = UIImage( named: "img-placeholder.png" )
         
         if let imageCached = cache.objectForKey( imageName ) as? UIImage {
             cell.picture.image = imageCached
         } else {
-            let image = Picture.getImageFromUrl( "\(getBaseUrl())\(imageName)" )
-            cache.setObject( image, forKey: imageName )
-            cell.picture.image = image
+            Picture.getImgFromUrl( "\(getBaseUrl())\(imageName)" ) {
+                data, response, error in
+                let image = UIImage( data: data! )
+                self.cache.setObject( image!, forKey: imageName )
+                cell.picture.image = image
+            }
         }
         
         tableView.separatorColor = UIHelper.red

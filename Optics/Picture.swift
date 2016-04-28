@@ -59,19 +59,13 @@ class Picture: Model
         }
     }
     
-//    static func getImageFromUrl(url: String) -> UIImage
-//    {
-//        let url  = NSURL( string: url )
-//        let data = NSData( contentsOfURL: url! )
-//        
-//        return UIImage( data: data! )!
-//    }
-    
-    static func getImgFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void))
+    static func getImgFromUrl(url: String, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void))
     {
-        NSURLSession.sharedSession().dataTaskWithURL(url) {
-            (data, response, error) in
-                completion(data: data, response: response, error: error)
+        let route = NSURL( string: url )
+        
+        NSURLSession.sharedSession().dataTaskWithURL( route! ) {
+            data, response, error in
+                completion( data: data, response: response, error: error )
             }.resume()
     }
     
