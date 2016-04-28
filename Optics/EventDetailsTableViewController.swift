@@ -46,12 +46,6 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         return false
     }
 
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     /*
         TABLE CONTROLS
     */
@@ -74,9 +68,12 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         } else {
             Picture.getImgFromUrl( "\(getBaseUrl())\(imageName)" ) {
                 data, response, error in
-                let image = UIImage( data: data! )
-                self.cache.setObject( image!, forKey: imageName )
-                cell.picture.image = image
+                dispatch {
+                    let image = UIImage( data: data! )
+                    
+                    self.cache.setObject( image!, forKey: imageName )
+                    cell.picture.image = image
+                }
             }
         }
         
@@ -139,12 +136,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
     // Reload data
     private func _setAndReloadData(data: NSData)
     {
-        if let imagesCached = cache.objectForKey( "images" ) as? NSData {
-            self.images = JSON( data: imagesCached )[ "data" ].arrayValue
-        } else {
-            cache.setObject( data, forKey: "images" )
-            self.images = JSON( data: data )[ "data" ].arrayValue
-        }
+        self.images = JSON( data: data )[ "data" ].arrayValue
 
         self.tableView.reloadData()
     }

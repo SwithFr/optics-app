@@ -96,11 +96,12 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         } else {
             Picture.getImgFromUrl( avatarUrl ) {
                 data, response, error in
-                let avatar = UIImage( data: data! )
-                
-                self.cache.setObject( avatar!, forKey: avatarUrl )
-                self.authorAvatar.image = avatar
-            }
+                dispatch {
+                    let avatar = UIImage( data: data! )
+                    
+                    self.cache.setObject( avatar!, forKey: avatarUrl )
+                    self.authorAvatar.image = avatar
+                }}
             
         }
         
@@ -174,7 +175,9 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         
         Picture.getImgFromUrl( String( comment[ "avatar" ] ) ) {
             data, response, error in
-            cell.authorAvatar.image = UIImage( data: data! )
+            dispatch {
+                cell.authorAvatar.image = UIImage( data: data! )
+            }
         }
         
         return cell
