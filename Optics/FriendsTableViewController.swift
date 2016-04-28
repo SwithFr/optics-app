@@ -54,7 +54,11 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
         let friend = friends[ indexPath.row ]
         
         cell.textLabel?.text = friend[ "login" ].string
-        cell.imageView?.image = Picture.getImageFromUrl( friend[ "avatar" ].string! )
+        cell.imageView?.image = UIImage( named: "img-placeholder.png" )
+        Picture.getImgFromUrl( NSURL( string: friend[ "avatar" ].string! )! ) {
+            data, response, error in
+            cell.imageView?.image = UIImage( data: data! )
+        }
         UIHelper.formatRoundedImage( cell.imageView!, radius: 40, color: UIHelper.red, border: 2 )
         
         return cell
