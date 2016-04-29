@@ -76,11 +76,13 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
     private func _loadData()
     {
         self.usernameField.text = user[ "data" ][ "login" ].string
-        self.userAvatar.image = UIImage( named: "img-placeholer.png" )
+        self.userAvatar.image   = UIImage( named: "img-placeholer.png" )
         
         Picture.getImgFromUrl( String( user[ "data" ][ "avatar" ] ) ) {
             data, response, error in
-            self.userAvatar.image = UIImage( data: data! )
+            dispatch {
+                self.userAvatar.image = UIImage( data: data! )
+            }
         }
     }
     

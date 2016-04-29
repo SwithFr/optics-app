@@ -106,6 +106,7 @@ class User : Model
         }
     }
     
+    // List all friends
     func getFriends(friendName: String?, completionHandler: (data: NSData) -> Void)
     {
         var route = "users/friends"
@@ -126,6 +127,24 @@ class User : Model
                     completionHandler( data: data )
                 }
             }
+        }
+    }
+    
+    // Add a friend
+    func addFriend(friendId: Int, completionHandler: (data: NSData) -> Void)
+    {
+        self.post( "users/friends/\(friendId)", authenticate: true ) {
+            error, data in
+            if error != nil {
+                print("error on adding friend")
+            } else {
+                dispatch {
+                    print("RESPONSE ADD FRIEND")
+                    print(JSON(data: data))
+                    completionHandler( data: data )
+                }
+            }
+
         }
     }
     

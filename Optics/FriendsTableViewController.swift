@@ -11,6 +11,9 @@ import UIKit
 class FriendsTableViewController: UITableViewController, UISearchBarDelegate
 {
     var friends = [JSON]()
+    var users   = [JSON]()
+    
+    var shouldShowResults = false
     
     let searchController = UISearchController( searchResultsController: nil )
     let ModelUser        = User()
@@ -45,23 +48,53 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if ( shouldShowResults ) {
+            return users.count
+        }
+        
         return friends.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier( "friendCell", forIndexPath: indexPath )
-        let friend = friends[ indexPath.row ]
+        
+        var friend = friends[ indexPath.row ]
+        
+        if ( shouldShowResults ) {
+            friend = users[ indexPath.row ]
+        }
         
         cell.textLabel?.text = friend[ "login" ].string
         cell.imageView?.image = UIImage( named: "img-placeholder.png" )
+        
         Picture.getImgFromUrl( friend[ "avatar" ].string! ) {
             data, response, error in
             cell.imageView?.image = UIImage( data: data! )
         }
+        
         UIHelper.formatRoundedImage( cell.imageView!, radius: 40, color: UIHelper.red, border: 2 )
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
+    {
+        let action = UITableViewRowAction( style: .Normal, title: "Ajouter" ) {
+            action, indexPath in
+            let friend = self.friends[ indexPath.row ]
+            
+            self.ModelUser.addFriend( friend[ "id" ].intValue ) {
+                data in
+                dispatch {
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+        action.backgroundColor = UIHelper.green
+        
+        return [ action ]
     }
     
 
@@ -95,7 +128,14 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     
     private func _setAndRealoadData(data: NSData)
     {
-        self.friends = JSON( data: data )[ "data" ].arrayValue
+        let d = JSON( data: data )[ "data" ].arrayValue
+        
+        if ( shouldShowResults ) {
+            self.users = d
+        } else {
+            self.friends = d
+        }
+        
         self.tableView.reloadData()
     }
     
@@ -108,6 +148,8 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
         
         self.showLoader( "Recherche de \( searchText )" )
         
+        shouldShowResults = true
+        
         ModelUser.getFriends( searchText ) {
             data in
             dispatch {
@@ -115,6 +157,12 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
                 self._setAndRealoadData( data )
             }
         }
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar)
+    {
+        shouldShowResults = false
+        tableView.reloadData()
     }
     
     /*
