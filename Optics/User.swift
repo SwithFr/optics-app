@@ -106,8 +106,8 @@ class User : Model
         }
     }
     
-    // List all friends
-    func getFriends(friendName: String?, completionHandler: (data: NSData) -> Void)
+    // List all friends or search a user
+    func getUsers(friendName: String?, completionHandler: (data: NSData) -> Void)
     {
         var route = "users/friends"
         
@@ -145,6 +145,24 @@ class User : Model
                 }
             }
 
+        }
+    }
+    
+    // Remove a friend
+    func removeFriend(friendId: Int, completionHandler: (data: NSData) -> Void)
+    {
+        self.delete( "users/friends/\(friendId)", authenticate: true ) {
+            error, data in
+            if error != nil {
+                print("error on deleting friend")
+            } else {
+                dispatch {
+                    print("RESPONSE DELETE FRIEND")
+                    print(JSON(data: data))
+                    completionHandler( data: data )
+                }
+            }
+            
         }
     }
     
