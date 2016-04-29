@@ -76,26 +76,33 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
 
     private func _loadData()
     {
-        let avatarUrl      = currentPicture[ "avatar" ].string!
+        let avatarUrl = currentPicture[ "avatar" ].string!
         
         if let cachedImage = cache.objectForKey( "currentImage_\(String( currentPicture[ "id" ]) )" ) as? UIImage {
             picture.image = cachedImage
         } else {
             cache.setObject( currentImage, forKey: "currentImage_\(String( currentPicture[ "id" ]) )" )
-            picture.image      = currentImage
+            picture.image = currentImage
         }
+        
         authorName.text    = currentPicture[ "author" ].string
         pictureTime.text   = Date.ago( currentPicture[ "date" ].string! )
+        authorAvatar.image = UIImage( named: "img-placeholder.png" )
         
         UIHelper.formatRoundedImage( authorAvatar, radius: 26, color: UIHelper.black, border: 1.5 )
         
         if let avatarCached = cache.objectForKey( "\(avatarUrl)" ) as? UIImage {
             authorAvatar.image = avatarCached
         } else {
-            let avatar = Picture.getImageFromUrl( avatarUrl )
+            Picture.getImgFromUrl( avatarUrl ) {
+                data, response, error in
+                dispatch {
+                    let avatar = UIImage( data: data! )
+                    
+                    self.cache.setObject( avatar!, forKey: avatarUrl )
+                    self.authorAvatar.image = avatar
+                }}
             
-            cache.setObject( avatar, forKey: avatarUrl )
-            authorAvatar.image = avatar
         }
         
         if ( User.isOwner( currentPicture[ "user_id" ] ) ) {
@@ -162,8 +169,16 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         
         cell.authorName.text = comment[ "author" ].string
         cell.comment.text    = comment[ "comment" ].string
+        cell.authorAvatar.image = UIImage( named: "img-placeholder.png" )
+        
         UIHelper.formatRoundedImage( cell.authorAvatar, radius: 20, color: UIHelper.black, border: 1.5 )
-        cell.authorAvatar.image = Picture.getImageFromUrl( String( comment[ "avatar" ] ) )
+        
+        Picture.getImgFromUrl( String( comment[ "avatar" ] ) ) {
+            data, response, error in
+            dispatch {
+                cell.authorAvatar.image = UIImage( data: data! )
+            }
+        }
         
         return cell
     }
