@@ -60,10 +60,12 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier( "friendCell", forIndexPath: indexPath )
         
-        var friend = friends[ indexPath.row ]
+        var friend: JSON!
         
         if ( shouldShowResults ) {
             friend = users[ indexPath.row ]
+        } else {
+            friend = friends[ indexPath.row ]
         }
         
         cell.textLabel?.text = friend[ "login" ].string
@@ -82,10 +84,12 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
     {
         var action: UITableViewRowAction!
-        var friend = friends[ indexPath.row ]
+        var friend: JSON!
         
         if ( shouldShowResults ) {
             friend = users[ indexPath.row ]
+        } else {
+            friend = friends[ indexPath.row ]
         }
         
         let friendId = friend[ "id" ].intValue
