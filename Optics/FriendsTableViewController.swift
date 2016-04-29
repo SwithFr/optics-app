@@ -10,8 +10,9 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController, UISearchBarDelegate
 {
-    var friends = [JSON]()
-    var users   = [JSON]()
+    var friends    = [JSON]()
+    var areFriends = [Int]()
+    var users      = [JSON]()
     
     var shouldShowResults = false
     
@@ -80,19 +81,46 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
     {
-        let action = UITableViewRowAction( style: .Normal, title: "Ajouter" ) {
-            action, indexPath in
-            let friend = self.friends[ indexPath.row ]
-            
-            self.ModelUser.addFriend( friend[ "id" ].intValue ) {
-                data in
-                dispatch {
-                    self.tableView.reloadData()
-                }
-            }
+        var action: UITableViewRowAction!
+        var friend = friends[ indexPath.row ]
+        
+        if ( shouldShowResults ) {
+            friend = users[ indexPath.row ]
         }
         
-        action.backgroundColor = UIHelper.green
+        let friendId = friend[ "id" ].intValue
+        
+        if ( shouldShowResults && !_areFriends( friendId ) ) {
+            action = UITableViewRowAction( style: .Normal, title: "Ajouter" ) {
+                action, indexPath in
+                
+                self.ModelUser.addFriend( friendId ) {
+                    data in
+                    dispatch {
+                        self.areFriends.append( friendId )
+                        self.friends.append( friend )
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
+            action.backgroundColor = UIHelper.green
+        } else {
+            action = UITableViewRowAction( style: .Normal, title: "Retirer" ) {
+                action, indexPath in
+                
+                self.ModelUser.removeFriend( friendId ) {
+                    data in
+                    dispatch {
+                        self.areFriends.removeObject( JSON( friendId ) )
+                        self.friends.removeObject( friend )
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
+            action.backgroundColor = UIHelper.red
+        }
         
         return [ action ]
     }
@@ -104,7 +132,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     private func _setupSearchController()
     {
         searchController.searchBar.delegate                   = self
-        searchController.searchBar.placeholder                = "Rechercher un ami..."
+        searchController.searchBar.placeholder                = "Rechercher un utilisateur..."
         searchController.dimsBackgroundDuringPresentation     = false
         searchController.hidesNavigationBarDuringPresentation = false
         
@@ -117,7 +145,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     {
         self.showLoader( "Récupération des amis" )
         
-        ModelUser.getFriends( nil ) {
+        ModelUser.getUsers( nil ) {
             data in
             dispatch {
                 self.hideLoader()
@@ -134,9 +162,17 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
             self.users = d
         } else {
             self.friends = d
+            for friend in d {
+                self.areFriends.append( friend[ "id" ].intValue )
+            }
         }
         
         self.tableView.reloadData()
+    }
+    
+    private func _areFriends(id: Int) -> Bool
+    {
+        return areFriends.contains( id )
     }
     
     /*
@@ -150,7 +186,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
         
         shouldShowResults = true
         
-        ModelUser.getFriends( searchText ) {
+        ModelUser.getUsers( searchText ) {
             data in
             dispatch {
                 self.hideLoader()
