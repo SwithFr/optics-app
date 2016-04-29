@@ -11,6 +11,9 @@ import UIKit
 class FriendsTableViewController: UITableViewController, UISearchBarDelegate
 {
     var friends = [JSON]()
+    var users   = [JSON]()
+    
+    var shouldShowResults = false
     
     let searchController = UISearchController( searchResultsController: nil )
     let ModelUser        = User()
@@ -67,15 +70,13 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
     {
         let action = UITableViewRowAction( style: .Normal, title: "Ajouter" ) {
-            ( action, indexPath ) -> Void in
+            action, indexPath in
             let friend = self.friends[ indexPath.row ]
-            
-            print(friend)
             
             self.ModelUser.addFriend( friend[ "id" ].intValue ) {
                 data in
                 dispatch {
-                    print(JSON(data))
+                    self.tableView.reloadData()
                 }
             }
         }
