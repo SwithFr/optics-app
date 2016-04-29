@@ -97,6 +97,8 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
                 self.ModelUser.addFriend( friendId ) {
                     data in
                     dispatch {
+                        self.areFriends.append( friendId )
+                        self.friends.append( friend )
                         self.tableView.reloadData()
                     }
                 }
@@ -110,6 +112,8 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
                 self.ModelUser.removeFriend( friendId ) {
                     data in
                     dispatch {
+                        self.areFriends.removeObject( JSON( friendId ) )
+                        self.friends.removeObject( friend )
                         self.tableView.reloadData()
                     }
                 }
