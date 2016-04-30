@@ -31,11 +31,13 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate
     /*
      LIGHT STATUS BAR
      */
-    override internal func preferredStatusBarStyle() -> UIStatusBarStyle {
+    override internal func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
         return .LightContent
     }
     
-    override func prefersStatusBarHidden() -> Bool {
+    override func prefersStatusBarHidden() -> Bool
+    {
         return false
     }
 

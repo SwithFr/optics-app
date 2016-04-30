@@ -69,6 +69,38 @@ class EventsListTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
+    {
+        let event   = events[ indexPath.row ]
+        let eventID = event[ "uuid" ].stringValue
+        
+        let shareAction = UITableViewRowAction( style: .Normal, title: "Partager" ) {
+            _, _ in
+            let shareVC = UIActivityViewController( activityItems: [ eventID ], applicationActivities: nil )
+            self.presentViewController( shareVC, animated: true, completion: nil )
+        }
+        
+        shareAction.backgroundColor = UIHelper.green
+        
+        if ( User.isOwner( event[ "user_id" ] ) ) {
+            let deleteAction = UITableViewRowAction( style: .Normal, title: "Supprimer" ) {
+                _,_ in
+                self.ModelEvent.delete( eventID ) {
+                    dispatch {
+                        self.events.removeObject( event )
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
+            deleteAction.backgroundColor = UIHelper.red
+            
+            return [ shareAction, deleteAction ]
+        }
+        
+        return [ shareAction ]
+    }
+    
     /*
         ACTIONS
     */

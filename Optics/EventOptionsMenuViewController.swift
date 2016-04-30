@@ -81,7 +81,6 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         } else {
             self.navigationItem.setRightBarButtonItems( [ shareBtnItem ], animated: true )
         }
-        
     }
     
     func _shareEvent(sender: AnyObject)
@@ -100,7 +99,6 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
                 }
             }
         }
-        
     }
     
     private func _setUI()
@@ -117,7 +115,6 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
             saveBtn.hidden                         = true
             eventDescription.editable              = false
             eventTitle.allowsEditingTextAttributes = false
-            
         }
         
         UIHelper.formatTextArea( eventDescription )
