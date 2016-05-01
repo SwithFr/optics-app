@@ -117,7 +117,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
             saveBtn.hidden                         = true
             eventDescription.editable              = false
             eventTitle.allowsEditingTextAttributes = false
-            
+            eventTitle.enabled                     = false
         }
         
         UIHelper.formatTextArea( eventDescription )
