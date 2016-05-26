@@ -51,7 +51,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
         }
         
         let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier( "loginView" )
-        self.presentViewController( loginVC!, animated: true, completion: nil )
+        self.present( loginVC! )
     }
     
     /*
@@ -76,12 +76,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
         let confirm  = confirmField.text!
         
         ModelUser.register( login, password: password, confirm: confirm, completionHandler: {
-            dispatch_async( dispatch_get_main_queue() ) {
+            dispatch {
                 self.dismissViewControllerAnimated( true, completion: nil )
             }
         } ) {
             errorType in
-            dispatch_async( dispatch_get_main_queue() ) {
+            dispatch {
                 if ( errorType == "connexion error" ) {
                     self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok" )
                 } else if ( errorType == "empty field" ) {
