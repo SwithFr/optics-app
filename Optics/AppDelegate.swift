@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
         barAppearace.tintColor = UIHelper.red
         
+        print(Application.UserHasAccount())
+        
         if !User.isAuthenticated() {
             let loginViewController = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
             

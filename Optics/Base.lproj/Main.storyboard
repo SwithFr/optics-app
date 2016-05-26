@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5eu-GT-wTW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5eu-GT-wTW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -260,6 +260,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="83.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="KFV-cz-K6R" kind="show" identifier="frriendDetailsSegue" id="6ME-Et-qHA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -271,6 +274,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2uv-U2-WEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="698.5" y="1908.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IzT-xt-vFE">
+            <objects>
+                <viewController storyboardIdentifier="friendDetailsView" id="KFV-cz-K6R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MPf-aW-ztg"/>
+                        <viewControllerLayoutGuide type="bottom" id="ap2-vF-HGx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lmf-Qe-eBn">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="C0M-B2-Pds">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C0M-B2-Pds" firstAttribute="top" secondItem="MPf-aW-ztg" secondAttribute="bottom" id="HpX-kP-USL"/>
+                            <constraint firstItem="C0M-B2-Pds" firstAttribute="leading" secondItem="Lmf-Qe-eBn" secondAttribute="leading" id="PQS-6g-hQR"/>
+                            <constraint firstItem="C0M-B2-Pds" firstAttribute="bottom" secondItem="ap2-vF-HGx" secondAttribute="top" id="YfR-uY-RqT"/>
+                            <constraint firstAttribute="trailing" secondItem="C0M-B2-Pds" secondAttribute="trailing" id="cH1-Lf-aLn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axV-gj-HKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698.5" y="2730.5"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="kip-6L-pAy">
@@ -889,7 +921,7 @@
                                             <constraint firstAttribute="width" constant="172" id="url-gE-bvN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" title="Mot de passe oublié ?">
+                                        <state key="normal">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
@@ -982,12 +1014,12 @@
                                             <constraint firstAttribute="width" constant="154" id="Gr1-gi-bKe"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inscription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBt-DN-XdC">
-                                        <rect key="frame" x="91" y="145" width="192" height="48"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inscrivez-vous pour créer et partager des évènements" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBt-DN-XdC">
+                                        <rect key="frame" x="20" y="145" width="335" height="85"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="mg6-xo-bRy"/>
+                                            <constraint firstAttribute="height" constant="85" id="mg6-xo-bRy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway" pointSize="40"/>
+                                        <fontDescription key="fontDescription" name="Raleway-Thin" family="Raleway" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1086,8 +1118,8 @@
                                     <constraint firstItem="k1t-lq-co4" firstAttribute="trailing" secondItem="o51-Fv-b45" secondAttribute="trailing" id="M5u-VT-csA"/>
                                     <constraint firstAttribute="trailing" secondItem="FBQ-f7-nQh" secondAttribute="trailing" id="Moq-bd-WhL"/>
                                     <constraint firstItem="k1t-lq-co4" firstAttribute="centerY" secondItem="Vve-FB-omQ" secondAttribute="centerY" id="Pad-vu-Dns"/>
-                                    <constraint firstItem="KBt-DN-XdC" firstAttribute="leading" secondItem="dDd-Vl-V3D" secondAttribute="leading" constant="91" id="Vs3-VV-H4f"/>
-                                    <constraint firstItem="o51-Fv-b45" firstAttribute="top" secondItem="KBt-DN-XdC" secondAttribute="bottom" constant="61" id="Vw5-h7-uRJ"/>
+                                    <constraint firstItem="KBt-DN-XdC" firstAttribute="leading" secondItem="dDd-Vl-V3D" secondAttribute="leading" constant="20" id="Vs3-VV-H4f"/>
+                                    <constraint firstItem="o51-Fv-b45" firstAttribute="top" secondItem="KBt-DN-XdC" secondAttribute="bottom" constant="24" id="Vw5-h7-uRJ"/>
                                     <constraint firstItem="FuC-j2-E6o" firstAttribute="centerX" secondItem="T5d-ZO-mkV" secondAttribute="centerX" id="b7P-DW-8eu"/>
                                     <constraint firstItem="o51-Fv-b45" firstAttribute="leading" secondItem="dDd-Vl-V3D" secondAttribute="leading" constant="20" id="cfM-RP-hbY"/>
                                     <constraint firstItem="o51-Fv-b45" firstAttribute="centerX" secondItem="KBt-DN-XdC" secondAttribute="centerX" id="dIn-GN-x9H"/>
