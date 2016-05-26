@@ -77,17 +77,26 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
         
         ModelUser.register( login, password: password, confirm: confirm, completionHandler: {
             dispatch {
-                self.dismissViewControllerAnimated( true, completion: nil )
+                self.ModelUser.login( login, password: password, completionHandler: {
+                    dispatch {
+                        self.success( "Compte créé", message: "Votre compte a été créé, vous êtes maintenant connecté", buttonText: "Cool" ) {
+                            let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" ) as! EventsListTableViewController
+                            let navigationController = UINavigationController( rootViewController: eventListVC )
+                            
+                            self.present( navigationController )
+                        }
+                    }
+                }, errorHandler: {_ in } )
             }
         } ) {
             errorType in
             dispatch {
                 if ( errorType == "connexion error" ) {
-                    self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok" )
+                    self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok", completion: nil )
                 } else if ( errorType == "empty field" ) {
-                    self.error( "Infos manquantes", message: "Veuillez remplir tous les champs.", buttonText: "Je complète" )
+                    self.error( "Infos manquantes", message: "Veuillez remplir tous les champs.", buttonText: "Je complète", completion: nil )
                 } else if ( errorType == "validation error" ) {
-                    self.error( "Identifiant indisponnible", message: "Cet identifiant est déjà utilisé.", buttonText: "J'en choisi un autre" )
+                    self.error( "Identifiant indisponnible", message: "Cet identifiant est déjà utilisé.", buttonText: "J'en choisi un autre", completion: nil )
                 }
             }
         }

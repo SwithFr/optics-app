@@ -106,20 +106,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         
         ModelUser.login( login, password: password, completionHandler: {
             dispatch {
-                let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" ) as! EventsListTableViewController
-                let navigationController = UINavigationController( rootViewController: eventListVC )
-                
-                self.presentViewController( navigationController, animated: true, completion: nil )
+                self.success( "Super !", message: "Vous êtes connecté", buttonText: "Cool" ) {                    
+                    let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" ) as! EventsListTableViewController
+                    let navigationController = UINavigationController( rootViewController: eventListVC )
+                    
+                    self.present( navigationController )
+                }
             }
         }) {
             errorType in
             dispatch {                
                 if ( errorType == "error connexion" ) {
-                    self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok" )
+                    self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok", completion: nil )
                 } else if ( errorType == "empty field" ) {
-                    self.error( "Infos manquantes", message: "Veuillez remplir tous les champs.", buttonText: "Je complète" )
+                    self.error( "Infos manquantes", message: "Veuillez remplir tous les champs.", buttonText: "Je complète", completion: nil )
                 } else if ( errorType == "unknown user" ) {
-                    self.error( "Utilisateur introuvable", message: "Veuillez verifier vos informations.", buttonText: "Nouvel essai" )
+                    self.error( "Utilisateur introuvable", message: "Veuillez verifier vos informations.", buttonText: "Nouvel essai", completion: nil )
                 }
             }
         }
