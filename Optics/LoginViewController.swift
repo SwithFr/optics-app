@@ -105,7 +105,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         let password = passwordField.text!
         
         ModelUser.login( login, password: password, completionHandler: {
-            dispatch_async( dispatch_get_main_queue() ) {
+            dispatch {
                 let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" ) as! EventsListTableViewController
                 let navigationController = UINavigationController( rootViewController: eventListVC )
                 
@@ -113,7 +113,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
             }
         }) {
             errorType in
-            dispatch_async( dispatch_get_main_queue() ) {                
+            dispatch {                
                 if ( errorType == "error connexion" ) {
                     self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok" )
                 } else if ( errorType == "empty field" ) {
