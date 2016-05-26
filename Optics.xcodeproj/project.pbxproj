@@ -18,6 +18,7 @@
 		093379401C9ED4A800E83722 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933793F1C9ED4A800E83722 /* JSSAlertView.swift */; };
 		093379461C9EF28800E83722 /* EventDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093379451C9EF28800E83722 /* EventDetailsTableViewController.swift */; };
 		094B65391CD22549009B590A /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094B65381CD22549009B590A /* FriendsTableViewController.swift */; };
+		095372F41CD9FAF500EE16E2 /* FriendDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095372F31CD9FAF500EE16E2 /* FriendDetailsViewController.swift */; };
 		0954B1161C9C7353007398EF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1151C9C7353007398EF /* Event.swift */; };
 		0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B1191C9C8898007398EF /* MainViewController.swift */; };
 		0954B11C1C9C8A40007398EF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0954B11B1C9C8A40007398EF /* LoginViewController.swift */; };
@@ -42,6 +43,7 @@
 		09BE0EC01CA1C61100DE0871 /* Picture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0EBF1CA1C61100DE0871 /* Picture.swift */; };
 		09BE0EC21CA1DF3B00DE0871 /* PictureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */; };
 		09BF1B621CAED6F8007C5FDA /* ButtonHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BF1B611CAED6F8007C5FDA /* ButtonHelper.swift */; };
+		09C037551CF6FCF3008760D6 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C037541CF6FCF3008760D6 /* Application.swift */; };
 		09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E981C9A063100796BF6 /* AppDelegate.swift */; };
 		09EF1E9C1C9A063100796BF6 /* Optics.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09EF1E9A1C9A063100796BF6 /* Optics.xcdatamodeld */; };
 		09EF1EA31C9A063100796BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09EF1EA11C9A063100796BF6 /* Main.storyboard */; };
@@ -84,6 +86,7 @@
 		0933793F1C9ED4A800E83722 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		093379451C9EF28800E83722 /* EventDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsTableViewController.swift; sourceTree = "<group>"; };
 		094B65381CD22549009B590A /* FriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
+		095372F31CD9FAF500EE16E2 /* FriendDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendDetailsViewController.swift; sourceTree = "<group>"; };
 		0954B1151C9C7353007398EF /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0954B1191C9C8898007398EF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0954B11B1C9C8A40007398EF /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 		09BE0EBF1CA1C61100DE0871 /* Picture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Picture.swift; sourceTree = "<group>"; };
 		09BE0EC11CA1DF3B00DE0871 /* PictureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureTableViewCell.swift; sourceTree = "<group>"; };
 		09BF1B611CAED6F8007C5FDA /* ButtonHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonHelper.swift; sourceTree = "<group>"; };
+		09C037541CF6FCF3008760D6 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		09EF1E951C9A063100796BF6 /* Optics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Optics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09EF1E981C9A063100796BF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09EF1E9B1C9A063100796BF6 /* Optics.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Optics.xcdatamodel; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				094B65381CD22549009B590A /* FriendsTableViewController.swift */,
+				095372F31CD9FAF500EE16E2 /* FriendDetailsViewController.swift */,
 			);
 			name = friends;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 				09A9A4E91CA68F3E00714D38 /* ScrollVIewExtensions.swift */,
 				09793E7D1CA84A1A00C41658 /* UIViewControllerExtensions.swift */,
 				097E82861CD394E90040FCB3 /* ArrayExtensions.swift */,
+				09C037541CF6FCF3008760D6 /* Application.swift */,
 			);
 			name = core;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 				0954B11E1C9C9D67007398EF /* EventsListTableViewController.swift in Sources */,
 				09B4D3E31CA5A5A900E24FE5 /* Global.swift in Sources */,
 				09EF1E991C9A063100796BF6 /* AppDelegate.swift in Sources */,
+				095372F41CD9FAF500EE16E2 /* FriendDetailsViewController.swift in Sources */,
 				0954B11A1C9C8898007398EF /* MainViewController.swift in Sources */,
 				0982CD2A1C9DCEAA00DBDE47 /* ModalHelper.swift in Sources */,
 				09B4D3E01CA56B6300E24FE5 /* Comment.swift in Sources */,
@@ -579,6 +586,7 @@
 				09197BE21C9ADC640010C77E /* SwiftyJSON.swift in Sources */,
 				09197BE91C9AE1FE0010C77E /* DateHelper.swift in Sources */,
 				09BE0EC01CA1C61100DE0871 /* Picture.swift in Sources */,
+				09C037551CF6FCF3008760D6 /* Application.swift in Sources */,
 				09197BE71C9ADEA70010C77E /* UIHelper.swift in Sources */,
 				0982CD281C9DBDE100DBDE47 /* RegisterViewController.swift in Sources */,
 				090A7C931CA2826C00129570 /* EventOptionsMenuViewController.swift in Sources */,

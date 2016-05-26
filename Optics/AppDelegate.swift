@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard   = UIStoryboard( name: "Main", bundle: nil )
         let barAppearace = UIBarButtonItem.appearance()
+        let firstView    = Application.getFirstView()
         
         UINavigationBar.appearance().barTintColor        = UIHelper.black
         UINavigationBar.appearance().tintColor           = UIHelper.red
@@ -29,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
         barAppearace.tintColor = UIHelper.red
         
-        if !User.isAuthenticated() {
-            let loginViewController = storyboard.instantiateViewControllerWithIdentifier( "loginView" ) as UIViewController
+        if firstView != "" {
+            let viewController = storyboard.instantiateViewControllerWithIdentifier( firstView ) as UIViewController
             
-            self.window?.rootViewController = loginViewController
+            self.window?.rootViewController = viewController
         }
         
         return true

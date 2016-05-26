@@ -105,21 +105,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         let password = passwordField.text!
         
         ModelUser.login( login, password: password, completionHandler: {
-            dispatch_async( dispatch_get_main_queue() ) {
-                let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" ) as! EventsListTableViewController
-                let navigationController = UINavigationController( rootViewController: eventListVC )
-                
-                self.presentViewController( navigationController, animated: true, completion: nil )
+            dispatch {
+                self.success( "Super !", message: "Vous êtes connecté", buttonText: "Cool" ) {                    
+                    let eventListVC = self.storyboard?.instantiateViewControllerWithIdentifier( "eventsListView" ) as! EventsListTableViewController
+                    let navigationController = UINavigationController( rootViewController: eventListVC )
+                    
+                    self.present( navigationController )
+                }
             }
         }) {
             errorType in
-            dispatch_async( dispatch_get_main_queue() ) {                
+            dispatch {                
                 if ( errorType == "error connexion" ) {
-                    self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok" )
+                    self.error( "Erreur", message: "Une erreur est survenue, veuillez réessayer.", buttonText: "Ok", completion: nil )
                 } else if ( errorType == "empty field" ) {
-                    self.error( "Infos manquantes", message: "Veuillez remplir tous les champs.", buttonText: "Je complète" )
+                    self.error( "Infos manquantes", message: "Veuillez remplir tous les champs.", buttonText: "Je complète", completion: nil )
                 } else if ( errorType == "unknown user" ) {
-                    self.error( "Utilisateur introuvable", message: "Veuillez verifier vos informations.", buttonText: "Nouvel essai" )
+                    self.error( "Utilisateur introuvable", message: "Veuillez verifier vos informations.", buttonText: "Nouvel essai", completion: nil )
                 }
             }
         }

@@ -13,7 +13,7 @@ public struct UIHelper
     // COLORS
     static let white        = UIColor( red:1.00, green:1.00, blue:1.00, alpha:1.0 )
     static let black        = UIColor( red:0.07, green:0.07, blue:0.07, alpha:1.0 )
-    static let green        = UIColor( red:0.75, green:0.89, blue:0.86, alpha:1.0 )
+    static let green        = UIColor( red:0.44, green:0.83, blue:0.60, alpha:1.0 )
     static let red          = UIColor( red:0.94, green:0.32, blue:0.26, alpha:1.0 )
     static let grey         = UIColor( red:0.58, green:0.60, blue:0.60, alpha:1.0 )
     static let transparent  = UIColor( red:0.00, green:0.00, blue:0.00, alpha:0.0 )

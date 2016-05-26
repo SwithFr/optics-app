@@ -30,7 +30,7 @@ class EventsListTableViewController: UITableViewController {
             }
         } ) {
             dispatch {
-                self.error( "Une erreur", message: "Une erreur", buttonText: "Ok" )
+                self.error( "Une erreur", message: "Une erreur", buttonText: "Ok", completion: nil )
             }
         }
     }

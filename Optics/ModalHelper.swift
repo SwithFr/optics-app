@@ -83,15 +83,29 @@ extension UIViewController
         }
     }
     
-    func error(title: String, message: String, buttonText: String)
+    func error(title: String, message: String, buttonText: String, completion: (() -> Void)?)
+    {
+        _performAlert( title, message: message, buttonText: buttonText, color: UIHelper.red, completion: completion )
+    }
+    
+    func success(title: String, message: String, buttonText: String, completion: (() -> Void)?)
+    {
+        _performAlert( title, message: message, buttonText: buttonText, color: UIHelper.green, completion: completion)
+    }
+    
+    private func _performAlert(title: String, message: String, buttonText: String, color: UIColor, completion: (() -> Void)?)
     {
         let alert = JSSAlertView().show(
             self,
             title: title,
             text:  message,
             buttonText: buttonText,
-            color: UIHelper.red
+            color: color
         )
+        
+        if completion != nil {
+            alert.addAction( completion! )
+        }
         
         alert.setTextTheme( .Light )
         alert.setTextFont( "Raleway-Light" )

@@ -11,6 +11,8 @@ import UIKit
 
 class User : Model
 {
+    let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    
     // Log in an user
     func login(login: String, password: String, completionHandler: () -> Void, errorHandler: (errorType: String) -> Void)
     {
@@ -26,11 +28,10 @@ class User : Model
                     if ( response["error"] != false  ) {
                         errorHandler( errorType: "unknown user" )
                     } else {
-                        let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-                        
-                        user.setValue( response[ "data"][ "token" ].string, forKey: "USER_TOKEN")
-                        user.setValue( response[ "data" ][ "id" ].int, forKey: "USER_ID" )
-                        user.synchronize()
+                        self.user.setValue( response[ "data"][ "token" ].string, forKey: "USER_TOKEN")
+                        self.user.setValue( response[ "data" ][ "id" ].int, forKey: "USER_ID" )
+                        self.user.setBool( true, forKey: "HAS_ACCOUNT" )
+                        self.user.synchronize()
                         
                         completionHandler()
                     }
@@ -60,6 +61,9 @@ class User : Model
                     if ( response["error"] != false  ) {
                         errorHandler( errorType: "validation error" )
                     } else {
+                        self.user.setBool( true, forKey: "HAS_ACCOUNT" )
+                        self.user.synchronize()
+                        
                         completionHandler()
                     }
                 } else {
