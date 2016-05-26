@@ -11,13 +11,15 @@ import Foundation
 class Application
 {
     
-    static func UserHasAccount()
+    static func UserHasAccount() -> Bool?
     {
         let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
-        let bHasAccount = user.objectForKey( "HAS_ACCOUNT" ) as? Bool
+        if user.objectForKey( "HAS_ACCOUNT" ) != nil {
+            return true
+        }
         
-        print(bHasAccount)
+        return false
     }
     
 }

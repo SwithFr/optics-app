@@ -43,10 +43,15 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
     {
         _register()
     }
-    
+
     @IBAction func goBackLoginBtnTapped(sender: AnyObject)
     {
-        Navigator.goBack( self )
+        if self.navigationController != nil {
+            Navigator.goBack( self )
+        }
+        
+        let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier( "loginView" )
+        self.presentViewController( loginVC!, animated: true, completion: nil )
     }
     
     /*
