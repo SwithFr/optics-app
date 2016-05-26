@@ -22,4 +22,15 @@ class Application
         return false
     }
     
+    static func getFirstView() -> String
+    {
+        if !User.isAuthenticated() && UserHasAccount()! {
+            return "loginView"
+        } else if !User.isAuthenticated() && !Application.UserHasAccount()! {
+            return "registerView"
+        }
+        
+        return ""
+    }
+    
 }
