@@ -87,7 +87,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         loginField.delegate         = self
         passwordField.delegate      = self
         
-        
         self.navigationController?.navigationBarHidden = true
     }
     
