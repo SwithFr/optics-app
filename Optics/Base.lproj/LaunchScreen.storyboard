@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -27,6 +27,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="ngI-jO-h2X">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Voa-25-pLY">
                                 <rect key="frame" x="68" y="214" width="239" height="127"/>
@@ -39,26 +42,72 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Meet people and share something great." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mw8-Ee-7hk">
                                 <rect key="frame" x="72" y="448" width="230" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="181" id="CGB-GA-dPB"/>
+                                    <constraint firstAttribute="height" constant="61" id="o0Q-NZ-wgI"/>
+                                </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CGB-GA-dPB"/>
+                                        <exclude reference="o0Q-NZ-wgI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="CGB-GA-dPB"/>
+                                        <include reference="o0Q-NZ-wgI"/>
+                                    </mask>
+                                </variation>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Jj-ss-3zW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6tO-UG-Yc2"/>
+                            <constraint firstItem="Mw8-Ee-7hk" firstAttribute="top" secondItem="0Jj-ss-3zW" secondAttribute="bottom" constant="9" id="7hD-8i-HYj"/>
+                            <constraint firstItem="0Jj-ss-3zW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8Cy-dV-PQ3"/>
+                            <constraint firstItem="Voa-25-pLY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="9AA-wP-PlY"/>
+                            <constraint firstItem="Mw8-Ee-7hk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="I4S-1w-9vX"/>
+                            <constraint firstItem="0Jj-ss-3zW" firstAttribute="top" secondItem="Voa-25-pLY" secondAttribute="bottom" constant="21" id="d81-Re-UEk"/>
+                            <constraint firstItem="Mw8-Ee-7hk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sjt-xl-3nY"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9AA-wP-PlY"/>
+                                <exclude reference="6tO-UG-Yc2"/>
+                                <exclude reference="8Cy-dV-PQ3"/>
+                                <exclude reference="d81-Re-UEk"/>
+                                <exclude reference="7hD-8i-HYj"/>
+                                <exclude reference="I4S-1w-9vX"/>
+                                <exclude reference="sjt-xl-3nY"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="9AA-wP-PlY"/>
+                                <include reference="6tO-UG-Yc2"/>
+                                <include reference="8Cy-dV-PQ3"/>
+                                <include reference="d81-Re-UEk"/>
+                                <include reference="7hD-8i-HYj"/>
+                                <include reference="I4S-1w-9vX"/>
+                                <include reference="sjt-xl-3nY"/>
+                            </mask>
+                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.5" y="374.5"/>
+            <point key="canvasLocation" x="52.5" y="374.25"/>
         </scene>
     </scenes>
     <resources>
-        <image name="bkg-flou" width="383" height="679"/>
+        <image name="bkg-flou" width="2393" height="1333"/>
         <image name="logo" width="246" height="118"/>
     </resources>
 </document>
