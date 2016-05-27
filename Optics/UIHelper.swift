@@ -55,9 +55,9 @@ public struct UIHelper
         input.layer.masksToBounds = true
     }
     
-    static func formatBtn(btn: UIButton)
+    static func formatBtn(btn: UIButton, radius: Int=20)
     {
-        btn.layer.cornerRadius = CGFloat(20)
+        btn.layer.cornerRadius = CGFloat(radius)
     }
     
     static func formatRoundedImage(img: UIImageView, radius: CGFloat, color: UIColor, border: CGFloat)

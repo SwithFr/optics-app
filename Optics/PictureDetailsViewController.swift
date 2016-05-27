@@ -71,7 +71,7 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     
     private func _setUI()
     {
-        UIHelper.formatBtn( addCommentBtn )
+        UIHelper.formatBtn( addCommentBtn, radius: 18 )
     }
 
     private func _loadData()
@@ -89,7 +89,7 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
         pictureTime.text   = Date.ago( currentPicture[ "date" ].string! )
         authorAvatar.image = UIImage( named: "img-placeholder.png" )
         
-        UIHelper.formatRoundedImage( authorAvatar, radius: 26, color: UIHelper.black, border: 1.5 )
+        UIHelper.formatRoundedImage( authorAvatar, radius: 27.5, color: UIHelper.black, border: 1.5 )
         
         if let avatarCached = cache.objectForKey( "\(avatarUrl)" ) as? UIImage {
             authorAvatar.image = avatarCached
