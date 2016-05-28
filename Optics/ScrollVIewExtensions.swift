@@ -16,8 +16,8 @@ extension UIScrollView
         self.setContentOffset( CGPointMake( 0, 0 ), animated: true )
     }
     
-    func scrollContent()
+    func scrollContent(size: CGFloat = 200)
     {
-        setContentOffset( CGPointMake( 0, 200 ), animated: true  )
+        setContentOffset( CGPointMake( 0, size ), animated: true  )
     }
 }

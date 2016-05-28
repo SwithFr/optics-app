@@ -11,7 +11,6 @@ import UIKit
 class LoginViewController: UIViewController, UITextFieldDelegate
 {
 
-    @IBOutlet weak var test: UIImageView!
     @IBOutlet weak var loginBtn: UIButton!
     @IBOutlet weak var loginField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -87,7 +86,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         passwordField.returnKeyType = .Done
         loginField.delegate         = self
         passwordField.delegate      = self
-        
         
         self.navigationController?.navigationBarHidden = true
     }
