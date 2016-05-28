@@ -27,25 +27,26 @@ class Event: Model
     }
     
     // Add an event
-    func add(title: String, description: String, completionHandler: () -> Void)
+    func add(title: String, description: String, completionHandler: () -> Void, errorHandler: (errorType: String) -> Void)
     {
-        if ( title.isEmpty || description.isEmpty ) {
-            // TODO: Verification et erroHandler
-            print( "Error" )
+        if ( title.isEmpty ) {
+            errorHandler( errorType: "empty field" )
         } else {
             self.setData( "title=\(title)&description=\(description)" )
             self.post( "events/create", authenticate: true ) {
                 error, data in
-                
-                if ( error != nil ) {
-                    print( "error" )
-                    return
-                }
-                
-                dispatch {
-                    print("RESPONSE ADD EVENT")
-                    print(JSON(data: data))
-                    completionHandler()
+                if error == nil {
+                    let response = JSON( data: data )
+                    
+                    if ( response["error"] != false  ) {
+                        errorHandler( errorType: "error connexion" )
+                    } else {
+                        dispatch {
+                            completionHandler()
+                        }
+                    }
+                } else {
+                    errorHandler( errorType: "error connexion" )
                 }
             }
         }
