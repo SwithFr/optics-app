@@ -13,11 +13,12 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
 
     @IBOutlet weak var eventTitle: UITextField!
     @IBOutlet weak var eventDescription: UITextView!
-    @IBOutlet weak var eventID: UILabel!
     @IBOutlet weak var saveBtn: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var shareCodeBtn: UIButton!
     
     var currentEvent: JSON!
+    var eventId = String()
     
     let ModelEvent = Event()
     
@@ -59,6 +60,11 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         }
     }
     
+    @IBAction func shareCodeTapped(sender: AnyObject)
+    {
+        _shareEvent( sender )
+    }
+    
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool)
     {
         if let controller = viewController as? EventDetailsTableViewController {
@@ -85,7 +91,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     
     func _shareEvent(sender: AnyObject)
     {
-        let shareVC = UIActivityViewController( activityItems: [ eventID.text! ], applicationActivities: nil )
+        let shareVC = UIActivityViewController( activityItems: [ eventId ], applicationActivities: nil )
         presentViewController( shareVC, animated: true, completion: nil )
     }
 
@@ -93,7 +99,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     {
         self.alert( "Supprimer l'évènement", message: "Voulez-vous vraiment supprimer cet évènement ?", buttonText: "Oui", cancelButton: "Oula non !" ) {
             
-            self.ModelEvent.delete( self.eventID.text! ) {
+            self.ModelEvent.delete( self.eventId ) {
                 dispatch {
                     Navigator.goTo( "eventsListView", vc: self )
                 }
@@ -128,7 +134,8 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     {
         eventTitle.text       = currentEvent[ "title" ] .string
         eventDescription.text = currentEvent[ "description" ].string
-        eventID.text          = currentEvent[ "uuid" ].string
+        shareCodeBtn.setTitle( currentEvent[ "uuid" ].string, forState: .Normal )
+        eventId = currentEvent[ "uuid" ].stringValue
     }
     
     func _goBack(sender: UIBarButtonItem)
