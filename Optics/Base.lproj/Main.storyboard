@@ -66,13 +66,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KiJ-SG-FsL">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KiJ-SG-FsL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="byi-g6-tlW">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="byi-g6-tlW">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titre de l'évènement" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s94-YV-WNb">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titre de l'évènement" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s94-YV-WNb">
                                         <rect key="frame" x="20" y="94" width="560" height="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
@@ -87,7 +87,7 @@
                                             <action selector="titleFieldTapped:" destination="8P8-Cf-J9f" eventType="editingChanged" id="d19-2Z-g7a"/>
                                         </connections>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Déscription de l'évènement" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-am-wTN">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="Déscription de l'évènement" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-am-wTN">
                                         <rect key="frame" x="20" y="188" width="560" height="191"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -115,7 +115,7 @@
                                             <outlet property="delegate" destination="8P8-Cf-J9f" id="66c-bC-7wb"/>
                                         </connections>
                                     </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dku-cz-c8W">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dku-cz-c8W">
                                         <rect key="frame" x="20" y="477" width="560" height="43"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -507,10 +507,10 @@
                                 <exclude reference="3yA-Ba-0E6"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="dSc-LO-LuN"/>
-                                <exclude reference="odL-ta-9ku"/>
                                 <exclude reference="ltK-PU-nW0"/>
                                 <exclude reference="xg3-gf-R48"/>
+                                <exclude reference="dSc-LO-LuN"/>
+                                <exclude reference="odL-ta-9ku"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -518,10 +518,10 @@
                                 <include reference="3yA-Ba-0E6"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="dSc-LO-LuN"/>
-                                <include reference="odL-ta-9ku"/>
                                 <include reference="ltK-PU-nW0"/>
                                 <include reference="xg3-gf-R48"/>
+                                <include reference="dSc-LO-LuN"/>
+                                <include reference="odL-ta-9ku"/>
                             </mask>
                         </variation>
                     </view>
@@ -571,7 +571,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Changer le mot de passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAa-9b-gpW">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Changer le mot de passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bAa-9b-gpW">
                                         <rect key="frame" x="29" y="331" width="317" height="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
@@ -585,7 +585,7 @@
                                             <outlet property="delegate" destination="HrO-I3-xBW" id="on7-iy-dp2"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmer le mot de passe" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-CY-mlf">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmer le mot de passe" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dTA-CY-mlf">
                                         <rect key="frame" x="29" y="434" width="317" height="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
@@ -627,7 +627,7 @@
                                             <action selector="saveBtnTapped:" destination="HrO-I3-xBW" eventType="touchUpInside" id="cNN-NE-pqJ"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock-input" translatesAutoresizingMaskIntoConstraints="NO" id="4JT-W8-oRB">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="lock-input" translatesAutoresizingMaskIntoConstraints="NO" id="4JT-W8-oRB">
                                         <rect key="frame" x="29" y="436" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="YKf-Wy-o29"/>
@@ -643,7 +643,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock-input" translatesAutoresizingMaskIntoConstraints="NO" id="yZG-ZJ-GOv">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="lock-input" translatesAutoresizingMaskIntoConstraints="NO" id="yZG-ZJ-GOv">
                                         <rect key="frame" x="29" y="333" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="6gP-hc-Gqb"/>
@@ -659,7 +659,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="d95-Gf-wnD">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="user-icon" translatesAutoresizingMaskIntoConstraints="NO" id="d95-Gf-wnD">
                                         <rect key="frame" x="29" y="233" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="f8q-XS-h5G"/>
@@ -678,7 +678,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Identifiant" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pm8-QM-UYn">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Identifiant" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pm8-QM-UYn">
                                         <rect key="frame" x="29" y="233" width="317" height="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
@@ -747,12 +747,12 @@
                                         <exclude reference="iWr-Rk-dJy"/>
                                         <exclude reference="NOn-kc-pii"/>
                                         <exclude reference="NV9-xk-7kH"/>
+                                        <exclude reference="Fhp-01-PjL"/>
+                                        <exclude reference="LS3-nr-19A"/>
                                         <exclude reference="9bO-I0-Ri5"/>
                                         <exclude reference="Fxw-mN-I6a"/>
                                         <exclude reference="Kgw-Eb-AgC"/>
                                         <exclude reference="ga6-sB-E5A"/>
-                                        <exclude reference="Fhp-01-PjL"/>
-                                        <exclude reference="LS3-nr-19A"/>
                                         <exclude reference="4wo-ji-zdi"/>
                                         <exclude reference="Luz-uh-zEA"/>
                                         <exclude reference="TqT-ME-2X1"/>
@@ -790,12 +790,12 @@
                                         <exclude reference="66O-MQ-EXT"/>
                                         <include reference="NOn-kc-pii"/>
                                         <include reference="NV9-xk-7kH"/>
+                                        <include reference="Fhp-01-PjL"/>
+                                        <include reference="LS3-nr-19A"/>
                                         <include reference="9bO-I0-Ri5"/>
                                         <include reference="Fxw-mN-I6a"/>
                                         <include reference="Kgw-Eb-AgC"/>
                                         <include reference="ga6-sB-E5A"/>
-                                        <include reference="Fhp-01-PjL"/>
-                                        <include reference="LS3-nr-19A"/>
                                         <include reference="4wo-ji-zdi"/>
                                         <include reference="Luz-uh-zEA"/>
                                         <include reference="TqT-ME-2X1"/>
@@ -1015,19 +1015,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmg-iv-tJa">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mmg-iv-tJa">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="H5k-zK-e9K">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bkg-flou" translatesAutoresizingMaskIntoConstraints="NO" id="H5k-zK-e9K">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mGB-SM-KlP">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mGB-SM-KlP">
                                         <rect key="frame" x="20" y="52" width="560" height="30"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="20"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oqf-65-Wy8">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oqf-65-Wy8">
                                         <rect key="frame" x="20" y="145" width="560" height="203"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="203" id="AQG-za-lzj">
@@ -1048,7 +1048,7 @@
                                             </mask>
                                         </variation>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfQ-uR-Gdj">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfQ-uR-Gdj">
                                         <rect key="frame" x="225" y="394" width="148" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="148" id="E6f-OA-ony"/>
@@ -1070,13 +1070,13 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utilisez ce code pour partager l'évènement." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiJ-7E-hCC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Utilisez ce code pour partager l'évènement." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiJ-7E-hCC">
                                         <rect key="frame" x="20" y="427" width="560" height="19"/>
                                         <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSh-bn-uoZ">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSh-bn-uoZ">
                                         <rect key="frame" x="20" y="485" width="560" height="44"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -1145,11 +1145,11 @@
                                         <exclude reference="1CG-SW-qbj"/>
                                         <exclude reference="fAr-cj-vB4"/>
                                         <exclude reference="yYx-gy-Yqt"/>
-                                        <exclude reference="757-I2-w0Y"/>
-                                        <exclude reference="x2h-8l-qkR"/>
                                         <exclude reference="XiA-YM-Glp"/>
                                         <exclude reference="hPa-yH-4Lw"/>
                                         <exclude reference="vsr-47-3Hd"/>
+                                        <exclude reference="757-I2-w0Y"/>
+                                        <exclude reference="x2h-8l-qkR"/>
                                         <exclude reference="6q8-IQ-tHj"/>
                                     </mask>
                                 </variation>
@@ -1169,11 +1169,11 @@
                                         <include reference="1CG-SW-qbj"/>
                                         <include reference="fAr-cj-vB4"/>
                                         <include reference="yYx-gy-Yqt"/>
-                                        <include reference="757-I2-w0Y"/>
-                                        <include reference="x2h-8l-qkR"/>
                                         <include reference="XiA-YM-Glp"/>
                                         <include reference="hPa-yH-4Lw"/>
                                         <include reference="vsr-47-3Hd"/>
+                                        <include reference="757-I2-w0Y"/>
+                                        <include reference="x2h-8l-qkR"/>
                                         <include reference="6q8-IQ-tHj"/>
                                     </mask>
                                 </variation>
