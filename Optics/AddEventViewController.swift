@@ -80,11 +80,16 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, UITextViewD
         return false
     }
     
-    func textViewdDidBeginEditing(textView: UITextView)
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool
     {
         if ( textView == eventDescriptionField ) {
-            scrollView.scrollContent()
+            if (textView.text == "Déscription de l'évènement") {
+                textView.text = nil
+            }
+            scrollView.scrollContent(110)
         }
+        
+        return true
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
