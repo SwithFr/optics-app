@@ -66,7 +66,7 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
         UIHelper.formatInput( passwordField )
         UIHelper.formatInput( confirmField )
         
-        UIHelper.formatRoundedImage( userAvatar, radius: 75, color: UIHelper.red, border: 2 )
+        UIHelper.formatRoundedImage( userAvatar, radius: 50, color: UIHelper.red, border: 2 )
         
         usernameField.delegate = self
         passwordField.delegate = self

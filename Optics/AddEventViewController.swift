@@ -46,9 +46,21 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, UITextViewD
         let title       = Str.trim( eventTitleField.text! )
         let description = Str.trim( eventDescriptionField.text )
         
-        ModelEvent.add( title, description: description ) {
+        ModelEvent.add( title, description: description, completionHandler: {
             dispatch {
-                Navigator.goTo( "eventsListView", vc: self )
+                self.success( "Évènement ajouté", message: "Votre évènement '\( title )' a bien été ajouté", buttonText: "Cool !" ) {
+                    Navigator.goTo( "eventsListView", vc: self )
+                }
+            }
+        } ) {
+            errorType in
+            dispatch {
+                switch errorType {
+                case "empty field":
+                    self.error( "Infos manquantes !", message: "Veuillez saisir un titre ET une description.", buttonText: "Je le fais!", completion: nil )
+                default:
+                    self.error( "Erreur", message: "La connexion au serveur à échoué, veuillez réessayer", buttonText: "Je réessai", completion: nil )
+                }                
             }
         }
     }
@@ -80,11 +92,16 @@ class AddEventViewController: UIViewController, UITextFieldDelegate, UITextViewD
         return false
     }
     
-    func textViewdDidBeginEditing(textView: UITextView)
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool
     {
         if ( textView == eventDescriptionField ) {
-            scrollView.scrollContent()
+            if (textView.text == "Déscription de l'évènement") {
+                textView.text = nil
+            }
+            scrollView.scrollContent(110)
         }
+        
+        return true
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
