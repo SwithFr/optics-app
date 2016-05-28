@@ -85,11 +85,15 @@ class EventsListTableViewController: UITableViewController {
         if ( User.isOwner( event[ "user_id" ] ) ) {
             let deleteAction = UITableViewRowAction( style: .Normal, title: "Supprimer" ) {
                 _,_ in
-                self.ModelEvent.delete( eventID ) {
-                    dispatch {
-                        self.events.removeObject( event )
-                        self.tableView.reloadData()
+                self.askBeforeDelete( "Supprimer ?", message: "Voulez-vous vraiment supprimer cet évènemtn ?", buttonText: "Oui", otherButtonTitle: "Oula ! non !", completion: {
+                    self.ModelEvent.delete( eventID ) {
+                        dispatch {
+                            self.events.removeObject( event )
+                            self.tableView.reloadData()
+                        }
                     }
+                } ) {
+                    tableView.setEditing( false, animated: true )
                 }
             }
             

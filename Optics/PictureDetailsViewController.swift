@@ -126,11 +126,11 @@ class PictureDetailsViewController: UIViewController, UITableViewDataSource {
     
     func _deletePicture(sender: UIBarButtonItem)
     {
-        self.askBeforeDelete( "Supprimer ?", message: "Voulez-vous vraiment supprimer cette photo ?", buttonText: "Oui !", otherButtonTitle: "Oups, non !" ) {
+        self.askBeforeDelete( "Supprimer ?", message: "Voulez-vous vraiment supprimer cette photo ?", buttonText: "Oui !", otherButtonTitle: "Oups, non !", completion: {
             self.ModelPicture.delete( String( self.currentPicture[ "id" ] ) ) {
                 Navigator.goBack( self )
             }
-        }
+        }, cancelHandler: nil )
     }
     
     func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>)

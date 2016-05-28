@@ -73,12 +73,16 @@ extension UIViewController
         }
     }
     
-    func askBeforeDelete(title: String, message: String, buttonText: String, otherButtonTitle: String, completion: () -> Void)
+    func askBeforeDelete(title: String, message: String, buttonText: String, otherButtonTitle: String, completion: () -> Void, cancelHandler: (() -> Void)?)
     {
         SweetAlert().showAlert( title, subTitle: message, style: .None, buttonTitle: buttonText, buttonColor: UIHelper.green, otherButtonTitle: otherButtonTitle, otherButtonColor: UIHelper.red ) {
             isOtherButton in
             if ( isOtherButton ) {
                 completion()
+            } else {
+                if cancelHandler != nil {
+                    cancelHandler!()
+                }
             }
         }
     }
