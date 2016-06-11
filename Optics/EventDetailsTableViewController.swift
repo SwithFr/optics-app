@@ -132,7 +132,7 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
             data in
             dispatch {
                 self.hideLoader()
-                refreshControl!.endRefreshing()
+                self.refreshControl!.endRefreshing()
                 self._setAndReloadData( data )
             }
         }
