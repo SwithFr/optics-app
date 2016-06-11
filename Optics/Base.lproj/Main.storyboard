@@ -2238,12 +2238,12 @@
                                         <exclude reference="PCB-2K-a0S"/>
                                         <exclude reference="Fwc-FD-tLP"/>
                                         <exclude reference="RMI-Gu-W6G"/>
+                                        <exclude reference="EgI-Av-xry"/>
+                                        <exclude reference="t5t-YU-vAv"/>
                                         <exclude reference="EY3-Zf-0wl"/>
                                         <exclude reference="Hpm-lc-Hvs"/>
                                         <exclude reference="Wvj-00-JPX"/>
                                         <exclude reference="xWf-Yo-bh9"/>
-                                        <exclude reference="EgI-Av-xry"/>
-                                        <exclude reference="t5t-YU-vAv"/>
                                         <exclude reference="8iR-jA-yJ0"/>
                                         <exclude reference="IOY-YO-VVd"/>
                                         <exclude reference="IxX-6a-5Ct"/>
@@ -2269,12 +2269,12 @@
                                         <include reference="PCB-2K-a0S"/>
                                         <include reference="Fwc-FD-tLP"/>
                                         <include reference="RMI-Gu-W6G"/>
+                                        <include reference="EgI-Av-xry"/>
+                                        <include reference="t5t-YU-vAv"/>
                                         <include reference="EY3-Zf-0wl"/>
                                         <include reference="Hpm-lc-Hvs"/>
                                         <include reference="Wvj-00-JPX"/>
                                         <include reference="xWf-Yo-bh9"/>
-                                        <include reference="EgI-Av-xry"/>
-                                        <include reference="t5t-YU-vAv"/>
                                         <include reference="8iR-jA-yJ0"/>
                                         <include reference="IOY-YO-VVd"/>
                                         <include reference="IxX-6a-5Ct"/>
@@ -2387,6 +2387,9 @@
                                         <state key="normal" title="Déjà un compte ?">
                                             <color key="titleColor" red="0.93725490199999995" green="0.31764705879999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="121" y="744" width="159" height="36"/>
+                                        </variation>
                                         <connections>
                                             <action selector="goBackLoginBtnTapped:" destination="wwt-Oq-C9G" eventType="touchUpInside" id="DCZ-MX-axk"/>
                                         </connections>
