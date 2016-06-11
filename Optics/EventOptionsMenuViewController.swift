@@ -30,6 +30,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         _setNavigationButtons()
         _loadData()
         _setUI()
+        self.hideKeyboardWhenTappedAround() 
     }
     
     /*
@@ -159,7 +160,10 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     
     func textViewdDidBeginEditing(textView: UITextView)
     {
+        print("ok")
         if ( textView == eventDescription ) {
+            print( textView.text == "Déscription de l'évènement" )
+            textView.text = ""
             scrollView.scrollContent()
         }
     }
