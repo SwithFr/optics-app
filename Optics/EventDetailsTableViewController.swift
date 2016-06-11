@@ -25,10 +25,6 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
         imageFromSource.delegate      = self
         imageFromSource.allowsEditing = true
         
-        refreshControl = UIRefreshControl()
-        refreshControl!.attributedTitle = NSAttributedString(string: "Rafraîchir")
-        refreshControl!.addTarget(self, action: #selector(EventsListTableViewController.viewDidAppear), forControlEvents: UIControlEvents.ValueChanged)
-        
         _setNavigationButtons()
     }
     
@@ -132,7 +128,6 @@ class EventDetailsTableViewController: UITableViewController, UINavigationContro
             data in
             dispatch {
                 self.hideLoader()
-                self.refreshControl!.endRefreshing()
                 self._setAndReloadData( data )
             }
         }

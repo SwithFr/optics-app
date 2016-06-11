@@ -19,9 +19,6 @@ class EventsListTableViewController: UITableViewController {
     {
         super.viewDidLoad()
         navigationController?.toolbar.barTintColor = UIHelper.black
-        refreshControl = UIRefreshControl()
-        refreshControl!.attributedTitle = NSAttributedString(string: "Rafraîchir")
-        refreshControl!.addTarget(self, action: #selector(EventsListTableViewController.viewWillAppear), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -148,14 +145,7 @@ class EventsListTableViewController: UITableViewController {
         let events = JSON( data: data )
         
         self.events = events[ "data" ].arrayValue
-        refreshControl!.endRefreshing()
         self.tableView.reloadData()
-    }
-    
-    func _refresh()
-    {
-        self.tableView.reloadData()
-        refreshControl!.endRefreshing()
     }
     
     // addEvent
