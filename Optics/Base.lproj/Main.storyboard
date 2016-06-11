@@ -1092,8 +1092,7 @@
                                                 <exclude reference="Hh8-MB-5Qe"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="150" y="266" width="101" height="30"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="Hh8-MB-5Qe"/>
                                             </mask>
@@ -1134,6 +1133,9 @@
                                         <exclude reference="ghA-Q5-HWq"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="CbM-FR-wbh"/>
+                                        <exclude reference="MUd-b4-6RU"/>
+                                        <exclude reference="Sk0-ad-Clw"/>
                                         <exclude reference="4cG-9n-Ka9"/>
                                         <exclude reference="MDT-xG-WzW"/>
                                         <exclude reference="P18-O6-r06"/>
@@ -1150,9 +1152,6 @@
                                         <exclude reference="B6Q-CA-kVw"/>
                                         <exclude reference="XiA-YM-Glp"/>
                                         <exclude reference="hPa-yH-4Lw"/>
-                                        <exclude reference="CbM-FR-wbh"/>
-                                        <exclude reference="MUd-b4-6RU"/>
-                                        <exclude reference="Sk0-ad-Clw"/>
                                         <exclude reference="6q8-IQ-tHj"/>
                                     </mask>
                                 </variation>
@@ -1161,6 +1160,9 @@
                                         <include reference="ghA-Q5-HWq"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="CbM-FR-wbh"/>
+                                        <include reference="MUd-b4-6RU"/>
+                                        <include reference="Sk0-ad-Clw"/>
                                         <include reference="4cG-9n-Ka9"/>
                                         <include reference="MDT-xG-WzW"/>
                                         <include reference="P18-O6-r06"/>
@@ -1177,9 +1179,6 @@
                                         <include reference="B6Q-CA-kVw"/>
                                         <include reference="XiA-YM-Glp"/>
                                         <include reference="hPa-yH-4Lw"/>
-                                        <include reference="CbM-FR-wbh"/>
-                                        <include reference="MUd-b4-6RU"/>
-                                        <include reference="Sk0-ad-Clw"/>
                                         <include reference="6q8-IQ-tHj"/>
                                     </mask>
                                 </variation>
@@ -1589,12 +1588,18 @@
                                                             <fontDescription key="fontDescription" name="Raleway-SemiBold" family="Raleway" pointSize="16"/>
                                                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="69" y="8" width="249" height="19"/>
+                                                            </variation>
                                                         </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="Comment." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1d-Rb-aLt">
                                                             <rect key="frame" x="73" y="25" width="261" height="47"/>
                                                             <color key="textColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" name="Raleway" family="Raleway" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                                <rect key="frame" x="66" y="25" width="244" height="47"/>
+                                                            </variation>
                                                         </textView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="STF-ai-Jkk">
                                                             <rect key="frame" x="25" y="8" width="40" height="40"/>
