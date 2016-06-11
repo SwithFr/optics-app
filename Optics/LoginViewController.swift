@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate
+class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate
 {
 
     @IBOutlet weak var loginBtn: UIButton!
@@ -23,7 +23,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         super.viewDidLoad()
         _setUI()
         _hideBackButton()
-        
     }
     
     /*
@@ -53,8 +52,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         if ( textField == loginField ) {
             passwordField.becomeFirstResponder()
         } else if ( textField == passwordField ) {
-            _logUser()
             self.view.endEditing( true )
+            _logUser()
         }
         
         return false
