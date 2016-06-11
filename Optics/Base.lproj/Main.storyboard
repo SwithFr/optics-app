@@ -1092,7 +1092,8 @@
                                                 <exclude reference="Hh8-MB-5Qe"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="176" y="266" width="49" height="30"/>
                                             <mask key="constraints">
                                                 <include reference="Hh8-MB-5Qe"/>
                                             </mask>
