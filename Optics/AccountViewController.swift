@@ -27,6 +27,7 @@ class AccountViewController: UIViewController, UITextFieldDelegate {
         
         _setUI()
         _loadData()
+        hideKeyboardWhenTappedAround()
     }
     
     /*

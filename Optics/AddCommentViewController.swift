@@ -25,6 +25,7 @@ class AddCommentViewController: UIViewController, UITextViewDelegate {
     {
         super.viewDidLoad()
         _setUI()
+        hideKeyboardWhenTappedAround()
     }
     
     /*
