@@ -23,6 +23,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UINavigatio
     {
         super.viewDidLoad()
         _setUI()
+        hideKeyboardWhenTappedAround()
     }
     
     /*

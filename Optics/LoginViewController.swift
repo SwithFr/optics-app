@@ -23,7 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate
         super.viewDidLoad()
         _setUI()
         _hideBackButton()
-        
+        hideKeyboardWhenTappedAround()
     }
     
     /*

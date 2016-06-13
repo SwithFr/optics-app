@@ -31,6 +31,7 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
         _setNavigationButtons()
         _loadData()
         _setUI()
+        hideKeyboardWhenTappedAround()
     }
     
     /*

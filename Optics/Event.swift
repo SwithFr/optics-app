@@ -29,7 +29,7 @@ class Event: Model
     // Add an event
     func add(title: String, description: String, completionHandler: () -> Void, errorHandler: (errorType: String) -> Void)
     {
-        if ( title.isEmpty ) {
+        if ( title.isEmpty || description.isEmpty ) {
             errorHandler( errorType: "empty field" )
         } else {
             self.setData( "title=\(title)&description=\(description)" )
