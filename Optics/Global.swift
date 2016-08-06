@@ -49,7 +49,8 @@ func getBaseUrl() -> String
         
     switch deviceName {
         default:
-            baseUrl = "http://api.optics.swith.fr:2345/"
+            baseUrl = "http://192.168.99.100/"
+            //baseUrl = "http://api.optics.swith.fr:2345/"
             break
     }
     

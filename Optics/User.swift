@@ -205,6 +205,7 @@ class User : Model
             let user:NSUserDefaults = NSUserDefaults.standardUserDefaults()
             
             user.removeObjectForKey( "USER_ID" )
+            user.removeObjectForKey( "HAS_ACCOUNT" )
             user.removeObjectForKey( "USER_TOKEN" )
         }
     }
