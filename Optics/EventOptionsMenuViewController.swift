@@ -92,8 +92,9 @@ class EventOptionsMenuViewController: UIViewController, UINavigationControllerDe
     
     func _shareEvent(sender: AnyObject)
     {
-        let url = NSURL( string: "optics://send?text=test" )
-        let shareVC = UIActivityViewController( activityItems: [ url! ], applicationActivities: nil )
+        let msg = "Rejoignez l'évènement : \( currentEvent[ "title" ] .string! )\n"
+        let url = NSURL( string: "optics://?join=\( eventId )" )
+        let shareVC = UIActivityViewController( activityItems: [ msg, url! ], applicationActivities: nil )
         presentViewController( shareVC, animated: true, completion: nil )
     }
 

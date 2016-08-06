@@ -90,7 +90,10 @@ class EventsListTableViewController: UITableViewController {
             
             let shareAction = UITableViewRowAction( style: .Normal, title: "Partager" ) {
                 _, _ in
-                let shareVC = UIActivityViewController( activityItems: [ eventID ], applicationActivities: nil )
+                let msg = "Rejoignez l'évènement : \( event[ "title" ] .string! )\n"
+                let url = NSURL( string: "optics://?join=\( eventID )" )
+                let shareVC = UIActivityViewController( activityItems: [ msg, url! ], applicationActivities: nil )
+                
                 self.presentViewController( shareVC, animated: true, completion: nil )
             }
             
