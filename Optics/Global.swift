@@ -48,6 +48,8 @@ func getBaseUrl() -> String
     var baseUrl = ""
         
     switch deviceName {
+        case "Swith":
+            baseUrl = "http://api.optics.swith.fr:2345/"
         default:
             baseUrl = "http://192.168.99.100/"
             //baseUrl = "http://api.optics.swith.fr:2345/"
