@@ -54,58 +54,71 @@ class EventsListTableViewController: UITableViewController {
     */
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return events.count
+        return events.count == 0 ? 1 : events.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell  = tableView.dequeueReusableCellWithIdentifier( "eventCell", forIndexPath: indexPath ) as! EventTableViewCell
-        let event = events[ indexPath.row ]
-        let date  = Date.convertDateFormater( event["created_at"].string! )
         
         tableView.separatorColor = UIHelper.red
         
-        cell.eventTitle.text = event["title"].string!
-        cell.eventDate.text = date
-        cell.picturesCount.text = String( event[ "pictures_count" ] )
-        cell.usersCount.text = String( event["users_count"] )
+        if ( events.count <= 0 ) {
+            cell.eventTitle.text = "Aucun evenement"
+            cell.eventDate.text = ""
+            cell.picturesCount.text = "0"
+            cell.usersCount.text = "0"
+        } else {
+            let event = events[ indexPath.row ]
+            let date  = Date.convertDateFormater( event["created_at"].string! )
+            
+            cell.eventTitle.text = event["title"].string!
+            cell.eventDate.text = date
+            cell.picturesCount.text = String( event[ "pictures_count" ] )
+            cell.usersCount.text = String( event["users_count"] )
+        }
         
         return cell
     }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
     {
-        let event   = events[ indexPath.row ]
-        let eventID = event[ "uuid" ].stringValue
-        
-        let shareAction = UITableViewRowAction( style: .Normal, title: "Partager" ) {
-            _, _ in
-            let shareVC = UIActivityViewController( activityItems: [ eventID ], applicationActivities: nil )
-            self.presentViewController( shareVC, animated: true, completion: nil )
-        }
-        
-        shareAction.backgroundColor = UIHelper.green
-        
-        if ( User.isOwner( event[ "user_id" ] ) ) {
-            let deleteAction = UITableViewRowAction( style: .Normal, title: "Supprimer" ) {
-                _,_ in
-                self.askBeforeDelete( "Supprimer ?", message: "Voulez-vous vraiment supprimer cet évènemtn ?", buttonText: "Oui", otherButtonTitle: "Oula ! non !", completion: {
-                    self.ModelEvent.delete( eventID ) {
-                        dispatch {
-                            self.events.removeObject( event )
-                            self.tableView.reloadData()
-                        }
-                    }
-                } ) {
-                    tableView.setEditing( false, animated: true )
-                }
+        if ( events.count <= 0 ) {
+            return []
+        } else {
+            let event   = events[ indexPath.row ]
+            let eventID = event[ "uuid" ].stringValue
+            
+            let shareAction = UITableViewRowAction( style: .Normal, title: "Partager" ) {
+                _, _ in
+                let shareVC = UIActivityViewController( activityItems: [ eventID ], applicationActivities: nil )
+                self.presentViewController( shareVC, animated: true, completion: nil )
             }
             
-            deleteAction.backgroundColor = UIHelper.red
+            shareAction.backgroundColor = UIHelper.green
             
-            return [ shareAction, deleteAction ]
+            if ( User.isOwner( event[ "user_id" ] ) ) {
+                let deleteAction = UITableViewRowAction( style: .Normal, title: "Supprimer" ) {
+                    _,_ in
+                    self.askBeforeDelete( "Supprimer ?", message: "Voulez-vous vraiment supprimer cet évènemtn ?", buttonText: "Oui", otherButtonTitle: "Oula ! non !", completion: {
+                        self.ModelEvent.delete( eventID ) {
+                            dispatch {
+                                self.events.removeObject( event )
+                                self.tableView.reloadData()
+                            }
+                        }
+                    } ) {
+                        tableView.setEditing( false, animated: true )
+                    }
+                }
+                
+                deleteAction.backgroundColor = UIHelper.red
+                
+                return [ shareAction, deleteAction ]
+            }
+            
+            return [ shareAction ]
         }
-        
-        return [ shareAction ]
+
     }
     
     /*
@@ -194,6 +207,16 @@ class EventsListTableViewController: UITableViewController {
         popView.addAction(cancelAction)
         
         self.present( popView )
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
+    {
+        if ( identifier == "eventDetailsSegue" && events.count > 0 ) {
+            return true
+        } else {
+            _displayAddScreen()
+            return false
+        }
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
