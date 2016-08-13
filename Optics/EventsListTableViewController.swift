@@ -214,12 +214,12 @@ class EventsListTableViewController: UITableViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
     {
-        if ( identifier == "eventDetailsSegue" && events.count > 0 ) {
-            return true
-        } else {
+        if ( identifier == "eventDetailsSegue" && events.count <= 0 ) {
             _displayAddScreen()
             return false
         }
+        
+        return true
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
