@@ -14,8 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        UIApplication.sharedApplication().registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert , .Sound, .Badge], categories: nil))
         let storyboard   = UIStoryboard( name: "Main", bundle: nil )
         let barAppearace = UIBarButtonItem.appearance()
         let firstView    = Application.getFirstView()
@@ -27,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
-        barAppearace.setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics:UIBarMetrics.Default)
+        barAppearace.setBackButtonTitlePositionAdjustment( UIOffsetMake( 0, -60 ), forBarMetrics:UIBarMetrics.Default )
         barAppearace.tintColor = UIHelper.red
         
         if firstView != "" {
@@ -39,7 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool
+    {
         let params = NSMutableDictionary()
         let kvPairs : [ String ] = ( url.query?.componentsSeparatedByString( "&" ) )!
         for param in  kvPairs{
@@ -48,7 +50,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 params.setObject( keyValuePair.last!, forKey: keyValuePair.first! )
             }
         }
-        print( params )
+        
+        Event().join( params["join"]! as! String ) {
+            data in
+            dispatch {
+                let alert = UIAlertController( title: "Évènement rejoint !", message: "Ajoutez dès maintenant vos photos", preferredStyle: .Alert )
+                
+                alert.addAction( UIAlertAction(title: "ok", style: .Default ) {
+                    alert in
+                    
+                } )
+                
+                self.window?.rootViewController?.presentViewController( alert, animated: true, completion: nil )
+            }
+        }
+        
         return true
     }
 
